@@ -24,11 +24,11 @@
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-                <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a>
-                <a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Team</a>
+                <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+                <a href="profiili.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-                <a href="#pricing" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Price</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
+                <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -79,14 +79,14 @@
         <!-- Team Container -->
         <div class="w3-container w3-padding-64 w3-center" id="team">
             <h2>mainosbanneri!</h2>
-            <p>Meet the team - our office rats:</p>
+            <p>Tulee tähän</p>
 
             <div class="w3-row"><br>
 
                 <div class="w3-quarter">
-                    <img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3>Johnny Walker</h3>
-                    <p>Web Designer</p>
+                    <img src="/images/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3>title text</h3>
+                    <p>small text</p>
                 </div>
 
             </div>
@@ -150,25 +150,25 @@
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
 
-        <!-- Pricing Row -->
-        <div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-            <h2>PRICING</h2>
-            <p>Choose a pricing plan that fits your needs.</p><br>
+        <!-- Pikatreenit Row -->
+        <div class="w3-row-padding w3-center w3-padding-64" id="pikatreenit">
+            <h2>päivän pikareenit</h2>
+            <p>Valitse haluamasi pikatreeniohjelma!</p><br>
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
-                        <p class="w3-xlarge">Basic</p>
+                        <p class="w3-xlarge">Lite</p>
                     </li>
-                    <li class="w3-padding-16"><b>10GB</b> Storage</li>
-                    <li class="w3-padding-16"><b>10</b> Emails</li>
-                    <li class="w3-padding-16"><b>10</b> Domains</li>
-                    <li class="w3-padding-16"><b>Endless</b> Support</li>
+                    <li class="w3-padding-16"><b>10x</b> hauis</li>
+                    <li class="w3-padding-16"><b>10x</b> ojentajat</li>
+                    <li class="w3-padding-16"><b>10x</b> hartiat</li>
+                    <li class="w3-padding-16"><b>10x</b> rinta</li>
                     <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
-                        <span class="w3-opacity">per month</span>
+                        <h2 class="w3-wide"><i class="fa"></i> 5x</h2>
+                        <span class="w3-opacity">n.30min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
-                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
                     </li>
                 </ul>
             </div>
@@ -176,18 +176,18 @@
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme-l2">
-                        <p class="w3-xlarge">Pro</p>
+                        <p class="w3-xlarge">Medium</p>
                     </li>
-                    <li class="w3-padding-16"><b>25GB</b> Storage</li>
+                    <li class="w3-padding-16"><b>15x</b> Storage</li>
                     <li class="w3-padding-16"><b>25</b> Emails</li>
                     <li class="w3-padding-16"><b>25</b> Domains</li>
                     <li class="w3-padding-16"><b>Endless</b> Support</li>
                     <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
-                        <span class="w3-opacity">per month</span>
+                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 7x</h2>
+                        <span class="w3-opacity">30min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
-                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
                     </li>
                 </ul>
             </div>
@@ -195,7 +195,7 @@
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
-                        <p class="w3-xlarge">Premium</p>
+                        <p class="w3-xlarge">Hard</p>
                     </li>
                     <li class="w3-padding-16"><b>50GB</b> Storage</li>
                     <li class="w3-padding-16"><b>50</b> Emails</li>
@@ -206,7 +206,7 @@
                         <span class="w3-opacity">per month</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
-                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
                     </li>
                 </ul>
             </div>
@@ -253,7 +253,7 @@
                 myCenter=new google.maps.LatLng(41.878114, -87.629798);
                 var mapOptions= {
                     center:myCenter,
-                    zoom:12, scrollwheel: false, draggable: false,
+                    zoom:12, scrollwheel: true, draggable: true,
                     mapTypeId:google.maps.MapTypeId.ROADMAP
                 };
                 var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
@@ -266,9 +266,9 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
         <!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+        To use this code on your website, get a free API key from Google.
+        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+        -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
@@ -278,7 +278,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
             <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
                 <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
