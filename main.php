@@ -78,7 +78,7 @@
 
 <!-- Team Container -->
 <div class="w3-container w3-padding-64 w3-center" id="team">
-<h2>mainosbanneri!!!</h2>
+<h2>mainosbanneri!</h2>
 <p>Meet the team - our office rats:</p>
 
 <div class="w3-row"><br>
