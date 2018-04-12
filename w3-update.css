@@ -191,6 +191,10 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-white,.w3-hover-white:hover{color:#000!important;background-color:#b3e5fc!important}
 .w3-border-teal,.w3-hover-border-teal:hover{border-color:#01579b!important}
 
+/* Cursor pointer */
+.cursorpoint{cursor:url(http://www.icon100.com/up/3772/128/425-hand-pointer.png), auto;}
+
+
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
 .w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
