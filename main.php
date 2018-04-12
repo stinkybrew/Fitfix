@@ -3,7 +3,7 @@
     <title>W3.CSS Template</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="w3-theme-black.css">
     <link rel="stylesheet" href="font-awesome.min.css">
     <body id="myPage">
