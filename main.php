@@ -47,7 +47,7 @@
                 <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
                     <form action=".php">
                         <label for="email"></label>
-                        <input type="text" id="email" name="email address" placeholder="email address..">
+                        <input type="text" id="email" name="email adress" placeholder="email adress..">
                     </form>
                 </a>
                 <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
