@@ -37,6 +37,24 @@
                         <a href="#" class="w3-bar-item w3-button">Link</a>
                     </div>
                 </div>
+                <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                    <form action=".php">
+                        <label for="psw"></label>
+                        <input type="text" id="psw" name="password" placeholder="Password..">
+                    </form>
+                </a>
+                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                    <form action=".php">
+                        <label for="email"></label>
+                        <input type="text" id="email" name="email address" placeholder="email address..">
+                    </form>
+                </a>
+                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                    <form action=".php">
+                        <input type="submit" value="Login">
+                    </form>
+                </a>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
             </div>
 
