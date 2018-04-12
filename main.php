@@ -24,8 +24,8 @@
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-                <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-                <a href="profiili.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+                <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
@@ -182,8 +182,8 @@
                     <li class="w3-padding-16"><b>10x</b> hartiat</li>
                     <li class="w3-padding-16"><b>10x</b> rinta</li>
                     <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa"></i> 5x</h2>
-                        <span class="w3-opacity">n.30min</span>
+                        <h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
+                        <span class="w3-opacity">30min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
                         <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
@@ -196,12 +196,12 @@
                     <li class="w3-theme-l2">
                         <p class="w3-xlarge">Medium</p>
                     </li>
-                    <li class="w3-padding-16"><b>15x</b> Storage</li>
-                    <li class="w3-padding-16"><b>25</b> Emails</li>
-                    <li class="w3-padding-16"><b>25</b> Domains</li>
-                    <li class="w3-padding-16"><b>Endless</b> Support</li>
+                    <li class="w3-padding-16"><b>15x</b> hauis</li>
+                    <li class="w3-padding-16"><b>15x</b> ojentajat</li>
+                    <li class="w3-padding-16"><b>15x</b> hartiat</li>
+                    <li class="w3-padding-16"><b>15x</b> rinta</li>
                     <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 7x</h2>
+                        <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
                         <span class="w3-opacity">30min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
@@ -215,13 +215,13 @@
                     <li class="w3-theme">
                         <p class="w3-xlarge">Hard</p>
                     </li>
-                    <li class="w3-padding-16"><b>50GB</b> Storage</li>
-                    <li class="w3-padding-16"><b>50</b> Emails</li>
-                    <li class="w3-padding-16"><b>50</b> Domains</li>
-                    <li class="w3-padding-16"><b>Endless</b> Support</li>
+                    <li class="w3-padding-16"><b>20x</b> hauis</li>
+                    <li class="w3-padding-16"><b>20x</b> ojentajat</li>
+                    <li class="w3-padding-16"><b>20x</b> hartiat</li>
+                    <li class="w3-padding-16"><b>20x</b> rinta</li>
                     <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa fa-usd"></i> 50</h2>
-                        <span class="w3-opacity">per month</span>
+                        <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                        <span class="w3-opacity">30min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
                         <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
