@@ -38,19 +38,19 @@
                     </div>
                 </div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
                     </form>
                 </a>
-                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
                     <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email address" placeholder="email address..">
                     </form>
                 </a>
-                <a style="float:right" class="w3-bar-item w3-button w3-hide-small">
+                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
                     <form action=".php">
                         <input type="submit" value="Login">
                     </form>
