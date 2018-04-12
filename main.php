@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="w3-theme-black.css">
     <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
     <body id="myPage">
 
         <!-- Sidebar on click -->
@@ -38,20 +39,20 @@
                     </div>
                 </div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
                     </form>
                 </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email adress" placeholder="email adress..">
                     </form>
                 </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
-                    <form action=".php">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
+                    <form action="">
                         <input type="submit" value="Login">
                     </form>
                 </a>
