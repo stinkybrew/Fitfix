@@ -27,7 +27,6 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
-                <a href="treenit.php">
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -50,6 +49,7 @@
                         <a href="#" class="w3-bar-item w3-button">Link</a>
                     </div>
                 </div>
+                <div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                 <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
@@ -71,7 +71,8 @@
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                 </a>
             </div>
-
+               
+                
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="main.php" class="w3-bar-item w3-button">Home</a>
@@ -204,7 +205,7 @@
                     <li class="w3-padding-16">syviä</li>
                     <li class="w3-padding-16">suoria</li>
                     <li class="w3-padding-16">vinoja vatsalihaksia</li>
-                        <h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
+                    <li><h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
                         <span class="w3-opacity">6min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
@@ -224,7 +225,7 @@
                     <li class="w3-padding-16">Etureidet ja takareidet</li>
                     <li class="w3-padding-16">Pohjelihakset</li>
                     <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
-                        <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                    <li>   <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
                         <span class="w3-opacity">6min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
@@ -245,7 +246,7 @@
                     <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
                     <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
                     <li class="w3-padding-16">Olka- ja olka-värttinäluulihas</li>
-
+                    <li>
                         <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
                         <span class="w3-opacity">8min</span>
                     </li>
@@ -267,7 +268,7 @@
                 <li class="w3-padding-16">Ylä-</li>
                 <li class="w3-padding-16">Keski-</li>
                 <li class="w3-padding-16">Alarintalihakset</li>
-                    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                <li>    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
                     <span class="w3-opacity">6min</span>
                 </li>
                 <li class="w3-theme-l5 w3-padding-24">
@@ -287,7 +288,7 @@
                 <li class="w3-padding-16">Selän ojentajat</li>
                 <li class="w3-padding-16">Leveät selkälihakset</li>
                 <li class="w3-padding-16">Epäkäslihakset</li>
-                    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                <li>   <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
                     <span class="w3-opacity">6min</span>
                 </li>
                 <li class="w3-theme-l5 w3-padding-24">
