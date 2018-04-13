@@ -51,23 +51,15 @@
                 </div>
                 <div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
+                <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
-                    </form>
-                </a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
-                    <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email adress" placeholder="email adress..">
-                    </form>
-                </a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
-                    <form action="">
                         <input type="submit" value="Login">
                     </form>
-                </a>
+                </div>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                 </a>
             </div>

@@ -36,39 +36,23 @@
                         <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
                         <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
                         <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
+                        <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                    </div>
-                </div>
                 <div>
-                <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
+                <div href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</div>
+                <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
-                    </form>
-                </a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
-                    <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email adress" placeholder="email adress..">
-                    </form>
-                </a>
-                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
-                    <form action="">
                         <input type="submit" value="Login">
                     </form>
-                </a>
+                </div>
                 <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                 </a>
             </div>
@@ -89,6 +73,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!--
 //Image Header
