@@ -40,7 +40,7 @@
                         <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
                         <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
                         <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="#Koko kehon" class="w3-bar-item w3-button">Koko keho</a>
+                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
                     </div>
                 </div>
                 <a>
