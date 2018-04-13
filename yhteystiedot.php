@@ -63,7 +63,6 @@
                 <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
                 <a href="#work" class="w3-bar-item w3-button">Workout</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
@@ -97,9 +96,9 @@
                     <div class="w3-display-container w3-animate-opacity">
                         <p><i class="fa fa-chevron-circle-down w3-text-teal w3-xlarge"></i>    Voit myös antaa palautetta!</p>
 
-                        <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
-                        </div>
+                    <div class="w3-container w3-margin-bottom" style="display:block">  
+                         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
+                    </div>
                     </div>
                 </div>
 
