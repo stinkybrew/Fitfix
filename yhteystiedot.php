@@ -28,9 +28,20 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
+                    </div>
+                </div>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -39,6 +50,7 @@
                         <a href="#" class="w3-bar-item w3-button">Link</a>
                     </div>
                 </div>
+                <div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                 <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
@@ -57,16 +69,25 @@
                         <input type="submit" value="Login">
                     </form>
                 </a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
+                </a>
             </div>
-
+             
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="#team" class="w3-bar-item w3-button">Team</a>
-                <a href="#work" class="w3-bar-item w3-button">Work</a>
-                <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-                <a href="#" class="w3-bar-item w3-button">Search</a>
+                <a href="main.php" class="w3-bar-item w3-button">Home</a>
+                <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
+                <a href="#work" class="w3-bar-item w3-button">Workout</a>
+                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
+                <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                    </div>
+                </div>
             </div>
         </div>
         <!--
