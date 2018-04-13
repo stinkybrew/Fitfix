@@ -34,12 +34,21 @@
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+<<<<<<< HEAD
                         <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                         <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
                         <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
                         <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
                         <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
                         <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
+=======
+                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+>>>>>>> 571496d9d6e8a2c5c5180dedb420cccbcc10767e
                     </div>
                 </div>
 
