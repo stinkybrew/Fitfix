@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="w3-theme-black.css">
     <link rel="stylesheet" href="font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <body id="myPage">
 
         <!-- Sidebar on click -->
@@ -103,9 +103,9 @@
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/fjords.jpg" alt="Vernazza" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 1</h3>
+                        <h3>Treeni 1</h3>
                         <h4>Trade</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
@@ -117,9 +117,9 @@
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/lights.jpg" alt="Cinque Terre" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 2</h3>
+                        <h3>Treeni 2</h3>
                         <h4>Trade</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
@@ -131,9 +131,9 @@
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/mountains.jpg" alt="Monterosso" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 3</h3>
+                        <h3>Treeni 3</h3>
                         <h4>Trade</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>

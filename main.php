@@ -114,16 +114,16 @@
         <!-- Work Row -->
         <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
             <div class="w3-quarter">
-                <h2>Our Work</h2>
+                <h2>Workout</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/fjords.jpg" alt="Vernazza" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 1</h3>
-                        <h4>Trade</h4>
+                        <h3>Treeni 1</h3>
+                        <h4>Ohjelma</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
@@ -134,10 +134,10 @@
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/lights.jpg" alt="Cinque Terre" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 2</h3>
-                        <h4>Trade</h4>
+                        <h3>Treeni 2</h3>
+                        <h4>Ohjelma</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
@@ -148,10 +148,10 @@
 
             <div class="w3-quarter">
                 <div class="w3-card w3-white">
-                    <img src="/w3images/mountains.jpg" alt="Monterosso" style="width:100%">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <h3>Customer 3</h3>
-                        <h4>Trade</h4>
+                        <h3>Treeni 3</h3>
+                        <h4>Ohjelma</h4>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
                         <p>Blablabla</p>
