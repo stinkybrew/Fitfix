@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="w3-theme-black.css">
     <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css%22%3E">
     <body id="myPage">
 
         <!-- Sidebar on click -->
@@ -38,20 +39,20 @@
                     </div>
                 </div>
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
                     </form>
                 </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email adress" placeholder="email adress..">
                     </form>
                 </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
-                    <form action=".php">
+                <a style="float:right;background:ffffff;padding-top:4px" class="w3-hide-small">
+                    <form action="">
                         <input type="submit" value="Login">
                     </form>
                 </a>
@@ -112,7 +113,6 @@
 
         <!-- Work Row -->
         <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-
             <div class="w3-quarter">
                 <h2>Our Work</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -236,8 +236,8 @@
                 <div class="w3-col m5">
                     <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
                     <h3>Address</h3>
-                    <p>Swing by for a cup of coffee, or whatever.</p>
-                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Chicago, US</p>
+                    <p>Something funny text</p>
+                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Helsinki, FI</p>
                     <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +00 1515151515</p>
                     <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  test@test.com</p>
                 </div>
