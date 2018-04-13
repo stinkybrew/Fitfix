@@ -71,9 +71,9 @@
 
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
-            <img src="/w3images/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+            <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri tulee tähän</button>
             </div>
         </div>
 
@@ -97,13 +97,13 @@
 
         <!-- Team Container -->
         <div class="w3-container w3-padding-64 w3-center" id="team">
-            <h2>mainosbanneri!</h2>
-            <p>Tulee tähän</p>
+            <h2>jotain tekstiä!</h2>
+            <p>kuvatekstiä</p>
 
             <div class="w3-row"><br>
 
                 <div class="w3-quarter">
-                    <img src="/images/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
                     <h3>title text</h3>
                     <p>small text</p>
                 </div>
