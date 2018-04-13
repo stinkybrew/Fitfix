@@ -27,7 +27,7 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workout</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
                 <div class="w3-dropdown-hover w3-hide-small">
@@ -43,11 +43,18 @@
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="#team" class="w3-bar-item w3-button">Team</a>
-                <a href="#work" class="w3-bar-item w3-button">Work</a>
-                <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-                <a href="#" class="w3-bar-item w3-button">Search</a>
+                <a href="main.php" class="w3-bar-item w3-button">Home</a>
+                <a href="#work" class="w3-bar-item w3-button">Workout</a>
+                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
+                <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                    </div>
+                </div>
             </div>
         </div>
 
