@@ -121,7 +121,8 @@
                                 </div>
                                 <div class="w3-section">
                                     <label>Palaute</label>
-                                    <input class="w3-input" type="text" name="Message" required>
+                                    <textarea style="height:auto" class="w3-input" type="text" name="Message" required rows="4" cols="50">
+                                    </textarea> 
                                 </div>
                                 <input class="w3-check" type="checkbox" checked name="Like">
                                 <label>I Like it!</label>
