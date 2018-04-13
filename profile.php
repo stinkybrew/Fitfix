@@ -46,7 +46,7 @@
                 <a href="main.php" class="w3-bar-item w3-button">Home</a>
                 <a href="#work" class="w3-bar-item w3-button">Workout</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
@@ -62,7 +62,7 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
             </div>
         </div>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="font-awesome_min.css"
+    <link rel="stylesheet" href="font-awesome_min.css">
     <body id="myPage">
 
         <!-- Sidebar on click -->
@@ -31,156 +31,148 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
-                <a href="treenit.php">
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="#Koko kehon" class="w3-bar-item w3-button">Koko keho</a>
+                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a>
+
                 <a href="main.php#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="main.php#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
-<!--
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                    </div>
-                  -->
+                <!--
+<div class="w3-dropdown-hover w3-hide-small">
+<button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
+<div class="w3-dropdown-content w3-card-4 w3-bar-block">
+<a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+<a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+<a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+<a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+<a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+</div>
+-->
 
                 <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
+                <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
                         <input type="text" id="psw" name="password" placeholder="Password..">
-                    </form>
-                </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
-                    <form action=".php">
                         <label for="email"></label>
                         <input type="text" id="email" name="email adress" placeholder="email adress..">
-                    </form>
-                </a>
-                <a style="float:right" style="background:ffffff" class="w3-bar-item w3-hide-small">
-                    <form action=".php">
                         <input type="submit" value="Login">
                     </form>
-                </a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
-            </div>
-</div>
-            <!-- Navbar on small screens -->
-            <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="#team" class="w3-bar-item w3-button">Team</a>
-                <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
-                <a href="#pricing" class="w3-bar-item w3-button">Price</a>
-                <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-                <a href="#" class="w3-bar-item w3-button">Search</a>
+                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+                </div>
+
+
+                <!-- Navbar on small screens -->
+                <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                    <a href="#team" class="w3-bar-item w3-button">Team</a>
+                    <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
+                    <a href="#pricing" class="w3-bar-item w3-button">Price</a>
+                    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+                    <a href="#" class="w3-bar-item w3-button">Search</a>
+                </div>
             </div>
         </div>
         <div class="w3-container w3-padding-64 w3-center">
-        <div class="w3-container w3-padding-64 w3-center" id="Käsitreenit">
+            <div class="w3-container w3-padding-64 w3-center" id="Käsitreenit">
 
-            <h2 class="w3-wide"><i class="fa"></i>Käsitreenit</h2>
-            <iframe width="853" height="505" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
-            </iframe>
+                <h2 class="w3-wide"><i class="fa"></i>Käsitreenit</h2>
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="w3-container w3-padding-64 w3-center" id="Jalkatreenit">
+                <h2 class="w3-wide"><i class="fa"></i>Jalkatreenit</h2>
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="w3-container w3-padding-64 w3-center" id="Rintatreenit">
+                <h2 class="w3-wide"><i class="fa"></i>Rintatreenit</h2>
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="w3-container w3-padding-64 w3-center" id="Vatsatreenit">
+                <h2 class="w3-wide"><i class="fa"></i>Vatsatreenit</h2>
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="w3-container w3-padding-64 w3-center" id="Selkätreenit">
+                <h2 class="w3-wide"><i class="fa"></i>Selkätreenit</h2>
+                <iframe width="853" height="505" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
         </div>
-        <div class="w3-container w3-padding-64 w3-center" id="Jalkatreenit">
-            <h2 class="w3-wide"><i class="fa"></i>Jalkatreenit</h2>
-            <iframe width="853" height="505" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
-            </iframe>
+        <!-- Pikatreenit Row -->
+        <div class="w3-row-padding w3-center w3-padding-64" id="Koko kehon">
+            <h2 class="w3-wide"><i class="fa"></i>Koko kehon treenejä</h2>
+            <p>Valitse tasosi mukaan!</p><br>
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">Aloittelija</p>
+                    </li>
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/5eV33roibqc?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"> <b>Vatsa</b></li>
+                    <li class="w3-padding-16"> <b>Selkä</b></li>
+                    <li class="w3-padding-16"> <b>Jalat</b></li>
+                    <li class="w3-padding-16"> <b>Rinta</b></li>
+                    <span class="w3-opacity">20min</span>
+                    <li><h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                    </li>
+                </ul>
             </div>
 
-        <div class="w3-container w3-padding-64 w3-center" id="Rintatreenit">
-            <h2 class="w3-wide"><i class="fa"></i>Rintatreenit</h2>
-            <iframe width="853" height="505" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
-            </iframe>
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">Keskitaso</p>
+                    </li>
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/ZA8GzhFh_CQ?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"> <b>Vatsa</b></li>
+                    <li class="w3-padding-16"> <b>Selkä</b></li>
+                    <li class="w3-padding-16"> <b>Jalat</b></li>
+                    <li class="w3-padding-16"> <b>Rinta</b></li>
+                    <span class="w3-opacity">20min</span>
+                    <li><h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                    </li>
+                </ul>
             </div>
-        <div class="w3-container w3-padding-64 w3-center" id="Vatsatreenit">
-            <h2 class="w3-wide"><i class="fa"></i>Vatsatreenit</h2>
-            <iframe width="853" height="505" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
-            </iframe>
+
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">Vaikea</p>
+                    </li>
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/LqgGhJywnHI?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"> <b>Vatsa</b></li>
+                    <li class="w3-padding-16"> <b>Selkä</b></li>
+                    <li class="w3-padding-16"> <b>Jalat</b></li>
+                    <li class="w3-padding-16"> <b>Rinta</b></li>
+                    <span class="w3-opacity">20min</span>
+                    <li><h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                    </li>
+                </ul>
             </div>
-        <div class="w3-container w3-padding-64 w3-center" id="Selkätreenit">
-            <h2 class="w3-wide"><i class="fa"></i>Selkätreenit</h2>
-            <iframe width="853" height="505" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
-            </iframe>
         </div>
-      </div>
-                    <!-- Pikatreenit Row -->
-      <div class="w3-row-padding w3-center w3-padding-64" id="Koko kehon">
-          <h2 class="w3-wide"><i class="fa"></i>Koko kehon treenejä</h2>
-          <p>Valitse tasosi mukaan!</p><br>
-          <div class="w3-third w3-margin-bottom">
-              <ul class="w3-ul w3-border w3-hover-shadow">
-                  <li class="w3-theme">
-                      <p class="w3-xlarge">Aloittelija</p>
-                  </li>
-                  <iframe width="425" height="344" src="https://www.youtube.com/embed/5eV33roibqc?" frameborder="0" allowfullscreen>
-                  </iframe>
-                  <li class="w3-padding-16"> <b>Vatsa</b></li>
-                  <li class="w3-padding-16"> <b>Selkä</b></li>
-                  <li class="w3-padding-16"> <b>Jalat</b></li>
-                  <li class="w3-padding-16"> <b>Rinta</b></li>
-                  <span class="w3-opacity">20min</span>
-                  <h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
-                  </li>
-                  <li class="w3-theme-l5 w3-padding-24">
-                      <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                  </li>
-              </ul>
-          </div>
-
-          <div class="w3-third w3-margin-bottom">
-              <ul class="w3-ul w3-border w3-hover-shadow">
-                  <li class="w3-theme">
-                      <p class="w3-xlarge">Keskitaso</p>
-                  </li>
-                  <iframe width="425" height="344" src="https://www.youtube.com/embed/ZA8GzhFh_CQ?" frameborder="0" allowfullscreen>
-                  </iframe>
-                  <li class="w3-padding-16"> <b>Vatsa</b></li>
-                  <li class="w3-padding-16"> <b>Selkä</b></li>
-                  <li class="w3-padding-16"> <b>Jalat</b></li>
-                  <li class="w3-padding-16"> <b>Rinta</b></li>
-                  <span class="w3-opacity">20min</span>
-                  <h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
-                  </li>
-                  <li class="w3-theme-l5 w3-padding-24">
-                      <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                  </li>
-              </ul>
-          </div>
-
-          <div class="w3-third w3-margin-bottom">
-              <ul class="w3-ul w3-border w3-hover-shadow">
-                  <li class="w3-theme">
-                      <p class="w3-xlarge">Vaikea</p>
-                  </li>
-                  <iframe width="425" height="344" src="https://www.youtube.com/embed/LqgGhJywnHI?" frameborder="0" allowfullscreen>
-                  </iframe>
-                  <li class="w3-padding-16"> <b>Vatsa</b></li>
-                  <li class="w3-padding-16"> <b>Selkä</b></li>
-                  <li class="w3-padding-16"> <b>Jalat</b></li>
-                  <li class="w3-padding-16"> <b>Rinta</b></li>
-                  <span class="w3-opacity">20min</span>
-                  <h2 class="w3-wide"><i class="fa"></i> +30min kardiota</h2>
-                  </li>
-                  <li class="w3-theme-l5 w3-padding-24">
-                      <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                  </li>
-              </ul>
-          </div>
-      </div>
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
             <h4>Follow Us</h4>

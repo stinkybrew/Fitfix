@@ -55,184 +55,142 @@
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                     </a>
                 </div>
+            </div>
 
 
-                <!-- Navbar on small screens -->
-                <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                    <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                    <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
-                    <a href="#work" class="w3-bar-item w3-button">Workout</a>
-                    <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                    <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
-                    <div class="w3-dropdown-hover w3-hide-small">
-                        <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-                        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                        </div>
+            <!-- Navbar on small screens -->
+            <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                <a href="main.php" class="w3-bar-item w3-button">Home</a>
+                <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
+                <a href="#work" class="w3-bar-item w3-button">Workout</a>
+                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
+                <a href="#contact" class="w3-bar-item w3-button">Palaute</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="#" class="w3-bar-item w3-button">Link</a>
                     </div>
                 </div>
             </div>
         </div>
-            <!-- Image Header -->
-            <div class="w3-display-container w3-animate-opacity">
-                <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-                <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
+        <!-- Image Header -->
+        <div class="w3-display-container w3-animate-opacity">
+            <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container"> 
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Oh snap! We just showed you a modal..</h4>
+                    <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+                </header>
+                <div class="w3-container">
+                    <p>Cool huh? Ok, enough teasing around..</p>
+                    <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
                 </div>
+                <footer class="w3-container w3-teal">
+                    <p>Modal footer</p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Team Container -->
+        <div class="w3-container w3-padding-64 w3-center" id="team">
+            <h2>jotain tekstiä!</h2>
+            <p>kuvatekstiä</p>
+
+            <div class="w3-row"><br>
+
+                <div class="w3-quarter">
+                    <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
+                    <h3>title text</h3>
+                    <p>small text</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Work Row -->
+        <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+            <div class="w3-quarter">
+                <h2>Workout</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
 
-            <!-- Modal -->
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container"> 
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Oh snap! We just showed you a modal..</h4>
-                        <h5>Because we can <i class="fa fa-smile-o"></i></h5>
-                    </header>
+            <div class="w3-quarter">
+                <div class="w3-card w3-white">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
                     <div class="w3-container">
-                        <p>Cool huh? Ok, enough teasing around..</p>
-                        <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+                        <h3>Treeni 1</h3>
+                        <h4>Ohjelma</h4>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
                     </div>
-                    <footer class="w3-container w3-teal">
-                        <p>Modal footer</p>
-                    </footer>
                 </div>
             </div>
 
-            <!-- Team Container -->
-            <div class="w3-container w3-padding-64 w3-center" id="team">
-                <h2>jotain tekstiä!</h2>
-                <p>kuvatekstiä</p>
-
-                <div class="w3-row"><br>
-
-                    <div class="w3-quarter">
-                        <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
-                        <h3>title text</h3>
-                        <p>small text</p>
+            <div class="w3-quarter">
+                <div class="w3-card w3-white">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
+                    <div class="w3-container">
+                        <h3>Treeni 2</h3>
+                        <h4>Ohjelma</h4>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
                     </div>
-
                 </div>
             </div>
 
-            <!-- Work Row -->
-            <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-                <div class="w3-quarter">
-                    <h2>Workout</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-card w3-white">
-                        <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                        <div class="w3-container">
-                            <h3>Treeni 1</h3>
-                            <h4>Ohjelma</h4>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                        </div>
+            <div class="w3-quarter">
+                <div class="w3-card w3-white">
+                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
+                    <div class="w3-container">
+                        <h3>Treeni 3</h3>
+                        <h4>Ohjelma</h4>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
+                        <p>Blablabla</p>
                     </div>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-card w3-white">
-                        <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                        <div class="w3-container">
-                            <h3>Treeni 2</h3>
-                            <h4>Ohjelma</h4>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w3-quarter">
-                    <div class="w3-card w3-white">
-                        <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                        <div class="w3-container">
-                            <h3>Treeni 3</h3>
-                            <h4>Ohjelma</h4>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                            <p>Blablabla</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Container -->
-            <div class="w3-container" style="position:relative">
-                <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
-                   style="position:absolute;top:-28px;right:24px">+</a>
-            </div>
-
-            <!-- Pikatreenit Row -->
-            <div class="w3-row-padding w3-center w3-padding-64" id="pikatreenit">
-                <h2>Päivän pikareenit</h2>
-                <p>Valitse haluamasi treenikohde!</p><br>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">Vatsa</p>
-                        </li>
-                        <iframe width="425" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" frameborder="0" allowfullscreen>
-                        </iframe>
-                        <li class="w3-padding-16"><b>Treenaa:</b></li>
-                        <li class="w3-padding-16">syviä</li>
-                        <li class="w3-padding-16">suoria</li>
-                        <li class="w3-padding-16">vinoja vatsalihaksia</li>
-                        <li><h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
-                            <span class="w3-opacity">6min</span>
-                        </li>
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">Jalat</p>
-                        </li>
-                        <iframe width="425" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" frameborder="0" allowfullscreen>
-                        </iframe>
-                        <li class="w3-padding-16"><b>Treenaa:</b></li>
-                        <li class="w3-padding-16">Etureidet ja takareidet</li>
-                        <li class="w3-padding-16">Pohjelihakset</li>
-                        <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
-                        <li>   <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
-                            <span class="w3-opacity">6min</span>
-                        </li>
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
                 </div>
             </div>
 
+        </div>
+
+        <!-- Container -->
+        <div class="w3-container" style="position:relative">
+            <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+               style="position:absolute;top:-28px;right:24px">+</a>
+        </div>
+
+        <!-- Pikatreenit Row -->
+        <div class="w3-row-padding w3-center w3-padding-64" id="pikatreenit">
+            <h2>Päivän pikareenit</h2>
+            <p>Valitse haluamasi treenikohde!</p><br>
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
-                        <p class="w3-xlarge">Kädet</p>
+                        <p class="w3-xlarge">Vatsa</p>
                     </li>
-                    <iframe width="425" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" frameborder="0" allowfullscreen>
                     </iframe>
                     <li class="w3-padding-16"><b>Treenaa:</b></li>
-                    <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
-                    <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
-                    <li class="w3-padding-16">Olka- ja olka-värttinäluulihas</li>
-                    <li>
-                        <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
-                        <span class="w3-opacity">8min</span>
+                    <li class="w3-padding-16">syviä</li>
+                    <li class="w3-padding-16">suoria</li>
+                    <li class="w3-padding-16">vinoja vatsalihaksia</li>
+                    <li><h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
+                        <span class="w3-opacity">6min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
                         <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
@@ -240,12 +198,54 @@
                 </ul>
             </div>
 
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">Jalat</p>
+                    </li>
+                    <iframe width="100%" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"><b>Treenaa:</b></li>
+                    <li class="w3-padding-16">Etureidet ja takareidet</li>
+                    <li class="w3-padding-16">Pohjelihakset</li>
+                    <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
+                    <li>   <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                        <span class="w3-opacity">6min</span>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Kädet</p>
+                </li>
+                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" frameborder="0" allowfullscreen>
+                </iframe>
+                <li class="w3-padding-16"><b>Treenaa:</b></li>
+                <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
+                <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
+                <li class="w3-padding-16">Olka- ja olka-värttinäluulihas</li>
+                <li>
+                    <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                    <span class="w3-opacity">8min</span>
+                </li>
+                <li class="w3-theme-l5 w3-padding-24">
+                    <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                </li>
+            </ul>
+        </div>
+
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
                 <li class="w3-theme">
                     <p class="w3-xlarge">Rinta</p>
                 </li>
-                <iframe width="425" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" frameborder="0" allowfullscreen>
+                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" frameborder="0" allowfullscreen>
                 </iframe>
                 <li class="w3-padding-16"><b>Treenaa:</b></li>
                 <li class="w3-padding-16">Ylä-</li>
@@ -265,7 +265,7 @@
                 <li class="w3-theme">
                     <p class="w3-xlarge">Selkä</p>
                 </li>
-                <iframe width="425" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
+                <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
                 </iframe>
                 <li class="w3-padding-16"><b>Treenaa:</b></li>
                 <li class="w3-padding-16">Selän ojentajat</li>
