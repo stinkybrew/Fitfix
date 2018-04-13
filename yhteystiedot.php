@@ -43,7 +43,7 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                <div href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</div>
+                <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                 <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                     <form action=".php">
                         <label for="psw"></label>
@@ -127,6 +127,9 @@
                                 <input class="w3-check" type="checkbox" checked name="Like">
                                 <label>I Like it!</label>
                                 <button type="submit" class="w3-button w3-right w3-theme">Lähetä</button>
+                                
+                                <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->
+                                
                             </form>
                         </div>
                         <footer class="w3-container w3-teal">
