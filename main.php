@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-
+        </div>
             <!-- Image Header -->
             <div class="w3-display-container w3-animate-opacity">
                 <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
@@ -239,7 +239,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
 
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
