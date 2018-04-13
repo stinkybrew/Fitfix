@@ -27,6 +27,18 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                <a href="treenit.php">
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
+                    </div>
+                </div>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
@@ -168,41 +180,23 @@
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
 
-        <!-- Pikatreenit Row -->
+         <!-- Pikatreenit Row -->
         <div class="w3-row-padding w3-center w3-padding-64" id="pikatreenit">
-            <h2>päivän pikareenit</h2>
-            <p>Valitse haluamasi pikatreeniohjelma!</p><br>
+            <h2>Päivän pikareenit</h2>
+            <p>Valitse haluamasi treenikohde!</p><br>
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
-                        <p class="w3-xlarge">Lite</p>
+                        <p class="w3-xlarge">Vatsa</p>
                     </li>
-                    <li class="w3-padding-16"><b>10x</b> hauis</li>
-                    <li class="w3-padding-16"><b>10x</b> ojentajat</li>
-                    <li class="w3-padding-16"><b>10x</b> hartiat</li>
-                    <li class="w3-padding-16"><b>10x</b> rinta</li>
-                    <li class="w3-padding-16">
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"><b>Treenaa:</b></li>
+                    <li class="w3-padding-16">syviä</li>
+                    <li class="w3-padding-16">suoria</li>
+                    <li class="w3-padding-16">vinoja vatsalihaksia</li>
                         <h2 class="w3-wide"><i class="fa"></i> 5 sarjaa</h2>
-                        <span class="w3-opacity">30min</span>
-                    </li>
-                    <li class="w3-theme-l5 w3-padding-24">
-                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="w3-third w3-margin-bottom">
-                <ul class="w3-ul w3-border w3-hover-shadow">
-                    <li class="w3-theme-l2">
-                        <p class="w3-xlarge">Medium</p>
-                    </li>
-                    <li class="w3-padding-16"><b>15x</b> hauis</li>
-                    <li class="w3-padding-16"><b>15x</b> ojentajat</li>
-                    <li class="w3-padding-16"><b>15x</b> hartiat</li>
-                    <li class="w3-padding-16"><b>15x</b> rinta</li>
-                    <li class="w3-padding-16">
-                        <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
-                        <span class="w3-opacity">30min</span>
+                        <span class="w3-opacity">6min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
                         <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
@@ -213,15 +207,16 @@
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
-                        <p class="w3-xlarge">Hard</p>
+                        <p class="w3-xlarge">Jalat</p>
                     </li>
-                    <li class="w3-padding-16"><b>20x</b> hauis</li>
-                    <li class="w3-padding-16"><b>20x</b> ojentajat</li>
-                    <li class="w3-padding-16"><b>20x</b> hartiat</li>
-                    <li class="w3-padding-16"><b>20x</b> rinta</li>
-                    <li class="w3-padding-16">
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"><b>Treenaa:</b></li>
+                    <li class="w3-padding-16">Etureidet ja takareidet</li>
+                    <li class="w3-padding-16">Pohjelihakset</li>
+                    <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
                         <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
-                        <span class="w3-opacity">30min</span>
+                        <span class="w3-opacity">6min</span>
                     </li>
                     <li class="w3-theme-l5 w3-padding-24">
                         <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
@@ -230,6 +225,67 @@
             </div>
         </div>
 
+            <div class="w3-third w3-margin-bottom">
+                <ul class="w3-ul w3-border w3-hover-shadow">
+                    <li class="w3-theme">
+                        <p class="w3-xlarge">Kädet</p>
+                    </li>
+                    <iframe width="425" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <li class="w3-padding-16"><b>Treenaa:</b></li>
+                    <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
+                    <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
+                    <li class="w3-padding-16">Olka- ja olka-värttinäluulihas</li>
+
+                        <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                        <span class="w3-opacity">8min</span>
+                    </li>
+                    <li class="w3-theme-l5 w3-padding-24">
+                        <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Rinta</p>
+                </li>
+                <iframe width="425" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" frameborder="0" allowfullscreen>
+                </iframe>
+                <li class="w3-padding-16"><b>Treenaa:</b></li>
+                <li class="w3-padding-16">Ylä-</li>
+                <li class="w3-padding-16">Keski-</li>
+                <li class="w3-padding-16">Alarintalihakset</li>
+                    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                    <span class="w3-opacity">6min</span>
+                </li>
+                <li class="w3-theme-l5 w3-padding-24">
+                    <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w3-third w3-margin-bottom">
+            <ul class="w3-ul w3-border w3-hover-shadow">
+                <li class="w3-theme">
+                    <p class="w3-xlarge">Selkä</p>
+                </li>
+                <iframe width="425" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
+                </iframe>
+                <li class="w3-padding-16"><b>Treenaa:</b></li>
+                <li class="w3-padding-16">Selän ojentajat</li>
+                <li class="w3-padding-16">Leveät selkälihakset</li>
+                <li class="w3-padding-16">Epäkäslihakset</li>
+                    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                    <span class="w3-opacity">6min</span>
+                </li>
+                <li class="w3-theme-l5 w3-padding-24">
+                    <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                </li>
+            </ul>
+        </div>
         <!-- Contact Container -->
         <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
             <div class="w3-row">
