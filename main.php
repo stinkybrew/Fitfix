@@ -40,7 +40,7 @@
                 </div>
                 <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
