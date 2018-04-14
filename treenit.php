@@ -84,28 +84,28 @@
             <div class="w3-container w3-padding-64 w3-center" id="Käsitreenit">
 
                 <h2 class="w3-wide"><i class="fa"></i>Käsitreenit</h2>
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
+                <iframe width="70%" height="505" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
             <div class="w3-container w3-padding-64 w3-center" id="Jalkatreenit">
                 <h2 class="w3-wide"><i class="fa"></i>Jalkatreenit</h2>
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
+                <iframe width="70%" height="505" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
 
             <div class="w3-container w3-padding-64 w3-center" id="Rintatreenit">
                 <h2 class="w3-wide"><i class="fa"></i>Rintatreenit</h2>
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
+                <iframe width="70%" height="505" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
             <div class="w3-container w3-padding-64 w3-center" id="Vatsatreenit">
                 <h2 class="w3-wide"><i class="fa"></i>Vatsatreenit</h2>
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
+                <iframe width="70%" height="505" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
             <div class="w3-container w3-padding-64 w3-center" id="Selkätreenit">
                 <h2 class="w3-wide"><i class="fa"></i>Selkätreenit</h2>
-                <iframe width="853" height="505" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
+                <iframe width="70%" height="505" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -118,7 +118,7 @@
                     <li class="w3-theme">
                         <p class="w3-xlarge">Aloittelija</p>
                     </li>
-                    <iframe width="425" height="344" src="https://www.youtube.com/embed/5eV33roibqc?" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="344" src="https://www.youtube.com/embed/5eV33roibqc?" frameborder="0" allowfullscreen>
                     </iframe>
                     <li class="w3-padding-16"> <b>Vatsa</b></li>
                     <li class="w3-padding-16"> <b>Selkä</b></li>
@@ -138,7 +138,7 @@
                     <li class="w3-theme">
                         <p class="w3-xlarge">Keskitaso</p>
                     </li>
-                    <iframe width="425" height="344" src="https://www.youtube.com/embed/ZA8GzhFh_CQ?" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="344" src="https://www.youtube.com/embed/ZA8GzhFh_CQ?" frameborder="0" allowfullscreen>
                     </iframe>
                     <li class="w3-padding-16"> <b>Vatsa</b></li>
                     <li class="w3-padding-16"> <b>Selkä</b></li>
@@ -158,7 +158,7 @@
                     <li class="w3-theme">
                         <p class="w3-xlarge">Vaikea</p>
                     </li>
-                    <iframe width="425" height="344" src="https://www.youtube.com/embed/LqgGhJywnHI?" frameborder="0" allowfullscreen>
+                    <iframe width="100%" height="344" src="https://www.youtube.com/embed/LqgGhJywnHI?" frameborder="0" allowfullscreen>
                     </iframe>
                     <li class="w3-padding-16"> <b>Vatsa</b></li>
                     <li class="w3-padding-16"> <b>Selkä</b></li>
