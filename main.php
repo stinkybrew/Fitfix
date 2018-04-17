@@ -48,7 +48,7 @@
                             <label for="psw"></label>
                             <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
                         </form>
                     </div>
