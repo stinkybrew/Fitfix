@@ -160,7 +160,7 @@
                             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                             // More headers
-                            $headers .= 'From: <example@example.com>' . "\r\n";
+                            $headers .= htmlentities($_POST["Email"]); . "\r\n";
                             $headers .= 'Cc: example@example.com' . "\r\n";
 
                             mail($to,$subject,$message,$headers);
