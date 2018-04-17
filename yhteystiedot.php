@@ -139,7 +139,7 @@
                             // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
 
                             // More headers
-                            $headers = htmlentities($_POST["Email"]); . "\r\n";
+                            $headers = htmlentities($_POST["Email"]) . "\r\n";
                             mail($to,$subject,$message,$headers);
                             ?>
                         </div>
