@@ -137,11 +137,9 @@
                             $message = htmlentities($_POST["Email"]);
 
                             // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
-                            $headers = "MIME-Version: 1.0" . "\r\n";
-                            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                             // More headers
-                            $headers .= htmlentities($_POST["Email"]); . "\r\n";
+                            $headers = htmlentities($_POST["Email"]); . "\r\n";
                             mail($to,$subject,$message,$headers);
                             ?>
                         </div>
