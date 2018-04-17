@@ -42,14 +42,14 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
+                    <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+                    <div style="float:right;background-color:fff" class="w3-hide-small">
                         <form action=".php">
                             <label for="psw"></label>
-                            <input type="text" id="psw" name="password" placeholder="Password..">
+                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <label for="email"></label>
-                            <input type="text" id="email" name="email adress" placeholder="email adress..">
-                            <input type="submit" value="Login">
+                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
                         </form>
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>

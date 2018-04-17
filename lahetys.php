@@ -40,12 +40,12 @@ function isInjected($str) {
 }
 
 // If the user tries to access this script directly, redirect them to the feedback form,
-if (!isset($_POST['email'])) {
-header( "Location: $feedback_page" );
-}
+//if (!isset($_POST['email'])) {
+//header( "Location: $feedback_page" );
+//}
 
 // jos formfield on tyhjä, tämä ohjaa errorpagelle.
-elseif (empty($first_name) || empty($email_address)) {
+if (empty($name) || empty($email_address)) {
 header( "Location: $error_page" );
 }
 
