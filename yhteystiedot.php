@@ -132,9 +132,9 @@
                             <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->'
                             <?php
                             $to = "info.fixfit@gmail.com";
-                            $subject = "HTML email";
+                            $subject = "PALAUTE";
 
-                            $message = htmlentities($_POST["Email"]);
+                            $message = htmlentities($_POST["Message"]);
 
                             // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
 
