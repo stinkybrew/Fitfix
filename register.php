@@ -50,8 +50,39 @@
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;"> 
-            <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+            <div style="margin-top:40px" class="w3-container w3-display-bottomleft w3-margin-bottom">  
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
+                <div class="w3-container">
+                    <h1>Rekisteröidy tästä!</h1>
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
+                        <div class="w3-section">
+                            <label>Etunimi</label>
+                            <input class="w3-input" type="text" name="name" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Sukunimi</label>
+                            <input class="w3-input" type="text" name="name" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Syntymäaika</label>
+                            <input class="w3-input" type="date" name="dob" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Sähköposti (testi.esimerkki@gmail.com)</label>
+                            <input class="w3-input" type="text" name="email" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Käyttäjätunnus (testi.esimerkki@gmail.com)</label>
+                            <input class="w3-input" type="text" name="email" required>
+                        </div>
+                        <div class="w3-section">
+                            <label>Salasana (min. 8 merkkiä, käytäthän isoja ja pieniä kirjaimia sekä numeroita ja/tai erikoismerkkejä)</label>
+                            <input class="w3-input" type="password" name="password" required>
+                        </div>
+                        <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
+                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -75,48 +106,9 @@
 
         <!-- Team Container -->
         <div>
-            <div class="w3-row"><br>
-
-                <div class="w3-quarter">
-                    <h3></h3>
-                    <p>small text</p>
-                </div>
-
-            </div>
         </div>
         <!-- Contact Container -->
-        <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-            <div class="w3-row">
-                <div class="w3-col m5">
-                    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
-                    <h3>Address</h3>
-                    <p>Swing by for a cup of coffee, or whatever.</p>
-                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Chicago, US</p>
-                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +00 1515151515</p>
-                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  test@test.com</p>
-                </div>
-                <div class="w3-col m7">
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-                        <div class="w3-section">      
-                            <label>Name</label>
-                            <input class="w3-input" type="text" name="Name" required>
-                        </div>
-                        <div class="w3-section">      
-                            <label>Email</label>
-                            <input class="w3-input" type="text" name="Email" required>
-                        </div>
-                        <div class="w3-section">      
-                            <label>Message</label>
-                            <input class="w3-input" type="text" name="Message" required>
-                        </div>  
-                        <input class="w3-check" type="checkbox" checked name="Like">
-                        <label>I Like it!</label>
-                        <button type="submit" class="w3-button w3-right w3-theme">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
+   
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
             <h4>Follow Us</h4>
