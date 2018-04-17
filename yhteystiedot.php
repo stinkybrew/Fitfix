@@ -200,7 +200,7 @@
                 x.style.paddingTop = "10%";
                 x.style.display = "block";
             }
-            // testiä!
+            
             // Close side navigation
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
