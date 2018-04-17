@@ -110,7 +110,7 @@
                             <h4>Palaute</h4>
                         </header>
                         <div class="w3-container">
-                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" target="_blank">
+                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="mailto:info.fixfit@gmail.com" method="post" enctype="text/plain">
                                 <div class="w3-section">
                                     <label>Name</label>
                                     <input class="w3-input" type="text" name="Name" required>
@@ -128,20 +128,7 @@
                                 <label>I Like it!</label>
                                 <button type="submit" class="w3-button w3-right w3-theme">Lähetä</button>
                             </form>
-                            
-                            <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->'
-                            <?php
-                            $to = "info.fixfit@gmail.com";
-                            $subject = "PALAUTE";
 
-                            $message = htmlentities($_POST["Message"]);
-
-                            // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
-
-                            // More headers
-                            $headers = htmlentities($_POST["Email"]) . "\r\n";
-                            mail($to,$subject,$message,$headers);
-                            ?>
                         </div>
                         <footer class="w3-container w3-teal">
                             <p>Kiitos palauteesta!</p>
