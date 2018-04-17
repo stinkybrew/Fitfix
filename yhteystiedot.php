@@ -112,11 +112,11 @@
                         <div class="w3-container">
                             <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
                                 <div class="w3-section">
-                                    <label>Name</label>
+                                    <label>Nimi</label>
                                     <input class="w3-input" type="text" name="name">
                                 </div>
                                 <div class="w3-section">
-                                    <label>Email</label>
+                                    <label>Sähköpostiosoite</label>
                                     <input class="w3-input" type="text" name="email">
                                 </div>
                                 <div class="w3-section">
