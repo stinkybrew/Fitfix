@@ -61,5 +61,4 @@ else {
 
 	header( "Location: $thankyou_page" );
 }
-var_dump($msg);
 ?>
