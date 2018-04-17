@@ -110,7 +110,7 @@
                             <h4>Palaute</h4>
                         </header>
                         <div class="w3-container">
-                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="mailto:info.fixfit@gmail.com" method="post" enctype="text/plain">
+                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post" enctype="text/plain">
                                 <div class="w3-section">
                                     <label>Name</label>
                                     <input class="w3-input" type="text" name="Name" required>
