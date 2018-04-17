@@ -113,20 +113,21 @@
                             <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post" enctype="text/plain">
                                 <div class="w3-section">
                                     <label>Name</label>
-                                    <input class="w3-input" type="text" name="Name" required>
+                                    <input class="w3-input" type="text" name="name">
                                 </div>
                                 <div class="w3-section">
                                     <label>Email</label>
-                                    <input class="w3-input" type="text" name="Email" required>
+                                    <input class="w3-input" type="text" name="email">
                                 </div>
                                 <div class="w3-section">
                                     <label>Palaute</label>
-                                    <textarea style="height:auto" class="w3-input" type="text" name="Message" maxlength="500" rows="4" cols="50" required>
-                                    </textarea> 
+                                    <textarea style="height:auto" class="w3-input" type="text" name="message" maxlength="500" rows="4" cols="50"></textarea> 
                                 </div>
-                                <input class="w3-check" type="checkbox" checked name="Like">
+                                <input class="w3-check" type="checkbox" checked name="like">
                                 <label>I Like it!</label>
-                                <button type="submit" class="w3-button w3-right w3-theme">Lähetä</button>
+                                
+                                <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
+                                <button type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="submit">Lähetä</button>
                             </form>
 
                         </div>
