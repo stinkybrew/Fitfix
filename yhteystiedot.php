@@ -43,36 +43,36 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
-                    <form action=".php">
-                        <label for="psw"></label>
-                        <input type="text" id="psw" name="password" placeholder="Password..">
-                        <label for="email"></label>
-                        <input type="text" id="email" name="email adress" placeholder="email adress..">
-                        <input type="submit" value="Login">
-                    </form>
+                    <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+                    <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
+                        <form action=".php">
+                            <label for="psw"></label>
+                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
+                            <label for="email"></label>
+                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
+                        </form>
+                    </div>
+                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
+                    </a>
                 </div>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
-                </a>
-            </div>
-             
-            <!-- Navbar on small screens -->
-            <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
-                <a href="#work" class="w3-bar-item w3-button">Workout</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
+
+                <!-- Navbar on small screens -->
+                <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+                    <a href="main.php" class="w3-bar-item w3-button">Home</a>
+                    <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
+                    <a href="#work" class="w3-bar-item w3-button">Workout</a>
+                    <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
+                    <div class="w3-dropdown-hover w3-hide-small">
+                        <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
+                            <a href="#" class="w3-bar-item w3-button">Link</a>
+                            <a href="#" class="w3-bar-item w3-button">Link</a>
+                            <a href="#" class="w3-bar-item w3-button">Link</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
         <!--
 //Image Header
@@ -96,9 +96,9 @@
                     <div class="w3-display-container w3-animate-opacity">
                         <p><i class="fa fa-chevron-circle-down w3-text-teal w3-xlarge"></i>    Voit myös antaa palautetta!</p>
 
-                    <div class="w3-container w3-margin-bottom" style="display:block">  
-                         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
-                    </div>
+                        <div class="w3-container w3-margin-bottom" style="display:block">  
+                            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
+                        </div>
                     </div>
                 </div>
 
@@ -125,7 +125,7 @@
                                 </div>
                                 <input class="w3-check" type="checkbox" checked name="like">
                                 <label>I Like it!</label>
-                                
+
                                 <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
                                 <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
                             </form>

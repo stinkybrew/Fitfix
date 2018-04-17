@@ -46,10 +46,10 @@
                     <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                         <form action=".php">
                             <label for="psw"></label>
-                            <input type="text" id="psw" name="password" placeholder="Password..">
+                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <label for="email"></label>
-                            <input type="text" id="email" name="email adress" placeholder="email adress..">
-                            <input type="submit" value="Login">
+                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
                         </form>
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
@@ -78,8 +78,8 @@
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <div class="w3-container w3-display-bottomleft w3-margin-bottom" style="float:none">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">KIITOS PALAUTTEESTASI!</button>
+            <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
             </div>
         </div>
 

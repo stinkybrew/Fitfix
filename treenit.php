@@ -44,7 +44,7 @@
                 </div>
 
                 <a href="main.php#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
-                <a href="main.php#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -57,17 +57,16 @@
 </div>
 -->
 
-                <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
-                    <form action=".php">
-                        <label for="psw"></label>
-                        <input type="text" id="psw" name="password" placeholder="Password..">
-                        <label for="email"></label>
-                        <input type="text" id="email" name="email adress" placeholder="email adress..">
-                        <input type="submit" value="Login">
-                    </form>
-                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
-                </div>
+                    <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+                    <div style="float:right;background-color:fff" class="w3-hide-small">
+                        <form action=".php">
+                            <label for="psw"></label>
+                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
+                            <label for="email"></label>
+                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
+                        </form>
+                    </div>
 
 
                 <!-- Navbar on small screens -->
