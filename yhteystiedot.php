@@ -110,7 +110,7 @@
                             <h4>Palaute</h4>
                         </header>
                         <div class="w3-container">
-                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" target="_blank">
                                 <div class="w3-section">
                                     <label>Name</label>
                                     <input class="w3-input" type="text" name="Name" required>
@@ -134,26 +134,7 @@
                             $to = "info.fixfit@gmail.com";
                             $subject = "HTML email";
 
-                            $message = "
-                            <html>
-                            <head>
-                            <title>HTML email</title>
-                            </head>
-                            <body>
-                            <p> htmlentities($_POST["Email"]) </p>
-                            <table>
-                            <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            </tr>
-                            <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            </tr>
-                            </table>
-                            </body>
-                            </html>
-                            ";
+                            $message = htmlentities($_POST["Email"]);
 
                             // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
                             $headers = "MIME-Version: 1.0" . "\r\n";
