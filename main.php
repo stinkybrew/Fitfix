@@ -49,33 +49,33 @@
                         if(empty($_SESSION['username'])){
                         //user is not yet logged in
                         ?>
-                        <form action=".php">
-                            <label for="psw"></label>
-                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
+                        <form action="">
                             <label for="email"></label>
                             <input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
+                            <label for="psw"></label>
+                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
-                        </form>
-                        <?php
-                            if($_POST['login']){
-                                //normally, user data is stored in database
-                                $dbemail = ($_POST['email']);
-                                $email = "select email from user where email = " . $dbemail;
-                                $dbpwd = password_hash("salasana", PASSWORD_DEFAULT);
-                                $bdname = "select first from user where email = " . $dbemail;
-                                //echo $dbpwd;
+                            <?php
+                                if($_POST['login']){
+                                    //normally, user data is stored in database
+                                    $dbemail = ($_POST['email']);
+                                    $email = "select email from user where email = " . $dbemail;
+                                    $dbpwd = password_hash("salasana", PASSWORD_DEFAULT);
+                                    $bdname = "select first from user where email = " . $dbemail;
+                                    //echo $dbpwd;
 
-                                if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['pwd'], $dbpwd)){
-                                    echo "<br>Hello, $dbemail!";
-                                    $_SESSION['email'] = $dbemail;
-                                }else{
-                                    echo "Sorry, login failed...";
-                                    //user is logged in, maybe show the "logout" button/link
-                                    echo "Hello " . $bdname . "! <a href='logout.php'>logout</a>";
+                                    if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['pwd'], $dbpwd)){
+                                        echo "<br>Hello, $dbemail!";
+                                        $_SESSION['email'] = $dbemail;
+                                    }else{
+                                        echo "Sorry, login failed...";
+                                        //user is logged in, maybe show the "logout" button/link
+                                        echo "Hello " . $bdname . "! <a href='logout.php'>logout</a>";
+                                    }
                                 }
                             }
-                        }
-                        ?>              
+                            ?>        
+                        </form>      
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                     </a>

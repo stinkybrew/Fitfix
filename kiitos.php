@@ -43,7 +43,7 @@
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
                     <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
+                    <div style="float:right;background-color:fff" class="w3-hide-small">
                         <form action=".php">
                             <label for="psw"></label>
                             <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
