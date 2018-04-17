@@ -127,7 +127,7 @@
                                 <label>I Like it!</label>
                                 
                                 <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
-                                <button type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="submit">Lähetä</button>
+                                <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
                             </form>
 
                         </div>

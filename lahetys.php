@@ -19,9 +19,9 @@ If you add a form field, you will need to add it here.
 */
 $email_address = $_POST["email"] ;
 $comments = $_POST["message"] ;
-$first_name = $_POST["name"] ;
+$name = $_POST["name"] ;
 $msg = 
-"First Name: " . $first_name . "\r\n" . 
+"Name: " . $name . "\r\n" . 
 "Email: " . $email_address . "\r\n" . 
 "Comments: " . $comments ;
 
@@ -74,5 +74,5 @@ else {
 
 	header( "Location: $thankyou_page" );
 }
-echo $msg . $webmaster_email;
+var_dump($msg);
 ?>
