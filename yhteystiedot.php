@@ -131,7 +131,7 @@
                             
                             <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->'
                             <?php
-                            $to = "somebody@example.com, somebodyelse@example.com";
+                            $to = "info.fixfit@gmail.com";
                             $subject = "HTML email";
 
                             $message = "
@@ -160,8 +160,8 @@
                             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
                             // More headers
-                            $headers .= 'From: <webmaster@example.com>' . "\r\n";
-                            $headers .= 'Cc: myboss@example.com' . "\r\n";
+                            $headers .= 'From: <example@example.com>' . "\r\n";
+                            $headers .= 'Cc: example@example.com' . "\r\n";
 
                             mail($to,$subject,$message,$headers);
                             ?>
