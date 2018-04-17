@@ -121,16 +121,50 @@
                                 </div>
                                 <div class="w3-section">
                                     <label>Palaute</label>
-                                    <textarea style="height:auto" class="w3-input" type="text" name="Message" required rows="4" cols="50">
+                                    <textarea style="height:auto" class="w3-input" type="text" name="Message" rows="4" cols="50" required>
                                     </textarea> 
                                 </div>
                                 <input class="w3-check" type="checkbox" checked name="Like">
                                 <label>I Like it!</label>
                                 <button type="submit" class="w3-button w3-right w3-theme">Lähetä</button>
-                                
-                                <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->
-                                
                             </form>
+                            
+                            <!-- Tähän PHP-osio joka lähetää kirjotetut FixFit mailiiin -->'
+                            <?php
+                            $to = "somebody@example.com, somebodyelse@example.com";
+                            $subject = "HTML email";
+
+                            $message = "
+                            <html>
+                            <head>
+                            <title>HTML email</title>
+                            </head>
+                            <body>
+                            <p>This email contains HTML Tags!</p>
+                            <table>
+                            <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            </tr>
+                            <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            </tr>
+                            </table>
+                            </body>
+                            </html>
+                            ";
+
+                            // Aseta aina sisällön-tyyppi HTML emailia lähetettäessä
+                            $headers = "MIME-Version: 1.0" . "\r\n";
+                            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+                            // More headers
+                            $headers .= 'From: <webmaster@example.com>' . "\r\n";
+                            $headers .= 'Cc: myboss@example.com' . "\r\n";
+
+                            mail($to,$subject,$message,$headers);
+                            ?>
                         </div>
                         <footer class="w3-container w3-teal">
                             <p>Kiitos palauteesta!</p>
