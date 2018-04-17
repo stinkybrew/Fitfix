@@ -140,7 +140,7 @@
                             <title>HTML email</title>
                             </head>
                             <body>
-                            <p>This email contains HTML Tags!</p>
+                            <p> htmlentities($_POST["Email"]) </p>
                             <table>
                             <tr>
                             <th>Firstname</th>
@@ -161,8 +161,6 @@
 
                             // More headers
                             $headers .= htmlentities($_POST["Email"]); . "\r\n";
-                            $headers .= 'Cc: example@example.com' . "\r\n";
-
                             mail($to,$subject,$message,$headers);
                             ?>
                         </div>
