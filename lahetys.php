@@ -40,9 +40,9 @@ function isInjected($str) {
 }
 
 // If the user tries to access this script directly, redirect them to the feedback form,
-//if (!isset($_POST['email'])) {
-//header( "Location: $feedback_page" );
-//}
+if (!isset($_POST['email'])) {
+header( "Location: $feedback_page" );
+}
 
 // jos formfield on tyhjä, tämä ohjaa errorpagelle.
 if (empty($name) || empty($email_address)) {
@@ -57,7 +57,7 @@ header( "Location: $error_page" );
 // jos kaikki edellä oleet testit läpäistään, maili lähetetään ja ohjataan "kiitos!" sivulle.
 else {
 
-	mail( "$webmaster_email", "Feedback Form Results", $msg );
+	mail($webmaster_email, "Feedback Form Results", $msg);
 
 	header( "Location: $thankyou_page" );
 }
