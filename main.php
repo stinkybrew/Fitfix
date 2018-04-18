@@ -55,11 +55,6 @@ fclose($testia);
                 <div>
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
-                        <?php
-                        session_start(['cookie_lifetime' => 0]);
-                        if(empty($_SESSION['email'])){
-                        }  //user is not yet logged in
-                        ?>
                         <form action="main.php">
                             <label for="email"></label>
                             <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
@@ -68,6 +63,10 @@ fclose($testia);
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
                         </form>
                         <?php
+                        session_start(['cookie_lifetime' => 0]);
+                        if(empty($_SESSION['email'])){
+                        }  //user is not yet logged in
+                        
                         $config = parse_ini_file("../../config.ini");
 						// Try and connect to the database  
 						$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
@@ -75,14 +74,15 @@ fclose($testia);
 						if (!$conn) {
 							die("Connection failed!: " . mysqli_connect_error());
 						}
-                        if($_POST['login']){
+                        if(!empty($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
+                            $_SESSION['email'] = $dbemail;
                             $dbname = "select first from user where email = '" . $_POST['email'] . "'";
                             $dbemail = "select email from user where email = '" . $_POST['email'] . "'";
                             $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
                             $dblogin = "update user set loggedin = 1 where email = '" . $_POST['email'] . "'";
-                        
+                            echo "hello";
                             if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['password'], $dbpwd)){
                                 echo "<br>Hello, $dbname!";
                                 if ($conn->query($dblogin) === TRUE) {
@@ -90,7 +90,6 @@ fclose($testia);
                                 } else {
                                     echo "Error updating record: " . $conn->error;
                                 }
-                                $_SESSION['email'] = $dbemail;
                             }
                             else{
                                 echo "Sorry, login failed...";
