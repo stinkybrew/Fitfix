@@ -90,9 +90,9 @@
                         $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                         // Check connection
                         if (!$conn) {
-                            die("Connection failed!: " . mysqli_connect_error());
+                            die("Connection to database failed!: " . mysqli_connect_error());
                         }
-                        echo "Connected successfully!";
+                        echo "Databace connection works successfully!";
                         echo "<br>";
                         ?>    
                     </form>
