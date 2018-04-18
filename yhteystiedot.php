@@ -90,6 +90,7 @@
                 <div class="w3-margin-bottom ">
                     <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span></div>
                     <h3>Jäikö jokin mietityttämään?</h3>
+                    <h3>Onko sinulla kehitysideoita?</h3>
                     <h3>Ota meihin yhteyttä!</h3>
                     <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>    Metropolia Ammattikorkeakoulu</p>
                     <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>    <a href="info.fixfit@gmail.com">info.fixfit@gmail.com</a></p>
@@ -132,7 +133,7 @@
 
                         </div>
                         <footer class="w3-container w3-teal">
-                            <p>Kiitos palauteesta!</p>
+                            <p>Kiitos palautteesta!</p>
                         </footer>
                     </div>
                 </div>
