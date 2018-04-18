@@ -81,6 +81,20 @@
                         </div>
                         <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
+                        
+                        <!-- database connection -->
+                        
+                        <?php
+                        $config = parse_ini_file("../../config.ini");
+                        // Create connection to the database  
+                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed!: " . mysqli_connect_error());
+                        }
+                        echo "Connected successfully!";
+                        echo "<br>";
+                        ?>    
                     </form>
                 </div>
             </div>
