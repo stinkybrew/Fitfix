@@ -1,3 +1,9 @@
+<?php // Here i open a text file that contains longin function
+$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
+echo fread($testia,filesize("login_function.txt"));
+fclose($testia);
+?>
+
 <!DOCTYPE html>
 <html>
     <title>W3.CSS Template</title>
@@ -45,16 +51,6 @@
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
                         <?php
-                        // Open .ini file
-                        $config = parse_ini_file("../../config.ini");
-                        // Try and connect to the database  
-                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed!: " . mysqli_connect_error());
-                        }
-                        echo "<br>";
-
                         session_start(['cookie_lifetime' => 3600]);
                         if(empty($_SESSION['email'])){
                             //user is not yet logged in
@@ -65,13 +61,32 @@
                             <label for="psw"></label>
                             <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
-                        </form>      
+                        </form>
+                        <?php    
+                        if($_POST['login']){
+                            //normally, user data is stored in database
+                            //select * user users where username = ...
+                            $dbuser = "select email from user where email = $_POST['email']";
+                            $dbpwd = password_hash("select password from user where email = $_POST['email']", PASSWORD_DEFAULT);
+                            //echo $dbpwd;
+
+                            if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['pwd'], $dbpwd)){
+                                echo "<br>Hello, $dbuser!";
+                                $_SESSION['email'] = $dbuser;
+                            }
+                            else{
+                                echo "Sorry, login failed...";
+                                //user is logged in, maybe show the "logout" button/link
+                                echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
+                            }
+                        }
+                        ?>
+
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                     </a>
                 </div>
             </div>
-
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
