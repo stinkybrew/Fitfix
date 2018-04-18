@@ -82,7 +82,43 @@
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
             </div>
         </div>
-
+        <div style="margin-top: 50px;font-size: 150%">
+            <?php
+            // Open .ini file
+            $config = parse_ini_file("../../config.ini");
+            // Try and connect to the database  
+            $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+            // Check connection
+            if (!$conn) {
+                die("Connection failed!: " . mysqli_connect_error());
+            }
+            echo "<br>";
+            $ress = 0;
+            $sql = "select loggedin from user where first = 'Wille'";
+            $result = $conn->query($sql);
+            // Check loggedin ! 
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    echo "Database fech for loggedin was: " . $row["loggedin"] . ", so as boolean it means " . "<br>";
+                    $ress = $row["loggedin"];
+                }
+            }
+            else {
+                echo "Theres nothing to print out";
+                echo "<br>";
+            }
+                    
+            if ($ress > 0) {
+                echo"you are loggedin";
+            }
+            else {
+                echo"you are not loggedin!";
+            }
+                echo "<br>";
+            $conn->close();
+            ?>
+        </div>    
         <!-- Modal -->
         <div id="id01" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">

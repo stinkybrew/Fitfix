@@ -1,8 +1,13 @@
-<?php // Here i open a text file that contains longin function
+
+<?php 
+/*
+// Here i open a text file that contains longin function
 $testia = fopen("login_function.txt", "r") or die("Unable to open file!");
 echo fread($testia,filesize("login_function.txt"));
 fclose($testia);
+*/
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -51,28 +56,35 @@ fclose($testia);
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
                         <?php
-                        session_start(['cookie_lifetime' => 3600]);
+                        session_start(['cookie_lifetime' => 0]);
                         if(empty($_SESSION['email'])){
-                            //user is not yet logged in
+                        }  //user is not yet logged in
                         ?>
-                        <form action="">
+                        <form action="main.php">
                             <label for="email"></label>
                             <input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
                             <label for="psw"></label>
-                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
+                            <input style="margin-top:5px" type="password" id="psw" name="password" placeholder="Password..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
                         </form>
                         <?php    
                         if($_POST['login']){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $dbuser = "select email from user where email = $_POST['email']";
-                            $dbpwd = password_hash("select password from user where email = $_POST['email']", PASSWORD_DEFAULT);
+                            $dbname = "select first from user where email = '" . $_POST['email'] . "'";
+                            $dbemail = "select email from user where email = '" . $_POST['email'] . "'";
+                            $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
+                            $dblogin = "update user set loggedin = 1 where email = '" . $_POST['email'] . "'";
                             //echo $dbpwd;
-
-                            if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['pwd'], $dbpwd)){
-                                echo "<br>Hello, $dbuser!";
-                                $_SESSION['email'] = $dbuser;
+                        
+                            if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['password'], $dbpwd)){
+                                echo "<br>Hello, $dbname!";
+                                if ($conn->query($dblogin) === TRUE) {
+                                    echo "Record updated successfully";
+                                } else {
+                                    echo "Error updating record: " . $conn->error;
+                                }
+                                $_SESSION['email'] = $dbemail;
                             }
                             else{
                                 echo "Sorry, login failed...";
