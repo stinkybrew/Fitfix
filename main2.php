@@ -36,7 +36,7 @@ fclose($testia);
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-                <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="w3-margin-right"></i>FIXFIT</a>
+                <a href="main2.php" class="w3-bar-item w3-button w3-teal"><i class="w3-margin-right"></i>FIXFIT</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -69,6 +69,34 @@ fclose($testia);
 						if (!$conn) {
 							die("Connection failed!: " . mysqli_connect_error());
 						}
+                        
+                        if($_POST['login']){
+                            //normally, user data is stored in database
+                            //select * user users where username = ...
+                            $name = "select first from user where email = 'wille.tuovinen@metropolia.fi'";
+                            $email = "select email from user where email = 'wille.tuovinen@metropolia.fi'";
+                            $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
+                            $dblogin = "update user set loggedin = 1 where email = 'wille.tuovinen@metropolia.fi'";
+                            $_SESSION['email'] = @dbemail;
+                            //echo $dbpwd;
+                            echo $name;
+                        
+                            if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['password'], $dbpwd)){
+                                echo "<br>Hello, $dbname!";
+                                if ($conn->query($dblogin) === TRUE) {
+                                    echo "Record updated successfully";
+                                } else {
+                                    echo "Error updating record: " . $conn->error;
+                                }
+                                $_SESSION['email'] = $dbemail;
+                            }
+                            else{
+                                echo "Sorry, login failed...";
+                                //user is logged in, maybe show the "logout" button/link
+                                echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
+                            }
+                        }
+                        
 						$ress = 0;
 						$dbemail = "select email from user where email = 'wille.tuovinen@metropolia.fi'";
 						$dblogged = "select loggedin, first from user where first = 'wille.tuovinen@metropolia.fi'";
@@ -90,34 +118,10 @@ fclose($testia);
 				            // Here we open a text file that contains login and register to navbar
                             $logreg = fopen("login_register.txt", "r") or die("Unable to open file!");
                             echo fread($logreg,filesize("login_register.txt"));
-                            fclose($logreg);;
+                            fclose($logreg);
 						}
                         
-                        if($_POST['login']){
-                            //normally, user data is stored in database
-                            //select * user users where username = ...
-                            $name = "select first from user where email = 'wille.tuovinen@metropolia.fi'";
-                            $email = "select email from user where email = 'wille.tuovinen@metropolia.fi'";
-                            $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
-                            $dblogin = "update user set loggedin = 1 where email = 'wille.tuovinen@metropolia.fi'";
-                            //echo $dbpwd;
-                            echo $name;
-                        
-                            if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['password'], $dbpwd)){
-                                echo "<br>Hello, $dbname!";
-                                if ($conn->query($dblogin) === TRUE) {
-                                    echo "Record updated successfully";
-                                } else {
-                                    echo "Error updating record: " . $conn->error;
-                                }
-                                $_SESSION['email'] = $dbemail;
-                            }
-                            else{
-                                echo "Sorry, login failed...";
-                                //user is logged in, maybe show the "logout" button/link
-                                echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
-                            }
-                        }
+
                         ?>
 
                     </div>
