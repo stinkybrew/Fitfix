@@ -45,9 +45,19 @@
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
                         <?php
+                        // Open .ini file
+                        $config = parse_ini_file("../../config.ini");
+                        // Try and connect to the database  
+                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed!: " . mysqli_connect_error());
+                        }
+                        echo "<br>";
+
                         session_start(['cookie_lifetime' => 3600]);
-                        if(empty($_SESSION['username'])){
-                        //user is not yet logged in
+                        if(empty($_SESSION['email'])){
+                            //user is not yet logged in
                         ?>
                         <form action="">
                             <label for="email"></label>
@@ -55,26 +65,6 @@
                             <label for="psw"></label>
                             <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
-                            <?php
-                                if($_POST['login']){
-                                    //normally, user data is stored in database
-                                    $dbemail = ($_POST['email']);
-                                    $email = "select email from user where email = " . $dbemail;
-                                    $dbpwd = password_hash("salasana", PASSWORD_DEFAULT);
-                                    $bdname = "select first from user where email = " . $dbemail;
-                                    //echo $dbpwd;
-
-                                    if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['pwd'], $dbpwd)){
-                                        echo "<br>Hello, $dbemail!";
-                                        $_SESSION['email'] = $dbemail;
-                                    }else{
-                                        echo "Sorry, login failed...";
-                                        //user is logged in, maybe show the "logout" button/link
-                                        echo "Hello " . $bdname . "! <a href='logout.php'>logout</a>";
-                                    }
-                                }
-                            }
-                            ?>        
                         </form>      
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
@@ -357,10 +347,8 @@
             }
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-        <!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
+        <!-- To use this code on your website, get a free API key from Google.
+        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
@@ -403,17 +391,5 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
                 }
             }
         </script>
-        <?php
-        // Open .ini file
-        $config = parse_ini_file("../../config.ini");
-        // Try and connect to the database  
-        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-        // Check connection
-        if (!$conn) {
-            die("Connection failed!: " . mysqli_connect_error());
-        }
-        echo "<br>";
-       
-        ?>
     </body>
 </html>
