@@ -1,4 +1,4 @@
-<form action="main.php">
+<form action="main2.php">
 	<label for="email"></label>
 	<input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
 	<label for="psw"></label>

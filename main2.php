@@ -58,11 +58,9 @@ fclose($testia);
                         <?php
                         session_start(['cookie_lifetime' => 0]);
                         if(empty($_SESSION['email'])){
+                            echo "you are not loggedin";
                         }  //user is not yet logged in
-                        ?>
 						
-						
-						<?php
 						// Open .ini file
 						$config = parse_ini_file("../../config.ini");
 						// Try and connect to the database  
@@ -71,45 +69,39 @@ fclose($testia);
 						if (!$conn) {
 							die("Connection failed!: " . mysqli_connect_error());
 						}
-						echo "<br>";
 						$ress = 0;
-						$dbemail = "select email from user where email = '" . $_SESSION['email'] . "'";
-						$dblogged = "select loggedin, first from user where first = '" . $dbemail . "'";
+						$dbemail = "select email from user where email = 'wille.tuovinen@metropolia.fi'";
+						$dblogged = "select loggedin, first from user where first = 'wille.tuovinen@metropolia.fi'";
 						$result = $conn->query($dblogged);
 						// Check loggedin ! 
 						if ($result->num_rows > 0) {
 							// output data of each row
 							while($row = $result->fetch_assoc()) {
-								echo "Database fech for loggedin was: " . $row["loggedin"] . ", so as boolean it means " . "<br>";
+								echo "Database fech for loggedin was: " . $row["loggedin"] . ", so as boolean it means ";
 								$ress = $row["loggedin"];
 							}
 						}
 						else {
-							echo "Theres nothing to print out";
-							echo "<br>";
 						}
-							
 						if ($ress > 0) {
-							session_start(['cookie_lifetime' => 0]);
 							echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
 						}
 						else {
-							echo"you are not loggedin!";
+				            // Here we open a text file that contains login and register to navbar
+                            $logreg = fopen("login_register.txt", "r") or die("Unable to open file!");
+                            echo fread($logreg,filesize("login_register.txt"));
+                            fclose($logreg);;
 						}
-						echo "<br>";
-						$conn->close();
-						?>
-						
-						
-                        <?php    
+                        
                         if($_POST['login']){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $dbname = "select first from user where email = '" . $_POST['email'] . "'";
-                            $dbemail = "select email from user where email = '" . $_POST['email'] . "'";
+                            $name = "select first from user where email = 'wille.tuovinen@metropolia.fi'";
+                            $email = "select email from user where email = 'wille.tuovinen@metropolia.fi'";
                             $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
-                            $dblogin = "update user set loggedin = 1 where email = '" . $_POST['email'] . "'";
+                            $dblogin = "update user set loggedin = 1 where email = 'wille.tuovinen@metropolia.fi'";
                             //echo $dbpwd;
+                            echo $name;
                         
                             if(htmlentities($_POST['email']) == $dbuser && password_verify($_POST['password'], $dbpwd)){
                                 echo "<br>Hello, $dbname!";
