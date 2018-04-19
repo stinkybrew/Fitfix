@@ -70,7 +70,7 @@ fclose($testia);
 							die("Connection failed!: " . mysqli_connect_error());
 						}
                         
-                        if($_POST['login']){
+                        if(isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
                             $name = "select first from user where email = 'wille.tuovinen@metropolia.fi'";

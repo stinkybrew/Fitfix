@@ -74,7 +74,8 @@ fclose($testia);
 						if (!$conn) {
 							die("Connection failed!: " . mysqli_connect_error());
 						}
-                        if(!empty($_POST['login'])){
+                        echo "hello";
+                        if(isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
                             $_SESSION['email'] = $dbemail;
