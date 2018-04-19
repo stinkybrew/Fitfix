@@ -80,15 +80,15 @@ fclose($testia);
                             //select * user users where username = ...
                             $sql = "select * from user where email = '" . $_POST['email'] . "'";
                             $result = $conn->query($sql);
-                            // Check loggedin ! 
+                            // Check data ! 
                             if ($result->num_rows > 0) {
-                                // output data of each row
+                                // output data
                                 while($row = $result->fetch_assoc()) {
-                                    echo $row["loggedin"];  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
                                     $login = $row["loggedin"];
                                     $name = $row["first"];
                                     $email = $row["email"];
-                                    $pwd = $row["password"];    
+                                    $pwd = $row["password"];
+                                    echo $name;  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
                                 }
                             }
 
