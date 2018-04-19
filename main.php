@@ -78,29 +78,28 @@ fclose($testia);
                         if ($_POST['login']){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $sqlfech = "select * from user where email = '" . $_POST['email'] . "'";
-                            $result = $conn->query($sqlfech);
+                            $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
+                            $result = $conn->query($sqlfetch);
                             // Check data amount! 
                             if ($result->num_rows > 0) {
                                 // output data
                                 while($row = $result->fetch_assoc()) {
-                                    $login = $row["loggedin"];
-                                    $name = $row["first"];
-                                    $email = $row["email"];
-                                    $pwd = $row["password"];
+                                    $userlogin = $row["loggedin"];
+                                    $userfirst = $row["first"];
+                                    $useremail = $row["email"];
+                                    $userpwd = $row["password"];
                                     echo $name;  // TESTI TULOSTUS!!!
                                 }
                             }
                             
                             $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
-                            $_SESSION['email'] = $email;
 
-                            
-                            if(htmlentities($email) == $email && password_verify($_POST['password'], $pwd)){
+                            if(htmlentities($_POST['email']) == $useremail && password_verify($_POST['password'], $userpwd)){
                                 if ($conn->query($login) === TRUE) {
                                     echo "Record updated successfully";
-                                    echo "Hello " . $name . "! <a href='logout.php'>logout</a>";
-                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $email . "'";
+                                    echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $useremail . "'";
+                                    $_SESSION['email'] = $useremail;
                                 } else {
                                     echo "Error updating record: " . $conn->error;
                                 }
