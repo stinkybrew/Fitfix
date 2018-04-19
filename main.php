@@ -66,27 +66,38 @@ fclose($testia);
                         session_start(['cookie_lifetime' => 0]);
                         if(empty($_SESSION['email'])){
                         }  //user is not yet logged in
-                        
+
                         $config = parse_ini_file("../../config.ini");
-						// Try and connect to the database  
-						$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-						// Check connection
-						if (!$conn) {
-							die("Connection failed!: " . mysqli_connect_error());
-						}
-                        echo "hello";
-                        if(isset($_POST['login'])){
+                        // Try and connect to the database  
+                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed!: " . mysqli_connect_error());
+                        }
+
+                        if (isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $_SESSION['email'] = $dbemail;
-                            $dbname = "select first from user where email = '" . $_POST['email'] . "'";
-                            $dbemail = "select email from user where email = '" . $_POST['email'] . "'";
-                            $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
-                            $dblogin = "update user set loggedin = 1 where email = '" . $_POST['email'] . "'";
+                            $sql = "select * from user where email = '" . $_POST['email'] . "'";
+                            $result = $conn->query($sql);
+                            // Check loggedin ! 
+                            if ($result->num_rows > 0) {
+                                // output data of each row
+                                while($row = $result->fetch_assoc()) {
+                                    echo $row["loggedin"];  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
+                                    $login = $row["loggedin"];
+                                    $name = $row["first"];
+                                    $email = $row["email"];
+                                    $pwd = $row["password"];    
+                                }
+                            }
+
+                            $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
+                            $_SESSION['email'] = $email;
                             echo "hello";
-                            if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['password'], $dbpwd)){
-                                echo "<br>Hello, $dbname!";
-                                if ($conn->query($dblogin) === TRUE) {
+                            if(htmlentities($_POST['email']) == $email && password_verify($_POST['password'], $pwd)){
+                                echo "<br>Hello, $name!";
+                                if ($conn->query($login) === TRUE) {
                                     echo "Record updated successfully";
                                 } else {
                                     echo "Error updating record: " . $conn->error;
@@ -95,9 +106,10 @@ fclose($testia);
                             else{
                                 echo "Sorry, login failed...";
                                 //user is logged in, maybe show the "logout" button/link
-                                echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
+                                echo "Hello " . $name . "! <a href='logout.php'>logout</a>";
                             }
                         }
+                        $conn->close();
                         ?>
 
                     </div>
@@ -381,7 +393,7 @@ fclose($testia);
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
         <!-- To use this code on your website, get a free API key from Google.
-        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
