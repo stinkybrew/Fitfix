@@ -57,9 +57,9 @@ fclose($testia);
                     <div style="float:right;background-color:fff" class="w3-hide-small">
                         <form action="main.php" method="post">
                             <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
+                            <input style="margin-top:5px" type="text" name="email" placeholder="email address..">
                             <label for="psw"></label>
-                            <input style="margin-top:5px" type="password" id="psw" name="password" placeholder="Password..">
+                            <input style="margin-top:5px" type="password" name="password" placeholder="Password..">
                             <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="Login">
                         </form>
                         <?php
@@ -75,7 +75,7 @@ fclose($testia);
                             die("Connection failed!: " . mysqli_connect_error());
                         }
 
-                        if ($_POST['login']){
+                        if (isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
                             $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
@@ -88,18 +88,21 @@ fclose($testia);
                                     $userfirst = $row["first"];
                                     $useremail = $row["email"];
                                     $userpwd = $row["password"];
-                                    echo $name;  // TESTI TULOSTUS!!!
+                                    echo $userfirst;  // TESTI TULOSTUS!!!
                                 }
                             }
                             
                             $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
-
+                            // tarkistetaan email ja password oikeiksi
                             if(htmlentities($_POST['email']) == $useremail && password_verify($_POST['password'], $userpwd)){
                                 if ($conn->query($login) === TRUE) {
                                     echo "Record updated successfully";
                                     echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $useremail . "'";
                                     $_SESSION['email'] = $useremail;
+                                    
+                                    
+                                    
                                 } else {
                                     echo "Error updating record: " . $conn->error;
                                 }
