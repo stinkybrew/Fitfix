@@ -60,7 +60,7 @@ fclose($testia);
                             <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
                             <label for="psw"></label>
                             <input style="margin-top:5px" type="password" id="psw" name="password" placeholder="Password..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="Login">
                         </form>
                         <?php
                         session_start(['cookie_lifetime' => 0]);
@@ -78,9 +78,9 @@ fclose($testia);
                         if (isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $sql = "select * from user where email = '" . $_POST['email'] . "'";
-                            $result = $conn->query($sql);
-                            // Check data ! 
+                            $sqlfech = "select * from user where email = '" . $_POST['email'] . "'";
+                            $result = $conn->query($sqlfech);
+                            // Check data amount! 
                             if ($result->num_rows > 0) {
                                 // output data
                                 while($row = $result->fetch_assoc()) {
@@ -91,10 +91,11 @@ fclose($testia);
                                     echo $name;  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
                                 }
                             }
-
                             $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
                             $_SESSION['email'] = $email;
-                            echo "hello";
+                            
+                            echo "hello";  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
+                            
                             if(htmlentities($_POST['email']) == $email && password_verify($_POST['password'], $pwd)){
                                 echo "<br>Hello, $name!";
                                 if ($conn->query($login) === TRUE) {
