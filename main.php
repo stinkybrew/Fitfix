@@ -91,6 +91,7 @@ fclose($testia);
                                     echo $name;  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
                                 }
                             }
+                            $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $email . "'";
                             $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
                             $_SESSION['email'] = $email;
                             
