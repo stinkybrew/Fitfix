@@ -55,7 +55,7 @@ fclose($testia);
                 <div>
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
-                        <form action="main.php">
+                        <form action="main.php" method="post">
                             <label for="email"></label>
                             <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
                             <label for="psw"></label>
@@ -75,7 +75,7 @@ fclose($testia);
                             die("Connection failed!: " . mysqli_connect_error());
                         }
 
-                        if (isset($_POST['login'])){
+                        if ($_POST['login']){
                             //normally, user data is stored in database
                             //select * user users where username = ...
                             $sqlfech = "select * from user where email = '" . $_POST['email'] . "'";
@@ -88,19 +88,19 @@ fclose($testia);
                                     $name = $row["first"];
                                     $email = $row["email"];
                                     $pwd = $row["password"];
-                                    echo $name;  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
+                                    echo $name;  // TESTI TULOSTUS!!!
                                 }
                             }
-                            $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $email . "'";
+                            
                             $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
                             $_SESSION['email'] = $email;
+
                             
-                            echo "hello";  // TESTI TULOSTUS!!! JOKA EI TOIM! :(
-                            
-                            if(htmlentities($_POST['email']) == $email && password_verify($_POST['password'], $pwd)){
-                                echo "<br>Hello, $name!";
+                            if(htmlentities($email) == $email && password_verify($_POST['password'], $pwd)){
                                 if ($conn->query($login) === TRUE) {
                                     echo "Record updated successfully";
+                                    echo "Hello " . $name . "! <a href='logout.php'>logout</a>";
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $email . "'";
                                 } else {
                                     echo "Error updating record: " . $conn->error;
                                 }
@@ -108,7 +108,6 @@ fclose($testia);
                             else{
                                 echo "Sorry, login failed...";
                                 //user is logged in, maybe show the "logout" button/link
-                                echo "Hello " . $name . "! <a href='logout.php'>logout</a>";
                             }
                         }
                         $conn->close();
