@@ -55,7 +55,7 @@ fclose($testia);
                 <div>
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
-<<<<<<< HEAD
+
                         <?php
                         // TÄMÄ TULOSTAA LOGIN buttonin ja email- ja password-syöttökentät
                         session_start(['cookie_lifetime' => 0]);
@@ -64,48 +64,33 @@ fclose($testia);
                             $testia = fopen("login_register.txt", "r") or die("Unable to open file!");
                             echo fread($testia,filesize("login_register.txt"));
                             fclose($testia); 
-                        }  
-                        ?>
-=======
->>>>>>> be530c9ca44db467500330ac6e81b88f5b988771
-                        <form action="main.php" method="post">
-                            <label for="email"></label>
-                            <input style="margin-top:5px" type="text" name="email" placeholder="email address..">
-                            <label for="psw"></label>
-                            <input style="margin-top:5px" type="password" name="password" placeholder="Password..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="Login">
-                        </form>
-                        <?php
-                        session_start(['cookie_lifetime' => 0]);
-                        if(empty($_SESSION['email'])){
-                        }  //user is not yet logged in
-
+                        }
+                        // open config.ini file
                         $config = parse_ini_file("../../config.ini");
-                        // Try and connect to the database  
+                        // connect to the database  
                         $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                         // Check connection
                         if (!$conn) {
                             die("Connection failed!: " . mysqli_connect_error());
                         }
-
+                        // if LOGIN buttom is pressed
                         if (isset($_POST['login'])){
-                            //normally, user data is stored in database
                             //select * user users where username = ...
                             $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                             $result = $conn->query($sqlfetch);
-                            // Check data amount! 
+                            // Check data rows! 
                             if ($result->num_rows > 0) {
-                                // output data
+                                // output data what is needed
                                 while($row = $result->fetch_assoc()) {
                                     $userlogin = $row["loggedin"];
                                     $userfirst = $row["first"];
                                     $useremail = $row["email"];
                                     $userpwd = $row["password"];
-                                    echo $userfirst;  // TESTI TULOSTUS!!!
+                                    echo $userfirst;  // TEST PRINT for users first name!!
                                 }
                             }
                             
-                            $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
+                            $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);           
                             // tarkistetaan email ja password oikeiksi
                             if(htmlentities($_POST['email']) == $useremail && password_verify($_POST['password'], $userpwd)){
                                 if ($conn->query($login) === TRUE) {
