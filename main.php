@@ -119,10 +119,6 @@ fclose($testia);
                             echo"0 row fetches";
                         }
                     }
-                    else {
-                        echo"paina login";
-                    }
-                    //user is logged in, maybe show the "logout" button/link
 
                     $conn->close();
                     ?>
