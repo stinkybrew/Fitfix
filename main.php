@@ -149,7 +149,7 @@ fclose($testia);
         </div>
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/running_man_wider2.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/running_man_wider3.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/running_man_wider4.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
