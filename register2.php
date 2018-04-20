@@ -46,29 +46,31 @@
                 <div class="w3-third w3-display-middle">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
-                        <div class="w3-section">
+                      <div class="w3-section">
                             <label>Etunimi</label>
-                            <input class="w3-input" type="text" name="name">
+                            <input class="w3-input" type="text" name="name" required>
                         </div>
                         <div class="w3-section">
                             <label>Sukunimi</label>
-                            <input class="w3-input" type="text" name="name">
+                            <input class="w3-input" type="text" name="name" required>
                         </div>
                         <div class="w3-section">
                             <label>Syntymäaika</label>
-                            <input class="w3-input" type="date" name="dob">
+                            <input class="w3-input" type="date" name="dob" required>
                         </div>
                         <div class="w3-section">
                             <label>Sähköposti (testi.esimerkki@gmail.com)</label>
-                            <input class="w3-input" type="text" name="email">
+                            <input class="w3-input" type="text" name="email" required>
                         </div>
                         <div class="w3-section">
                             <label>Käyttäjätunnus (testi.esimerkki@gmail.com)</label>
-                            <input class="w3-input" type="text" name="email">
+                            <input class="w3-input" type="text" name="email" required>
                         </div>
                         <div class="w3-section">
-                            <label>Salasana (min. 8 merkkiä, käytäthän isoja ja pieniä kirjaimia sekä numeroita ja/tai erikoismerkkejä)</label>
-                            <input class="w3-input" type="password" name="password">
+                            <label for="password">Salasana (min. 8 merkkiä, käytäthän isoja ja pieniä kirjaimia sekä numeroita ja/tai erikoismerkkejä)</label>
+                            <input class="w3-input" type="password" name="password" required>
+                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                            <input type="password" name="psw-repeat" required>
                         </div>
                         <button type="reset" style="display:inline" class="w3-button w3-xlarge w3-right w3-theme" value="Reset">Tyhjennä</button>
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-xlarge w3-right w3-theme" value="Lähetä">
