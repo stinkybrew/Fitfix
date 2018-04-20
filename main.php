@@ -53,67 +53,81 @@ fclose($testia);
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff" class="w3-hide-small">
+                    
+                    <?php
+                    session_start(['cookie_lifetime' => 0]);
+                    
+                    // checs if session is on. if its no, login navbar field is visible!
+                    if(empty($_SESSION['email'])){
+                        // if user is not yet logged in
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
+                    }
+                    
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    
+                    // action if LOGIN buttom is pressed
+                    if (isset($_POST['login'])){
+                        //select * user users where username = ..., or something samelike sql-code
+                        $postemail = $_POST['email'];
+                        echo $postemail;
+                        $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
+                        $result = $conn->query($sqlfetch);
+                        $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
+                        //echo $sqlfetch; TÄMÄ HAKU TOIMII!!!
+                        // echo $_POST['email']; TÄMÄ HAKU TOIMII!!!
+                        // Check data of columns! 
+                        if ($result->num_rows > 0) {
+                            // output data of rows needed
+                            while($row = $result->fetch_assoc()) {
+                                $userlogin = $row["loggedin"];
+                                $userfirst = $row["first"];
+                                $useremail = $row["email"];
+                                $userpwd = $row["password"];
+                                //echo $userpwd . " " . $useremail;   TEST print for users firstname!!! TÄMÄ TOIMII !
 
-                        <?php
-                        // TÄMÄ TULOSTAA LOGIN buttonin ja email- ja password-syöttökentät
-                        session_start(['cookie_lifetime' => 0]);
-                        if(empty($_SESSION['email'])){
-                            // Here i open a text file that contains longin function
-                            $testia = fopen("login_register.txt", "r") or die("Unable to open file!");
-                            echo fread($testia,filesize("login_register.txt"));
-                            fclose($testia); 
-                        }
-                        // open config.ini file
-                        $config = parse_ini_file("../../config.ini");
-                        // connect to the database  
-                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed!: " . mysqli_connect_error());
-                        }
-                        // if LOGIN buttom is pressed
-                        if (isset($_POST['login'])){
-                            //select * user users where username = ...
-                            $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
-                            $result = $conn->query($sqlfetch);
-                            // Check data rows! 
-                            if ($result->num_rows > 0) {
-                                // output data what is needed
-                                while($row = $result->fetch_assoc()) {
-                                    $userlogin = $row["loggedin"];
-                                    $userfirst = $row["first"];
-                                    $useremail = $row["email"];
-                                    $userpwd = $row["password"];
-                                    echo $userfirst;  // TEST PRINT for users first name!!
-                                }
-                            }
-                            
-                            $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);           
-                            // tarkistetaan email ja password oikeiksi
-                            if(htmlentities($_POST['email']) == $useremail && password_verify($_POST['password'], $userpwd)){
-                                if ($conn->query($login) === TRUE) {
+                                // If login email and wassword are valid or invalid.
+                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
                                     echo "Record updated successfully";
                                     echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
-                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $useremail . "'";
+                                    // UPDATE loggedin to 1, and 1 means that you are logged in!
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
+                                    if(mysqli_query($conn, $updatelogin)){
+                                        echo $userlogin;
+                                    } else {
+                                        echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                                    }
+                                    
                                     $_SESSION['email'] = $useremail;
-                                    
-                                    
-                                    
-                                } else {
-                                    echo "Error updating record: " . $conn->error;
+                                    //echo $updatelogin; TÄMÄ TOIMII ! ! ! !
+                                }
+                                else {
+                                    // Login email and password are INVALID ! ! ! 
+                                    echo "invalid email-address or password";
                                 }
                             }
-                            else{
-                                echo "Sorry, login failed...";
-                                //user is logged in, maybe show the "logout" button/link
-                            }
                         }
-                        $conn->close();
-                        ?>
+                        else {
+                            echo"0 row fetches";
+                        }
+                    }
+                    else {
+                        echo"paina login";
+                    }
+                    //user is logged in, maybe show the "logout" button/link
 
-                    </div>
+                    $conn->close();
+                    ?>
+                </div>    
+                <div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                     </a>
                 </div>
