@@ -149,7 +149,13 @@ fclose($testia);
         </div>
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
-            <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider2.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider3.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider4.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider5.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider6.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides" src="img/running_man_wider7.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
             </div>
@@ -425,6 +431,24 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
         </footer>
 
         <script>
+            // script for slideshow
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                   x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 4000); // Change image every 4 seconds
+            }
+        </script>
+        
+        <script>
             // Script for side navigation
             function w3_open() {
                 var x = document.getElementById("mySidebar");
@@ -437,7 +461,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
             }
-
+            
             // Used to toggle the menu on smaller screens when clicking on the menu button
             function openNav() {
                 var x = document.getElementById("navDemo");
