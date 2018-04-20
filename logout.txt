@@ -3,10 +3,28 @@
 		<input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="logout" value="logout">
 	</form>
     <?php
-    if(isset($_post['logout'])) {
+    
+    // Open config.ini file, that contains login-info for DB.
+    $config = parse_ini_file("../../config.ini");
+    // connect to the database  
+    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+    // Check connection
+    if (!$conn) {
+        die("Connection failed!: " . mysqli_connect_error());
+    }
+    
+    if(isset($_POST['logout'])) {
         session_start();
         $_SESSION = array();
-
+        // Update login info to database!
+        $updatelogin = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
+        if(mysqli_query($conn, $updatelogin)){
+            echo $userlogin;
+        } 
+        else {
+            echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+        }
+        
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -17,7 +35,8 @@
 
         session_unset();
         session_destroy();
-        echo "Thank you for visiting us, you are now logged out";
+        echo "Thank you for visiting us!";
     }
+    $conn->close();
     ?>
 </div>
