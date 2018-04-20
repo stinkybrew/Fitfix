@@ -157,7 +157,7 @@ fclose($testia);
             <img class="mySlides" src="img/running_man_wider6.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides" src="img/running_man_wider7.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri testiä</button>
             </div>
         </div>
 
