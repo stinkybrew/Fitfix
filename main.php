@@ -55,7 +55,7 @@ fclose($testia);
                 <div>
                     
                     <?php
-                    session_start(['cookie_lifetime' => 0]);
+                    session_start(['cookie_lifetime' => 3600]);
                     
                     $main = "main.php";
                     // Open config.ini file, that contains login-info for DB.
@@ -74,6 +74,13 @@ fclose($testia);
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
                     }
+                    elseif(!empty($_SESSION['first'])){
+                        // if user is not yet logged in
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                    }
+                    
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
                         //select * user users where username = ..., or something samelike sql-code
@@ -99,14 +106,6 @@ fclose($testia);
                                     $_SESSION['first'] = $userfirst;
                                     echo "Hello " . $_SESSION['first'];
                                     
-
-                                    if(!empty($_SESSION['first'])){
-                                        // if user is not yet logged in
-                                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
-                                        echo fread($fields,filesize("logout.txt"));
-                                        fclose($fields);
-                                    }
-                                    
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
                                     if(mysqli_query($conn, $updatelogin)){
@@ -120,6 +119,7 @@ fclose($testia);
                                 }
                             }
                         }
+                        header("location:main.php");
                     }
                     
                     ?>
