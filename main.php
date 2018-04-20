@@ -78,7 +78,6 @@ fclose($testia);
                     if (isset($_POST['login'])){
                         //select * user users where username = ..., or something samelike sql-code
                         $postemail = $_POST['email'];
-                        echo $postemail;
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
@@ -96,7 +95,6 @@ fclose($testia);
 
                                 // If login email and wassword are valid or invalid.
                                 if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
-                                    echo "Record updated successfully";
                                     echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
@@ -105,7 +103,6 @@ fclose($testia);
                                     } else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
-                                    
                                     $_SESSION['email'] = $useremail;
                                     //echo $updatelogin; TÄMÄ TOIMII ! ! ! !
                                 }
@@ -115,8 +112,8 @@ fclose($testia);
                                 }
                             }
                         }
-                        else {
-                            echo"0 row fetches";
+                        elseif ((empty($_POST['password'])) or (empty($_POST['email']))) {
+                            echo "Email-address and password are recuired!";
                         }
                     }
 
