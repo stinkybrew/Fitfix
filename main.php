@@ -74,7 +74,6 @@ fclose($testia);
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
                     }
-                    
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
                         //select * user users where username = ..., or something samelike sql-code
