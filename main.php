@@ -57,14 +57,7 @@ fclose($testia);
                     <?php
                     session_start(['cookie_lifetime' => 0]);
                     
-                    // checs if session is on. if its no, login navbar field is visible!
-                    if(empty($_SESSION['email'])){
-                        // if user is not yet logged in
-                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
-                        echo fread($fields,filesize("login_register.txt"));
-                        fclose($fields);
-                    }
-                    
+                    $main = "main.php";
                     // Open config.ini file, that contains login-info for DB.
                     $config = parse_ini_file("../../config.ini");
                     // connect to the database  
@@ -72,6 +65,14 @@ fclose($testia);
                     // Check connection
                     if (!$conn) {
                         die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    
+                    // checs if session is on. if its no, login navbar field is visible!
+                    if(empty($_SESSION['first'])){
+                        // if user is not yet logged in
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
                     }
                     
                     // action if LOGIN buttom is pressed
@@ -95,16 +96,24 @@ fclose($testia);
 
                                 // If login email and wassword are valid or invalid.
                                 if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
-                                    echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
+                                    $_SESSION['email'] = $useremail;
+                                    $_SESSION['first'] = $userfirst;
+                                    echo "Hello " . $_SESSION['first'];
+                                    
+
+                                    if(!empty($_SESSION['first'])){
+                                        // if user is not yet logged in
+                                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                                        echo fread($fields,filesize("logout.txt"));
+                                        fclose($fields);
+                                    }
+                                    
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
                                     if(mysqli_query($conn, $updatelogin)){
-                                        echo $userlogin;
                                     } else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
-                                    $_SESSION['email'] = $useremail;
-                                    //echo $updatelogin; TÄMÄ TOIMII ! ! ! !
                                 }
                                 else {
                                     // Login email and password are INVALID ! ! ! 
@@ -112,12 +121,8 @@ fclose($testia);
                                 }
                             }
                         }
-                        elseif ((empty($_POST['password'])) or (empty($_POST['email']))) {
-                            echo "Email-address and password are recuired!";
-                        }
                     }
-
-                    $conn->close();
+                    
                     ?>
                 </div>    
                 <div>
