@@ -2,7 +2,7 @@
 <?php 
 /*
 // Here i open a text file that contains longin function
-$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
+$testia = fopen("login_register.txt", "r") or die("Unable to open file!");
 echo fread($testia,filesize("login_function.txt"));
 fclose($testia);
 */
@@ -59,6 +59,10 @@ fclose($testia);
                         session_start(['cookie_lifetime' => 0]);
                         if(empty($_SESSION['email'])){
                             echo "you are not loggedin";
+                            // Here i open a text file that contains longin function
+                            $testia = fopen("login_register.txt", "r") or die("Unable to open file!");
+                            echo fread($testia,filesize("login_function.txt"));
+                            fclose($testia);
                         }  //user is not yet logged in
 						
 						// Open .ini file

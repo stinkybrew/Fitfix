@@ -56,11 +56,16 @@ fclose($testia);
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
                         <?php
+                        // TÄMÄ TULOSTAA LOGIN buttonin ja email- ja password-syöttökentät
                         session_start(['cookie_lifetime' => 0]);
                         if(empty($_SESSION['email'])){
-                        }  //user is not yet logged in
+                            // Here i open a text file that contains longin function
+                            $testia = fopen("login_register.txt", "r") or die("Unable to open file!");
+                            echo fread($testia,filesize("login_register.txt"));
+                            fclose($testia); 
+                        }  
                         ?>
-                        <form action="main.php">
+                        <form action="main.php" method="post">
                             <label for="email"></label>
                             <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
                             <label for="psw"></label>
