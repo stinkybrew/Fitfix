@@ -44,13 +44,13 @@
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
                     <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff" class="w3-hide-small">
+                    <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
                         <form action=".php">
                             <label for="psw"></label>
-                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
+                            <input type="text" id="psw" name="password" placeholder="Password..">
                             <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
+                            <input type="text" id="email" name="email adress" placeholder="email adress..">
+                            <input type="submit" value="Login">
                         </form>
                     </div>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
@@ -74,106 +74,71 @@
                 </div>
             </div>
         </div>
-        <!--
-//Image Header
-<div class="w3-display-container w3-animate-opacity">
-<img src="/w3images/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
-<div class="w3-container w3-display-bottomleft w3-margin-bottom">
-<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">LEARN W3.CSS</button>
-</div>
-</div>
--->
+
+        <!--Image Header-->
+        <div class="w3-display-container w3-animate-opacity">
+            <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;">
+        </div>
         <!-- Contact Container -->
 
-        <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-            <div class="w3-row w3-center">
-                <div class="w3-margin-bottom ">
-                    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span></div>
-                    <h3>Jäikö jokin mietityttämään?</h3>
-                    <h3>Onko sinulla kehitysideoita?</h3>
+        <div class="w3-container w3-padding-24">
+            <div class="w3-center w3-card w3-padding-16 backroundcolor center">
+                <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span>
+                    <h3>Jäikö jokin mietityttämään? Onko sinulla kehitysideoita?</h3>
                     <h3>Ota meihin yhteyttä!</h3>
-                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>    Metropolia Ammattikorkeakoulu</p>
-                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>    <a href="info.fixfit@gmail.com">info.fixfit@gmail.com</a></p>
-                    <div class="w3-display-container w3-animate-opacity">
-                        <p><i class="fa fa-chevron-circle-down w3-text-teal w3-xlarge"></i>    Voit myös antaa palautetta!</p>
+                </div>
+                <div class="w3-padding-16 boxover center boxcolor">
+                    <div class="box w3-right">
+                        <i class="fa fa-map-marker w3-text-teal w3-xxlarge"></i><h4>Metropolia<br>Ammattikorkeakoulu</h4>
+                    </div>
+                    <div class="box w3-left">
+                        <i class="fa fa-envelope-o w3-xxlarge"></i><h4>Fixfit info:<br><a href="info.fixfit@gmail.com">info.fixfit@gmail.com</a></h4>
+                    </div>
+                    <div class="boxunder">
+                        <br>
+                        <h4>Voit myös antaa palautetta!</h4>
+                        <p><i class="fa fa-chevron-circle-down w3-center w3-xxlarge"></i></p>
 
-                        <div class="w3-container w3-margin-bottom" style="display:block">  
-                            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
-                        </div>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
                     </div>
                 </div>
+            </div>
+            <!-- Modal -->
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container"> 
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Palaute</h4>
+                    </header>
+                    <div class="w3-container">
+                        <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
+                            <div class="w3-section">
+                                <label>Name</label>
+                                <input class="w3-input" type="text" name="name">
+                            </div>
+                            <div class="w3-section">
+                                <label>Email</label>
+                                <input class="w3-input" type="text" name="email">
+                            </div>
+                            <div class="w3-section">
+                                <label>Palaute</label>
+                                <textarea style="height:auto" class="w3-input" type="text" name="message" maxlength="500" rows="4" cols="50"></textarea> 
+                            </div>
+                            <input class="w3-check" type="checkbox" checked name="like">
+                            <label>I Like it!</label>
 
-                <!-- Modal -->
-                <div id="id01" class="w3-modal">
-                    <div class="w3-modal-content w3-card-4 w3-animate-top">
-                        <header class="w3-container w3-teal w3-display-container"> 
-                            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                            <h4>Palaute</h4>
-                        </header>
-                        <div class="w3-container">
-                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
-                                <div class="w3-section">
-                                    <label>Nimi</label>
-                                    <input class="w3-input" type="text" name="name">
-                                </div>
-                                <div class="w3-section">
-                                    <label>Sähköpostiosoite</label>
-                                    <input class="w3-input" type="text" name="email">
-                                </div>
-                                <div class="w3-section">
-                                    <label>Palaute</label>
-                                    <textarea style="height:auto" class="w3-input" type="text" name="message" maxlength="500" rows="4" cols="50"></textarea> 
-                                </div>
-                                <input class="w3-check" type="checkbox" checked name="like">
-                                <label>I Like it!</label>
+                            <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
+                            <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
+                        </form>
 
-                                <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
-                                <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
-                            </form>
-
-                        </div>
-                        <footer class="w3-container w3-teal">
-                            <p>Kiitos palautteesta!</p>
-                        </footer>
                     </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Team Container -->
-        <div class="w3-container w3-padding-64 w3-center" id="team">
-            <h3>Onko sinulla kehitysideoita sivulle?</h3>
-            <h4>Kehittäjät</h4>
-            <div class="w3-row"><br>
-                <div class="w3-quarter w3-teal">
-                    <!--<img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">-->
-                    <h3>Sofia Lampinen</h3>
-                    <p>HTML & CSS & SQL</p>
-                    <p>sofiala@metropolia.fi</p>
-                </div>
-
-                <div class="w3-quarter w3-white">
-
-                    <h3>Tomi Salo</h3>
-                    <p>????</p>
-                    <p>Tomi.Salo2@metropolia.fi</p>
-                </div>
-
-                <div class="w3-quarter w3-teal">
-
-                    <h3>Elias Sulva</h3>
-                    <p>HTML & TREENIT</p>
-                    <p>eliassul@metropolia.fi</p>
-                </div>
-
-                <div class="w3-quarter w3-white">
-
-                    <h3>Wille Tuovinen</h3>
-                    <p>HTML & CSS & PHP & MYSQL</p>
-                    <p>willetu@metropolia.fi</p>
+                    <footer class="w3-container w3-teal">
+                        <p>Kiitos palauteesta!</p>
+                    </footer>
                 </div>
             </div>
+
+
         </div>
 
         <!-- Footer -->
@@ -187,7 +152,7 @@
             <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
                 <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
                     <i class="fa fa-chevron-circle-up"></i></span></a>
             </div>
@@ -201,7 +166,7 @@
                 x.style.paddingTop = "10%";
                 x.style.display = "block";
             }
-            
+            // testiä!
             // Close side navigation
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
