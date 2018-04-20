@@ -55,6 +55,7 @@ fclose($testia);
                 <div>
                     <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
                     <div style="float:right;background-color:fff" class="w3-hide-small">
+<<<<<<< HEAD
                         <?php
                         // TÄMÄ TULOSTAA LOGIN buttonin ja email- ja password-syöttökentät
                         session_start(['cookie_lifetime' => 0]);
@@ -65,44 +66,66 @@ fclose($testia);
                             fclose($testia); 
                         }  
                         ?>
+=======
+>>>>>>> be530c9ca44db467500330ac6e81b88f5b988771
                         <form action="main.php" method="post">
                             <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email" placeholder="email address..">
+                            <input style="margin-top:5px" type="text" name="email" placeholder="email address..">
                             <label for="psw"></label>
-                            <input style="margin-top:5px" type="password" id="psw" name="password" placeholder="Password..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
+                            <input style="margin-top:5px" type="password" name="password" placeholder="Password..">
+                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="Login">
                         </form>
                         <?php
+                        session_start(['cookie_lifetime' => 0]);
+                        if(empty($_SESSION['email'])){
+                        }  //user is not yet logged in
+
                         $config = parse_ini_file("../../config.ini");
-						// Try and connect to the database  
-						$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-						// Check connection
-						if (!$conn) {
-							die("Connection failed!: " . mysqli_connect_error());
-						}
-                        if($_POST['login']){
+                        // Try and connect to the database  
+                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed!: " . mysqli_connect_error());
+                        }
+
+                        if (isset($_POST['login'])){
                             //normally, user data is stored in database
                             //select * user users where username = ...
-                            $dbname = "select first from user where email = '" . $_POST['email'] . "'";
-                            $dbemail = "select email from user where email = '" . $_POST['email'] . "'";
-                            $dbpwd = password_hash(("select password from user where email = '" . $_POST['email']) . "'", PASSWORD_DEFAULT);
-                            $dblogin = "update user set loggedin = 1 where email = '" . $_POST['email'] . "'";
-                        
-                            if(htmlentities($_POST['email']) == $dbemail && password_verify($_POST['password'], $dbpwd)){
-                                echo "<br>Hello, $dbname!";
-                                if ($conn->query($dblogin) === TRUE) {
+                            $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
+                            $result = $conn->query($sqlfetch);
+                            // Check data amount! 
+                            if ($result->num_rows > 0) {
+                                // output data
+                                while($row = $result->fetch_assoc()) {
+                                    $userlogin = $row["loggedin"];
+                                    $userfirst = $row["first"];
+                                    $useremail = $row["email"];
+                                    $userpwd = $row["password"];
+                                    echo $userfirst;  // TESTI TULOSTUS!!!
+                                }
+                            }
+                            
+                            $pwd2 = password_hash($pwd, PASSWORD_DEFAULT);           
+                            // tarkistetaan email ja password oikeiksi
+                            if(htmlentities($_POST['email']) == $useremail && password_verify($_POST['password'], $userpwd)){
+                                if ($conn->query($login) === TRUE) {
                                     echo "Record updated successfully";
+                                    echo "Hello " . $userfirst . "! <a href='logout.php'>logout</a>";
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $useremail . "'";
+                                    $_SESSION['email'] = $useremail;
+                                    
+                                    
+                                    
                                 } else {
                                     echo "Error updating record: " . $conn->error;
                                 }
-                                $_SESSION['email'] = $dbemail;
                             }
                             else{
                                 echo "Sorry, login failed...";
                                 //user is logged in, maybe show the "logout" button/link
-                                echo "Hello " . $_SESSION['email'] . "! <a href='logout.php'>logout</a>";
                             }
                         }
+                        $conn->close();
                         ?>
 
                     </div>
@@ -386,7 +409,7 @@ fclose($testia);
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
         <!-- To use this code on your website, get a free API key from Google.
-        Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
