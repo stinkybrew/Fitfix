@@ -1,0 +1,23 @@
+<div style="float:right;background-color:fff" class="w3-hide-small">
+	<form action="main.php" method="post">
+		<input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="logout" value="logout">
+	</form>
+    <?php
+    if(isset($_post['logout'])) {
+        session_start();
+        $_SESSION = array();
+
+        if (ini_get("session.use_cookies")) {
+            $params = session_get_cookie_params();
+            setcookie(session_name(), '', time() - 42000,
+                $params["path"], $params["domain"],
+                $params["secure"], $params["httponly"]
+            );
+        }
+
+        session_unset();
+        session_destroy();
+        echo "Thank you for visiting us, you are now logged out";
+    }
+    ?>
+</div>
