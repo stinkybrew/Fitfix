@@ -61,16 +61,7 @@
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                     <a href="main.php" class="w3-bar-item w3-button">Home</a>
                     <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
-                    <a href="#work" class="w3-bar-item w3-button">Workout</a>
-                    <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                    <div class="w3-dropdown-hover w3-hide-small">
-                        <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-                        <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                            <a href="#" class="w3-bar-item w3-button">Link</a>
-                        </div>
-                    </div>
+                    <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 </div>
             </div>
         </div>
@@ -92,14 +83,15 @@
                         <i class="fa fa-map-marker w3-text-teal w3-xxlarge"></i><h4>Metropolia<br>Ammattikorkeakoulu</h4>
                     </div>
                     <div class="box w3-left">
-                        <i class="fa fa-envelope-o w3-xxlarge"></i><h4>Fixfit info:<br><a href="info.fixfit@gmail.com">info.fixfit@gmail.com</a></h4>
+                        <i class="fa fa-envelope-o w3-xxlarge"></i><h4>Fixfit info:<br>
+                        <a href="info.fixfit@gmail.com">info.fixfit@gmail.com</a></h4>
                     </div>
                     <div class="boxunder">
                         <br>
                         <h4>Voit myös antaa palautetta!</h4>
                         <p><i class="fa fa-chevron-circle-down w3-center w3-xxlarge"></i></p>
 
-                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><b>Palaute</b></button>
+                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Palaute">Palaute</button>
                     </div>
                 </div>
             </div>
@@ -118,7 +110,7 @@
                             </div>
                             <div class="w3-section">
                                 <label>Email</label>
-                                <input class="w3-input" type="text" name="email">
+                                <input class="w3-input" type="email" name="email">
                             </div>
                             <div class="w3-section">
                                 <label>Palaute</label>
