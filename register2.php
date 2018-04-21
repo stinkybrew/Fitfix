@@ -32,11 +32,11 @@
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>
-                            <input class="w3-input" type="text" name="name" required>
+                            <input class="w3-input" type="text" name="first" required>
                         </div>
                         <div class="w3-section">
                             <label>Sukunimi</label>
-                            <input class="w3-input" type="text" name="name" required>
+                            <input class="w3-input" type="text" name="last" required>
                         </div>
                         <div class="w3-section">
                             <label>Syntymäaika</label>
@@ -44,11 +44,11 @@
                         </div>
                         <div class="w3-section">
                             <label>Sähköpostiosoite</label>
-                            <input class="w3-input" type="text" name="email" required>
+                            <input class="w3-input" type="email" name="email" required>
                         </div>
                         <div class="w3-section">
                             <label>Käyttäjätunnus (testi.esimerkki@gmail.com)</label>
-                            <input class="w3-input" type="text" name="email" required>
+                            <input class="w3-input" type="email" name="useremail" required>
                         </div>
                         <div class="w3-section">
                             <label for="password">Salasana (minimi 8 merkkiä)</label>
@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="w3-section">
                                     <label>Sähköpostiosoite (testi.esimerkki@gmail.com)</label>
-                                    <input class="w3-input" type="text" name="email">
+                                    <input class="w3-input" type="email" name="email">
                                 </div>
                                 <div class="w3-section">
                                     <label>Kysymys</label>
