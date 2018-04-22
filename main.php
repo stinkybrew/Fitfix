@@ -83,17 +83,17 @@ fclose($testia);
 
                     // LOGOUT function !
                     if(isset($_POST['logout'])) {
-                        session_start();
-                        $_SESSION = array();
                         // Update login info to database!
                         $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
+                            echo $logout;
                         } 
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
-
+                        session_start();
+                        $_SESSION = array();
                         if (ini_get("session.use_cookies")) {
                             $params = session_get_cookie_params();
                             setcookie(session_name(), '', time() - 42000,
