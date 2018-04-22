@@ -68,17 +68,42 @@ fclose($testia);
                     }
                     
                     // checs if session is on. if its no, login navbar field is visible!
-                    if(empty($_SESSION['first'])){
+                    if(empty($_SESSION['email'])){
                         // if user is not yet logged in
                         $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
                     }
-                    elseif(!empty($_SESSION['first'])){
+                    elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
+                    }
+
+                    // LOGOUT function !
+                    if(isset($_POST['logout'])) {
+                        session_start();
+                        $_SESSION = array();
+                        // Update login info to database!
+                        $updatelogin = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
+                        if(mysqli_query($conn, $updatelogin)){
+                            echo $userlogin;
+                        } 
+                        else {
+                            echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                        }
+
+                        if (ini_get("session.use_cookies")) {
+                            $params = session_get_cookie_params();
+                            setcookie(session_name(), '', time() - 42000,
+                                $params["path"], $params["domain"],
+                                $params["secure"], $params["httponly"]
+                            );
+                        }
+                        session_unset();
+                        session_destroy();
+                        header("Location:main.php");
                     }
                     
                     // action if LOGIN buttom is pressed

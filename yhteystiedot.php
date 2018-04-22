@@ -43,16 +43,33 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff;padding-top:4px" class="w3-hide-small">
-                        <form action=".php">
-                            <label for="psw"></label>
-                            <input type="text" id="psw" name="password" placeholder="Password..">
-                            <label for="email"></label>
-                            <input type="text" id="email" name="email adress" placeholder="email adress..">
-                            <input type="submit" value="Login">
-                        </form>
-                    </div>
+                    <?php
+                    session_start(['cookie_lifetime' => 3600]);
+                    
+                    $main = "main.php";
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    
+                    // checs if session is on. if its no, login navbar field is visible!
+                    if(empty($_SESSION['email'])){
+                        // if user is not yet logged in
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
+                    }
+                    elseif(!empty($_SESSION['email'])){
+                        // if user is not yet logged in
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                    }
+                    ?>
                     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
                     </a>
                 </div>

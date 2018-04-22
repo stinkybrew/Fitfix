@@ -42,9 +42,6 @@
                         <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
                     </div>
                 </div>
-
-                <a href="main.php#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -56,19 +53,36 @@
 <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
 </div>
 -->
+                <a href="main.php#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
 
-                    <a href="register.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff" class="w3-hide-small">
-                        <form action=".php">
-                            <label for="psw"></label>
-                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
-                            <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email address" placeholder="email address..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
-                        </form>
-                    </div>
-
-
+                <?php
+                session_start(['cookie_lifetime' => 3600]);
+                    
+                $main = "main.php";
+                // Open config.ini file, that contains login-info for DB.
+                $config = parse_ini_file("../../config.ini");
+                // connect to the database  
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                    
+                // checs if session is on. if its no, login navbar field is visible!
+                if(empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("login_register.txt"));
+                    fclose($fields);
+                }
+                elseif(!empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("logout.txt"));
+                    fclose($fields);
+                }
+                ?>
                 <!-- Navbar on small screens -->
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                     <a href="#team" class="w3-bar-item w3-button">Team</a>
