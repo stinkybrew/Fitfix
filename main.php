@@ -55,9 +55,8 @@ fclose($testia);
                 <div>
                     
                     <?php
-                    session_start(['cookie_lifetime' => 0]);
+                    session_start(['cookie_lifetime' => 3600]);
                     
-                    $main = "main.php";
                     // Open config.ini file, that contains login-info for DB.
                     $config = parse_ini_file("../../config.ini");
                     // connect to the database  
