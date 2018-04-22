@@ -55,7 +55,7 @@ fclose($testia);
                 <div>
                     
                     <?php
-                    session_start(['cookie_lifetime' => 3600]);
+                    session_start(['cookie_lifetime' => 0]);
                     
                     $main = "main.php";
                     // Open config.ini file, that contains login-info for DB.
@@ -79,10 +79,13 @@ fclose($testia);
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
 
                     // LOGOUT function !
                     if(isset($_POST['logout'])) {
+                        session_start();
+                        $_SESSION = array();
                         // Update login info to database!
                         $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
                         if(mysqli_query($conn, $logout)){
@@ -92,8 +95,7 @@ fclose($testia);
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
-                        session_start();
-                        $_SESSION = array();
+
                         if (ini_get("session.use_cookies")) {
                             $params = session_get_cookie_params();
                             setcookie(session_name(), '', time() - 42000,
@@ -123,18 +125,19 @@ fclose($testia);
                                 $userfirst = $row["first"];
                                 $useremail = $row["email"];
                                 $userpwd = $row["password"];
-                                //echo $userpwd . " " . $useremail;   TEST print for users firstname!!! TÄMÄ TOIMII !
+                                //echo $userpwd . " " . $useremail;    TEST print for users firstname!!! TÄMÄ TOIMII !
 
-                                // If login email and wassword are valid or invalid.
+                                // If login email and password are valid or invalid.
                                 if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
                                     $_SESSION['email'] = $useremail;
                                     $_SESSION['first'] = $userfirst;
-                                    echo "Hello " . $_SESSION['first'];
                                     
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
                                     if(mysqli_query($conn, $updatelogin)){
-                                    } else {
+                                        
+                                    } 
+                                    else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
                                 }
@@ -142,11 +145,12 @@ fclose($testia);
                                     // Login email and password are INVALID ! ! ! 
                                     echo "invalid email-address or password";
                                 }
+                                echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
                             }
                         }
                         header("location:main.php");
                     }
-                    
+                    mysqli_close($conn);
                     ?>
                 </div>    
                 <div>

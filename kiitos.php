@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <title>W3.CSS Template</title>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="5.0;main.php" />  
     <link rel="stylesheet" href="w3-update.css">
     <link rel="stylesheet" href="w3-theme-black.css">
     <link rel="stylesheet" href="font-awesome.min.css">
@@ -56,8 +57,6 @@
                     </a>
                 </div>
             </div>
-
-
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="main.php" class="w3-bar-item w3-button">Home</a>
@@ -79,45 +78,11 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI! Sinut ohjataa etusivulle 5sekunnin päästä.</h1></button>
             </div>
         </div>
         <div style="margin-top: 50px;font-size: 150%">
-            <?php
-            // Open .ini file
-            $config = parse_ini_file("../../config.ini");
-            // Try and connect to the database  
-            $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-            // Check connection
-            if (!$conn) {
-                die("Connection failed!: " . mysqli_connect_error());
-            }
-            echo "<br>";
-            $ress = 0;
-            $sql = "select loggedin from user where first = 'Wille'";
-            $result = $conn->query($sql);
-            // Check loggedin ! 
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    echo "Database fech for loggedin was: " . $row["loggedin"] . ", so as boolean it means " . "<br>";
-                    $ress = $row["loggedin"];
-                }
-            }
-            else {
-                echo "Theres nothing to print out";
-                echo "<br>";
-            }
-                    
-            if ($ress > 0) {
-                echo"you are loggedin";
-            }
-            else {
-                echo"you are not loggedin!";
-            }
-                echo "<br>";
-            $conn->close();
-            ?>
+
         </div>    
         <!-- Modal -->
         <div id="id01" class="w3-modal">
