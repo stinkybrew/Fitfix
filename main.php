@@ -86,8 +86,8 @@ fclose($testia);
                         session_start();
                         $_SESSION = array();
                         // Update login info to database!
-                        $updatelogin = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
-                        if(mysqli_query($conn, $updatelogin)){
+                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
+                        if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                         } 
                         else {
