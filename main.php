@@ -36,7 +36,7 @@ fclose($testia);
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-                <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="w3-margin-right"></i>FIXFIT</a>
+                <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
