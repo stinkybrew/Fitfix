@@ -29,7 +29,7 @@
             <div class="w3-row"><br>
                 <div class="w3-third w3-display-middle">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>
                             <input class="w3-input" type="text" name="first" required>
@@ -121,16 +121,18 @@
                                     echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                                 }
                                 echo"<br>";
-                                echo $insertquery;  //PRINT QUERRY FOR TEST! IT WORKS!!
+                                //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
                                 
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['success'] = "Hello" . $_SESSION['first'] . ". You can now login.";
-                               
+                                sleep(0.5);
+                                header("location:main.php");
                             }
                             elseif  (count($errors) > 0) {
                                 echo "Something went wrong in your registering prosses";
                             }
                         }
+                        mysqli_close($conn);
                         ?>
                     </div>    
                 </div>

@@ -11,7 +11,7 @@ fclose($testia);
 
 <!DOCTYPE html>
 <html>
-    <title>W3.CSS Template</title>
+    <title>FIXFIT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="w3-update.css">
@@ -55,7 +55,7 @@ fclose($testia);
                 <div>
                     
                     <?php
-                    session_start(['cookie_lifetime' => 3600]);
+                    session_start(['cookie_lifetime' => 0]);
                     
                     // Open config.ini file, that contains login-info for DB.
                     $config = parse_ini_file("../../config.ini");
@@ -72,6 +72,7 @@ fclose($testia);
                         $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . " from here --> </b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
@@ -79,15 +80,16 @@ fclose($testia);
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
-                        echo $_SESSION['success'];
+                        
                     }
-
+                    
                     // LOGOUT function !
-                    $postemail = $_SESSION['email'];
+                    $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
-                        // Update loggedin info to database!
-                        $logout = 'UPDATE user SET loggedin = 0 WHERE email = '$postemail'';
+                        session_start();
                         $_SESSION = array();
+                        // Update login info to database!
+                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'";
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
@@ -133,7 +135,7 @@ fclose($testia);
                                     $_SESSION['first'] = $userfirst;
                                     
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
-                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . $_POST['email'] . "'";
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
                                         
                                     } 
@@ -141,9 +143,10 @@ fclose($testia);
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
                                 }
-                                elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password']) != $userpwd)){ 
+                                else {
                                     // Login email and password are INVALID ! ! ! 
                                     echo "invalid email-address or password";
+                                    
                                 }
                                 echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
                             }
@@ -165,11 +168,10 @@ fclose($testia);
                 <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
                 <a href="#work" class="w3-bar-item w3-button">Workout</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button">Treenit</a>
-                <a href="treenit.php" class="w3-bar-item w3-button">Yhteystiedot</a>
+                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login</button>
                 
-                
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-hover-white">login</button>
             </div>
         </div>
         <!-- Image Header -->
@@ -191,15 +193,31 @@ fclose($testia);
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container"> 
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                    <h4>Oh snap! We just showed you a modal..</h4>
-                    <h5>Because we can <i class="fa fa-smile-o"></i></h5>
+                    <h4>Login or</h4>
+                    <h5>register and account <i class="fa fa-smile-o"></i></h5>
                 </header>
                 <div class="w3-container">
-                    <p>Cool huh? Ok, enough teasing around..</p>
-                    <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
+                    <p>fdsngfjndjf</p>
+                    <a href="register2.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+                    <div style="float:right;background-color:fff" class="w3-hide-small">
+                        
+                        <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
+                            <div class="w3-section">
+                                <label for="email"></label>
+                                <input style="margin-top:5px" type="text" name="email" placeholder="email address.." required>
+                            </div>
+                            <div class="w3-section">
+                                <label for="psw"></label>
+                                <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
+                            </div>
+                            <div class="w3-section">
+                                <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
+                            </div>
+                        </form>
+                    </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>Modal footer</p>
+                    <p>Yo</p>
                 </footer>
             </div>
         </div>
