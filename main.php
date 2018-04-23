@@ -72,7 +72,7 @@ fclose($testia);
                         $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . " from here --> </b>";
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in

@@ -114,7 +114,7 @@
                                 $password = md5($password1);//encrypt the password before saving in the database
 
                                 $insertquery = "INSERT INTO user (date_of_birth, email, password, first, last) 
-                                VALUES('$dob', '$email', '$password', '$first', '$last')";
+                                VALUES('$dob', '$email', '$password1', '$first', '$last')";
                                 if(mysqli_query($conn, $insertquery)){
                                 } 
                                 else {
@@ -122,9 +122,9 @@
                                 }
                                 echo"<br>";
                                 //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
-                                
+                                $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
-                                $_SESSION['success'] = "Hello" . $_SESSION['first'] . ". You can now login.";
+                                $_SESSION['success'] = "Hi " . $_SESSION['first2'] . ". You can now login -->";
                                 sleep(0.5);
                                 header("location:main.php");
                             }
