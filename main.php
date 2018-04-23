@@ -80,7 +80,6 @@ fclose($testia);
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
-                        
                     }
                     
                     // LOGOUT function !
@@ -196,10 +195,8 @@ fclose($testia);
                     <h4>Login or</h4>
                     <h5>register and account <i class="fa fa-smile-o"></i></h5>
                 </header>
-                <div class="w3-container">
-                    
+                <div class="w3-container" style="margin:3%">
                     <div style="background-color:fff" class="w3-hide-medium">
-                        
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                             <div class="w3-section">
                                 <label for="email"></label>
@@ -210,14 +207,15 @@ fclose($testia);
                                 <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
                             </div>
                             <div class="w3-section">
-                                <input class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
+                                <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
                             </div>
+                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                         </form>
+                        
                     </div>
-                    <a href="register2.php" style="float:left" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>Yo</p>
+ 
                 </footer>
             </div>
         </div>
