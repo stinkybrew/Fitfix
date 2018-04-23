@@ -197,7 +197,7 @@ fclose($testia);
                     <h5>register and account <i class="fa fa-smile-o"></i></h5>
                 </header>
                 <div class="w3-container">
-                    <a href="register2.php" style="float:left" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
+                    
                     <div style="background-color:fff" class="w3-hide-medium">
                         
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
@@ -210,10 +210,11 @@ fclose($testia);
                                 <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
                             </div>
                             <div class="w3-section">
-                                <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
+                                <input class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
                             </div>
                         </form>
                     </div>
+                    <a href="register2.php" style="float:left" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                 </div>
                 <footer class="w3-container w3-teal">
                     <p>Yo</p>
