@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <body id="myPages" class="register">
-        
+
         <!-- Navbar -->
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
@@ -29,7 +29,7 @@
             <div class="w3-row"><br>
                 <div class="w3-third w3-display-middle">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>
                             <input class="w3-input" type="text" name="first" required>
@@ -56,13 +56,83 @@
                         </div>                   
                         <div class="w3-section">
                             <label for="psw-repeat">Toista salasana</label>
-                            <input type="password" name="psw-repeat" required>
+                            <input class="w3-input" type="password" name="psw-repeat" required>
                         </div>
                         <button type="reset" style="display:inline" class="w3-button w3-large w3-right w3-theme" value="Reset">Tyhjennä</button>
-                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-right w3-theme" value="Lähetä">
+                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-right w3-theme" value="lähetä" name="laheta">
 
                         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
+                    <div>
+                        <?php
+                        session_start(['cookie_lifetime' => 3600]);
+
+                        // Open config.ini file, that contains login-info for DB.
+                        $config = parse_ini_file("../../config.ini");
+                        // connect to the database  
+                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed!: " . mysqli_connect_error());
+                        }
+
+                        // initializing variables
+                        $username = "";
+                        $email    = "";
+                        $errors = array(); 
+
+                        // REGISTER USER
+                        if (isset($_POST['laheta'])) {
+                            // receive all input values from the form
+                            $username = mysqli_real_escape_string($conn, $_POST['useremail']);
+                            $email = mysqli_real_escape_string($conn, $_POST['email']);
+                            $password1 = mysqli_real_escape_string($conn, $_POST['password']);
+                            $password2 = mysqli_real_escape_string($conn, $_POST['psw-repeat']);
+                            $dob = mysqli_real_escape_string($conn, $_POST['dob']);
+                            $first = mysqli_real_escape_string($conn, $_POST['first']);
+                            $last = mysqli_real_escape_string($conn, $_POST['last']);
+                            //echo $_POST['useremail']; AND THIS WORKS ! ! !
+                            // by adding (array_push()) corresponding error unto $errors array
+                            if ($password1 != $password2) {
+                                array_push($errors, "The two passwords do not match");
+                            }
+
+                            // first check the database to make sure 
+                            // a user does not already exist with the same username and/or email
+                            $user_check_query = "SELECT email FROM user WHERE email = '$email'";
+                            $result = mysqli_query($conn, $user_check_query);
+                            $user = mysqli_fetch_assoc($result);
+
+                            if ($user) { // if user exists
+                                if ($user['email'] === $email) {
+                                    array_push($errors, "email already exists");
+                                }
+                            }
+
+                            // Register user if there are no errors in the form
+                            if (count($errors) == 0) {
+                                $password = md5($password1);//encrypt the password before saving in the database
+
+                                $insertquery = "INSERT INTO user (date_of_birth, email, password, first, last, height, loggedin) 
+                                VALUES('$dob', '$email', '$password' '$first', '$last', '0', '0')";
+                                if(mysqli_query($conn, $insertquery)){
+                                } 
+                                else {
+                                    echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
+                                }
+                                echo"<br>";
+                                echo $insertquery;  //PRINT QUERRY FOR TEST! IT WORKS!!
+                                
+                                $_SESSION['insertquery'] = $insertquery;
+                                $_SESSION['success'] = "Hello" . $_SESSION['first'] . ". You can now login.";
+                               
+                            }
+                            elseif  (count($errors) > 0) {
+                                echo "Something went wrong in your registering prosses";
+                            }
+                        }
+                        ?>
+                    </div>    
                 </div>
                 <!--modal-->
                 <div id="id01" class="w3-modal">

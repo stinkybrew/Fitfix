@@ -79,6 +79,7 @@ fclose($testia);
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                        echo $_SESSION['success'];
                     }
 
                     // LOGOUT function !
