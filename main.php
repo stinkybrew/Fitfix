@@ -83,11 +83,11 @@ fclose($testia);
                     }
 
                     // LOGOUT function !
+                    $postemail = $_SESSION['email'];
                     if(isset($_POST['logout'])) {
-                        session_start();
+                        // Update loggedin info to database!
+                        $logout = 'UPDATE user SET loggedin = 0 WHERE email = '$postemail'';
                         $_SESSION = array();
-                        // Update login info to database!
-                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'";
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
@@ -111,7 +111,7 @@ fclose($testia);
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
                         //select * user users where username = ..., or something samelike sql-code
-                        $postemail = $_POST['email'];
+                        
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
@@ -141,7 +141,7 @@ fclose($testia);
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
                                 }
-                                else {
+                                elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password']) != $userpwd)){ 
                                     // Login email and password are INVALID ! ! ! 
                                     echo "invalid email-address or password";
                                 }
