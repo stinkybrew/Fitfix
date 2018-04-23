@@ -210,7 +210,7 @@ fclose($testia);
                                 <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
                             </div>
                             <div class="w3-section">
-                                <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
+                                <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
                             </div>
                         </form>
                     </div>
