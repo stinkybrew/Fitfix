@@ -198,8 +198,8 @@ fclose($testia);
                 </header>
                 <div class="w3-container">
                     <p>fdsngfjndjf</p>
-                    <a href="register2.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff" class="w3-hide-small">
+                    <a href="register2.php" style="float:left" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
+                    <div style="background-color:fff" class="w3-hide-medium">
                         
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                             <div class="w3-section">
