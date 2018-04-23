@@ -197,7 +197,6 @@ fclose($testia);
                     <h5>register and account <i class="fa fa-smile-o"></i></h5>
                 </header>
                 <div class="w3-container">
-                    <p>fdsngfjndjf</p>
                     <a href="register2.php" style="float:left" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                     <div style="background-color:fff" class="w3-hide-medium">
                         
