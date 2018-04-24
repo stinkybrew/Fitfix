@@ -93,8 +93,8 @@
                             $last = mysqli_real_escape_string($conn, $_POST['last']);
                             //echo $_POST['useremail']; AND THIS WORKS ! ! !
                             // by adding (array_push()) corresponding error unto $errors array
-                            if ($password1 != $password2) {
-                                array_push($errors, "The two passwords do not match");
+                            if ($password1 !== $password2) {
+                                array_push($errors, "<b style='color:red>The two passwords do not match<b/>");
                             }
 
                             // first check the database to make sure 
@@ -105,7 +105,7 @@
 
                             if ($user) { // if user exists
                                 if ($user['email'] === $email) {
-                                    array_push($errors, "email already exists");
+                                    array_push($errors, "<b style='color:red>Email-address already exists</b>");
                                 }
                             }
 
@@ -129,7 +129,13 @@
                                 header("location:main.php");
                             }
                             elseif  (count($errors) > 0) {
-                                echo "Something went wrong in your registering prosses";
+                                $arrlength=count($errors);
+                                for($x=0;$x<$arrlength;$x++)
+                                  {
+                                  echo $errors[$x];
+                                  echo "<br>";
+                                  }
+                                //echo "Something went wrong in your registering prosses";
                             }
                         }
                         mysqli_close($conn);
