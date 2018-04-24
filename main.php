@@ -53,7 +53,7 @@ fclose($testia);
                     $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
                     echo fread($fields,filesize("profilenavbar.txt"));
                     fclose($fields);
-                    }
+                }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
