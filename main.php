@@ -50,10 +50,9 @@ fclose($testia);
                 }
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
-                    $fields = fopen("Profilenavbar.txt", "r") or die("Unable to open file!");
-                    echo fread($fields,filesize("Profilenavbar.txt"));
+                    $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
                     fclose($fields);
-                    echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
