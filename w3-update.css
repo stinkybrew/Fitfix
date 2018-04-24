@@ -212,6 +212,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .pad2{padding: 2px 0 0 0;}
 .leveys{width: 50%}
 
+/* backgroundimage */
+.backgroundimg {background:url("img/greybackground.jpg");}
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
 .w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}

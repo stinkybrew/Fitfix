@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="font-awesome_min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <body id="myPages" class="register">
+    <body id="myPages" class="register backgroundimg">
 
         <!-- Navbar -->
         <div class="w3-top">
