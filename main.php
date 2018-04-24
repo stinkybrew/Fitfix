@@ -37,7 +37,25 @@ fclose($testia);
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
-                <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                <?php
+                session_start(['cookie_lifetime' => 0]);
+                    
+                // Open config.ini file, that contains login-info for DB.
+                $config = parse_ini_file("../../config.ini");
+                // connect to the database  
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                // Check connection
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                if(!empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("Profilenavbar.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("Profilenavbar.txt"));
+                    fclose($fields);
+                    echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                    }
+                ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">

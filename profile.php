@@ -22,24 +22,85 @@
         </nav>
 
         <!-- Navbar -->
-        <div class="w3-top">
+<div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Workout</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
-                <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">palaute</a>
                 <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
+                    <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
+                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
+                <div>
+                    
+                    <?php
+                    session_start(['cookie_lifetime' => 0]);
+                    
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    
+                    // checs if session is on. if its no, login navbar field is visible!
+
+                    elseif(!empty($_SESSION['email'])){
+                        // if user is not yet logged in
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                    }
+                    
+                    // LOGOUT function !
+                    $postemail = $_POST['email'];
+                    if(isset($_POST['logout'])) {
+                        session_start();
+                        $_SESSION = array();
+                        // Update login info to database!
+                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'";
+                        if(mysqli_query($conn, $logout)){
+                            echo $userlogin;
+                            echo $logout;
+                        } 
+                        else {
+                            echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                        }
+
+                        if (ini_get("session.use_cookies")) {
+                            $params = session_get_cookie_params();
+                            setcookie(session_name(), '', time() - 42000,
+                                $params["path"], $params["domain"],
+                                $params["secure"], $params["httponly"]
+                            );
+                        }
+                        session_unset();
+                        session_destroy();
+                        header("Location:main.php");
+                    }
+                    header("location:main.php");
+                    mysqli_close($conn);
+                    ?>
+                </div>    
+                <div>
+                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
+                    </a>
+                </div>
             </div>
+
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
