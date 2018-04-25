@@ -116,7 +116,8 @@
                         
                         $emailtest = $_POST["email"];
                         if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
-                          echo "<p class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</p>"; 
+                          echo "<script type='text/javascript'>alert('invalid email-address!')</script>";
+                          // "<p class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</p>"; 
                         }
                         //select * user users where username = ..., or something samelike sql-code
                         
