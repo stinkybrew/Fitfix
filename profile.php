@@ -1,9 +1,3 @@
-<?php 
-// Here i open a text file that contains database connection function
-$dbconnection = fopen("dbconnection.txt", "r") or die("Unable to open file!");
-echo fread($dbconnection,filesize("dbconnection.txt"));
-fclose($dbconnection);
-?>
 
 <!DOCTYPE html>
 <html>
@@ -53,8 +47,16 @@ fclose($dbconnection);
                     <?php
                     session_start(['cookie_lifetime' => 0]);
                     
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    
                     // checs if session is on. if its no, login navbar field is visible!
-
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
