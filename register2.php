@@ -30,7 +30,7 @@
             <div class="w3-row"><br>
                 <div class="w3-third w3-display-middle" style="top:60%">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>
                             <input class="w3-input" type="text" name="first" required>
