@@ -11,18 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <body id="myPage">
-        <!-- Sidebar on click -->
-        <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
-                <i class="fa fa-remove"></i>
-            </a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            <a href="#" class="w3-bar-item w3-button">Link 4</a>
-            <a href="#" class="w3-bar-item w3-button">Link 5</a>
-        </nav>
-
         <!-- Navbar -->
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
@@ -40,8 +28,6 @@
                         <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
                     <?php
@@ -78,7 +64,6 @@
                 <!-- Navbar on small screens -->
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                     <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                    <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
                     <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 </div>
             </div>
