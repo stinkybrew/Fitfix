@@ -155,7 +155,7 @@
                                     echo "<p class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</p>";
                                 }
                                 else {
-                                    echo "<p style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</p>";
+                                    echo "<p style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first2'] . "</p>";
                                 }
                             }
                         }
