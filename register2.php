@@ -28,7 +28,7 @@
         <!-- Contact Container -->
         <div class="w3-container">
             <div class="w3-row"><br>
-                <div class="w3-third w3-display-middle">
+                <div class="w3-third w3-display-middle" style="top:60%">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="" method="post">
                         <div class="w3-section">
@@ -110,9 +110,9 @@
                                 }
                             }
                             
-                            $emailtest = test_input($emailtest);
+                            $emailtest = test_input($email);
                             if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
-                              $emailErr = "<b class='blink_me' style='color:red> Invalid email format</b>"; 
+                                array_push($errors, "<b class='blink_me' style='color:red> Invalid email format</b>"); 
                             }
                             
                             // Register user if there are no errors in the form
