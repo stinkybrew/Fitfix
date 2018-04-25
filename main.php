@@ -1,11 +1,9 @@
 
 <?php 
-/*
-// Here i open a text file that contains longin function
-$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
-echo fread($testia,filesize("login_function.txt"));
-fclose($testia);
-*/
+// Here i open a text file that contains database connection function
+$dbconnection = fopen("dbconnection.txt", "r") or die("Unable to open file!");
+echo fread($dbconnection,filesize("dbconnection.txt"));
+fclose($dbconnection);
 ?>
 
 
@@ -39,20 +37,12 @@ fclose($testia);
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <?php
                 session_start(['cookie_lifetime' => 0]);
-                    
-                // Open config.ini file, that contains login-info for DB.
-                $config = parse_ini_file("../../config.ini");
-                // connect to the database  
-                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                // Check connection
-                if (!$conn) {
-                    die("Connection failed!: " . mysqli_connect_error());
-                }
+
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
-                    $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
-                    echo fread($fields,filesize("profilenavbar.txt"));
-                    fclose($fields);
+                    $fields1 = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
+                    echo fread($fields1,filesize("profilenavbar.txt"));
+                    fclose($fields1);
                 }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
@@ -72,30 +62,22 @@ fclose($testia);
                 <div>
                     
                     <?php
+                    // Start session!
                     session_start(['cookie_lifetime' => 0]);
-                    
-                    // Open config.ini file, that contains login-info for DB.
-                    $config = parse_ini_file("../../config.ini");
-                    // connect to the database  
-                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                    // Check connection
-                    if (!$conn) {
-                        die("Connection failed!: " . mysqli_connect_error());
-                    }
                     
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
-                        echo fread($fields,filesize("login_register.txt"));
-                        fclose($fields);
+                        $fields2 = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields2,filesize("login_register.txt"));
+                        fclose($fields2);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
-                        echo fread($fields,filesize("logout.txt"));
-                        fclose($fields);
+                        $fields3 = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields3,filesize("logout.txt"));
+                        fclose($fields3);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
                     
@@ -153,7 +135,6 @@ fclose($testia);
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
-                                        
                                     } 
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
@@ -162,14 +143,13 @@ fclose($testia);
                                 else {
                                     // Login email and password are INVALID ! ! ! 
                                     echo "invalid email-address or password";
-                                    
                                 }
                                 echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
                             }
                         }
                         header("location:main.php");
                     }
-                    mysqli_close($conn);
+                    
                     ?>
                 </div>    
                 <div>

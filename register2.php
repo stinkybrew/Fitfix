@@ -1,3 +1,10 @@
+<?php 
+// Here i open a text file that contains database connection function
+$dbconnection = fopen("dbconnection.txt", "r") or die("Unable to open file!");
+echo fread($dbconnection,filesize("dbconnection.txt"));
+fclose($dbconnection);
+?>
+
 <!DOCTYPE html>
 <html>
     <title>FIXFIT</title>
@@ -67,15 +74,6 @@
                         <?php
                         session_start(['cookie_lifetime' => 3600]);
 
-                        // Open config.ini file, that contains login-info for DB.
-                        $config = parse_ini_file("../../config.ini");
-                        // connect to the database  
-                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed!: " . mysqli_connect_error());
-                        }
-
                         // initializing variables
                         $username = "";
                         $email    = "";
@@ -138,7 +136,7 @@
                                 //echo "Something went wrong in your registering prosses";
                             }
                         }
-                        mysqli_close($conn);
+                        
                         ?>
                     </div>    
                 </div>
