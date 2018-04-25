@@ -58,12 +58,12 @@
                         <button type="reset" style="display:inline" class="w3-button w3-large w3-right w3-theme" value="Reset">Tyhjennä</button>
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-right w3-theme" value="lähetä" name="laheta">
 
-                        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
+                        <button type="button" onclick="document.getElementById('id01').style.display='inline-block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
                     <div>
                         <?php
                         session_start(['cookie_lifetime' => 3600]);
-                        
+
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
                         // connect to the database  
@@ -72,7 +72,7 @@
                         if (!$conn) {
                             die("Connection failed!: " . mysqli_connect_error());
                         }
-                        
+
                         // initializing variables
                         $username = "";
                         $email    = "";
@@ -88,10 +88,11 @@
                             $dob = mysqli_real_escape_string($conn, $_POST['dob']);
                             $first = mysqli_real_escape_string($conn, $_POST['first']);
                             $last = mysqli_real_escape_string($conn, $_POST['last']);
+
                             //echo $_POST['useremail']; AND THIS WORKS ! ! !
                             // by adding (array_push()) corresponding error unto $errors array
                             if ($password1 !== $password2) {
-                                array_push($errors, "<b class='blink_me' style='color:red>The two passwords do not match<b/>");
+                                array_push($errors, "<b class='blink_me2' style='color:red'>The two passwords do not match<b/>");
                             }
 
                             // first check the database to make sure 
@@ -102,15 +103,10 @@
 
                             if ($user) { // if user exists
                                 if ($user['email'] === $email) {
-                                    array_push($errors, "<b class='blink_me' style='color:red>Email-address already exists!</b>");
+                                    array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
                                 }
                             }
-                            
-                            $emailtest = test_input($email);
-                            if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
-                                array_push($errors, "<b class='blink_me' style='color:red> Invalid email format</b>"); 
-                            }
-                            
+
                             // Register user if there are no errors in the form
                             if (count($errors) == 0) {
                                 $password = md5($password1);//encrypt the password before saving in the database
@@ -133,14 +129,14 @@
                             elseif  (count($errors) > 0) {
                                 $arrlength=count($errors);
                                 for($x=0;$x<$arrlength;$x++)
-                                  {
-                                  echo $errors[$x];
-                                  echo "<br>";
-                                  }
+                                {
+                                    echo $errors[$x];
+                                    echo "<br>";
+                                }
                                 //echo "Something went wrong in your registering prosses";
                             }
                         }
-                        
+                        mysqli_close($conn);
                         ?>
                     </div>    
                 </div>

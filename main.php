@@ -66,6 +66,8 @@
                     // Start session!
                     session_start(['cookie_lifetime' => 0]);
                     
+                    // Here i open a text file that contains database connection function
+                    
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in
@@ -111,11 +113,17 @@
                     
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
+                        
+                        $emailtest = $_POST["email"];
+                        if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
+                          echo "<p class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</p>"; 
+                        }
                         //select * user users where username = ..., or something samelike sql-code
                         
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
+                        $errors = array();
                         //echo $sqlfetch; TÄMÄ HAKU TOIMII!!!
                         // echo $_POST['email']; TÄMÄ HAKU TOIMII!!!
                         // Check data of columns! 
@@ -141,14 +149,16 @@
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
                                 }
-                                else {
+                                elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password'] != $userpwd))){
                                     // Login email and password are INVALID ! ! ! 
-                                    echo "invalid email-address or password";
+                                    echo "<b class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</b>";
                                 }
-                                echo "<b class='blink_me' style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
+                                else {
+                                    echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";
+                                }
                             }
                         }
-                        header("location:main.php");
+                        
                     }
                     
                     ?>
