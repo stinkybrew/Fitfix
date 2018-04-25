@@ -45,11 +45,7 @@
                         </div>
                         <div class="w3-section">
                             <label>Sähköpostiosoite</label>
-                            <input class="w3-input" type="email" name="email" required>
-                        </div>
-                        <div class="w3-section">
-                            <label>Käyttäjätunnus (testi.esimerkki@gmail.com)</label>
-                            <input class="w3-input" type="email" name="useremail" required>
+                            <input class="w3-input" type="email" name="email" placeholder="testi.esimerkki@gmail.com" required>
                         </div>
                         <div class="w3-section">
                             <label for="password">Salasana (minimi 8 merkkiä)</label>
