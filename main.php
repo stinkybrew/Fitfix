@@ -113,7 +113,7 @@
                     
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
-                        
+                        alert(str.fontcolor( "red" ));
                         $emailtest = $_POST["email"];
                         if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
                           echo "<script type='text/javascript'>alert('invalid email-address!')</script>";

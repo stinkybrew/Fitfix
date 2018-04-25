@@ -44,6 +44,14 @@
                             <input class="w3-input" type="date" name="dob" required>
                         </div>
                         <div class="w3-section">
+                            <select name="customers">
+                            <option value="">Sukupuoli:</option>
+                            <option value="man">man</option>
+                            <option value="man">woman</option>
+                            <option value="man">something else</option>
+                            </select>
+                        </div>
+                        <div class="w3-section">
                             <label>Sähköpostiosoite</label>
                             <input class="w3-input" type="email" name="email" placeholder="testi.esimerkki@gmail.com" required>
                         </div>
@@ -62,7 +70,6 @@
                     </form>
                     <div>
                         <?php
-                        session_start(['cookie_lifetime' => 3600]);
 
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
