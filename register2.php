@@ -45,10 +45,10 @@
                         </div>
                         <div class="w3-section">
                             <select name="customers">
-                            <option value="">Sukupuoli:</option>
-                            <option value="man">man</option>
-                            <option value="man">woman</option>
-                            <option value="man">something else</option>
+                                <option value="">Sukupuoli:</option>
+                                <option value="man">man</option>
+                                <option value="man">woman</option>
+                                <option value="man">something else</option>
                             </select>
                         </div>
                         <div class="w3-section">
@@ -63,14 +63,14 @@
                             <label for="psw-repeat">Toista salasana</label>
                             <input class="w3-input" type="password" name="psw-repeat" required>
                         </div>
-                        <button type="reset" style="display:inline" class="w3-button w3-large w3-right w3-theme" value="Reset">Tyhjennä</button>
-                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-right w3-theme" value="lähetä" name="laheta">
+                        <button type="button" onclick="document.getElementById('id01').style.display='inline'" class="w3-right w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
+                        <button type="reset" style="display:inline" class="w3-button w3-large w3-theme" value="Reset">Tyhjennä</button>
+                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-theme" value="lähetä" name="laheta">
 
-                        <button type="button" onclick="document.getElementById('id01').style.display='inline-block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
                     <div>
                         <?php
-
+                        
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
                         // connect to the database  
@@ -108,10 +108,9 @@
                             $result = mysqli_query($conn, $user_check_query);
                             $user = mysqli_fetch_assoc($result);
 
-                            if ($user) { // if user exists
-                                if ($user['email'] === $email) {
-                                    array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
-                                }
+                             // if user exists
+                            if ($user['email'] === $email) {
+                                array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
                             }
 
                             // Register user if there are no errors in the form
@@ -125,13 +124,14 @@
                                 else {
                                     echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                                 }
-                                echo"<br>";
+                                
                                 //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['success'] = "Hi " . $_SESSION['first2'] . ". You can now login -->";
                                 sleep(0.5);
                                 header("location:main.php");
+                                
                             }
                             elseif  (count($errors) > 0) {
                                 $arrlength=count($errors);
@@ -143,7 +143,7 @@
                                 //echo "Something went wrong in your registering prosses";
                             }
                         }
-                        mysqli_close($conn);
+                        
                         ?>
                     </div>    
                 </div>

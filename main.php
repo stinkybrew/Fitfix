@@ -28,7 +28,7 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <?php
-                session_start(['cookie_lifetime' => 0]);
+                session_start(['cookie_lifetime' => 3600]);
                 
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
@@ -64,7 +64,7 @@
                     
                     <?php
                     // Start session!
-                    session_start(['cookie_lifetime' => 0]);
+                    session_start(['cookie_lifetime' => 3600]);
                     
                     // Here i open a text file that contains database connection function
                     
@@ -74,14 +74,14 @@
                         $fields2 = fopen("login_register.txt", "r") or die("Unable to open file!");
                         echo fread($fields2,filesize("login_register.txt"));
                         fclose($fields2);
-                        echo "<b class='blink_me' style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
                         $fields3 = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields3,filesize("logout.txt"));
                         fclose($fields3);
-                        echo "<b class='blink_me' style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
                     
                     // LOGOUT function !
@@ -113,7 +113,7 @@
                     
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
-                        alert(str.fontcolor( "red" ));
+                        
                         $emailtest = $_POST["email"];
                         if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
                           echo "<script type='text/javascript'>alert('invalid email-address!')</script>";
@@ -152,14 +152,14 @@
                                 }
                                 elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password'] != $userpwd))){
                                     // Login email and password are INVALID ! ! ! 
-                                    echo "<b class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</b>";
+                                    echo "<p class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</p>";
                                 }
                                 else {
-                                    echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";
+                                    echo "<p style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</p>";
                                 }
                             }
                         }
-                        
+                        header("location:main.php");
                     }
                     
                     ?>
