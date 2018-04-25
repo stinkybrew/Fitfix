@@ -71,14 +71,14 @@ fclose($dbconnection);
                         $fields2 = fopen("login_register.txt", "r") or die("Unable to open file!");
                         echo fread($fields2,filesize("login_register.txt"));
                         fclose($fields2);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
+                        echo "<b class='blink_me' style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
                         $fields3 = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields3,filesize("logout.txt"));
                         fclose($fields3);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                        echo "<b class='blink_me' style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
                     
                     // LOGOUT function !
@@ -144,7 +144,7 @@ fclose($dbconnection);
                                     // Login email and password are INVALID ! ! ! 
                                     echo "invalid email-address or password";
                                 }
-                                echo "<b style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
+                                echo "<b class='blink_me' style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first'] . "</b>";    
                             }
                         }
                         header("location:main.php");

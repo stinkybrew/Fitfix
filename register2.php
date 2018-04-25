@@ -92,7 +92,7 @@ fclose($dbconnection);
                             //echo $_POST['useremail']; AND THIS WORKS ! ! !
                             // by adding (array_push()) corresponding error unto $errors array
                             if ($password1 !== $password2) {
-                                array_push($errors, "<b style='color:red>The two passwords do not match<b/>");
+                                array_push($errors, "<b class='blink_me' style='color:red>The two passwords do not match<b/>");
                             }
 
                             // first check the database to make sure 
@@ -103,10 +103,15 @@ fclose($dbconnection);
 
                             if ($user) { // if user exists
                                 if ($user['email'] === $email) {
-                                    array_push($errors, "<b style='color:red>Email-address already exists</b>");
+                                    array_push($errors, "<b class='blink_me' style='color:red>Email-address already exists!</b>");
                                 }
                             }
-
+                            
+                            $emailtest = test_input($emailtest);
+                            if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
+                              $emailErr = "<b class='blink_me' style='color:red> Invalid email format</b>"; 
+                            }
+                            
                             // Register user if there are no errors in the form
                             if (count($errors) == 0) {
                                 $password = md5($password1);//encrypt the password before saving in the database
