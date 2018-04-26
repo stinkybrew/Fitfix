@@ -1,5 +1,20 @@
 
+
+
 <!DOCTYPE html>
+<?php
+session_start(['cookie_lifetime' => 0]);
+if (isset($_SESSION['first2'])) {
+    unset($_SESSION['first2']);
+}
+
+/*
+// Here i open a text file that contains longin function
+$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
+echo fread($testia,filesize("login_function.txt"));
+fclose($testia);
+*/
+?>
 <html>
     <title>FIXFIT</title>
     <meta charset="UTF-8">
@@ -28,8 +43,7 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <?php
-                session_start(['cookie_lifetime' => 3600]);
-                
+
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
                 // connect to the database  
@@ -38,12 +52,11 @@
                 if (!$conn) {
                     die("Connection failed!: " . mysqli_connect_error());
                 }
-                
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
-                    $fields1 = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
-                    echo fread($fields1,filesize("profilenavbar.txt"));
-                    fclose($fields1);
+                    $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
+                    fclose($fields);
                 }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
@@ -61,29 +74,34 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    
+
                     <?php
-                    // Start session!
-                    session_start(['cookie_lifetime' => 3600]);
-                    
-                    // Here i open a text file that contains database connection function
-                    
+
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields2 = fopen("login_register.txt", "r") or die("Unable to open file!");
-                        echo fread($fields2,filesize("login_register.txt"));
-                        fclose($fields2);
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields3 = fopen("logout.txt", "r") or die("Unable to open file!");
-                        echo fread($fields3,filesize("logout.txt"));
-                        fclose($fields3);
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
-                    
+
                     // LOGOUT function !
                     $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
@@ -102,29 +120,23 @@
                         if (ini_get("session.use_cookies")) {
                             $params = session_get_cookie_params();
                             setcookie(session_name(), '', time() - 42000,
-                                $params["path"], $params["domain"],
-                                $params["secure"], $params["httponly"]
-                            );
+                                      $params["path"], $params["domain"],
+                                      $params["secure"], $params["httponly"]
+                                     );
                         }
                         session_unset();
                         session_destroy();
-                        header("Location:main.php");
+                        header("Location: main.php");
+                        exit();
                     }
-                    
+
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
-                        
-                        $emailtest = $_POST["email"];
-                        if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
-                          echo "<script type='text/javascript'>alert('invalid email-address!')</script>";
-                          // "<p class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</p>"; 
-                        }
+
                         //select * user users where username = ..., or something samelike sql-code
-                        
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        $errors = array();
                         //echo $sqlfetch; TÄMÄ HAKU TOIMII!!!
                         // echo $_POST['email']; TÄMÄ HAKU TOIMII!!!
                         // Check data of columns! 
@@ -138,30 +150,27 @@
                                 //echo $userpwd . " " . $useremail;    TEST print for users firstname!!! TÄMÄ TOIMII !
 
                                 // If login email and password are valid or invalid.
-                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
+                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
-                                    $_SESSION['first'] = $userfirst;
+                                    $_SESSION['first'] = $userfirst;   
                                     
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
+
                                     } 
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
-                                }
-                                elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password'] != $userpwd))){
-                                    // Login email and password are INVALID ! ! ! 
-                                    echo "<p class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</p>";
-                                }
-                                else {
-                                    echo "<p style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first2'] . "</p>";
-                                }
+                                }  
                             }
+                        }
+                        else  {
+                            echo "invalid email-address or password!";
                         }
                         header("location:main.php");
                     }
-                    
+                    mysqli_close($conn);
                     ?>
                 </div>    
                 <div>
@@ -179,7 +188,7 @@
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
-                
+
             </div>
         </div>
         <!-- Image Header -->
@@ -220,11 +229,11 @@
                             </div>
                             <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                         </form>
-                        
+
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
- 
+
                 </footer>
             </div>
         </div>
@@ -489,7 +498,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
                 var i;
                 var x = document.getElementsByClassName("mySlides");
                 for (i = 0; i < x.length; i++) {
-                   x[i].style.display = "none";  
+                    x[i].style.display = "none";  
                 }
                 myIndex++;
                 if (myIndex > x.length) {myIndex = 1}    
@@ -497,7 +506,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
                 setTimeout(carousel, 4000); // Change image every 4 seconds
             }
         </script>
-        
+
         <script>
             // Script for side navigation
             function w3_open() {
@@ -511,7 +520,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
             }
-            
+
             // Used to toggle the menu on smaller screens when clicking on the menu button
             function openNav() {
                 var x = document.getElementById("navDemo");
