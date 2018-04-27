@@ -1,4 +1,10 @@
-
+<?php
+ 
+session_start(['cookie_lifetime' => 0]);
+if (isset($_SESSION['first2'])) {
+    header("location:main.php");
+}
+?>
 <!DOCTYPE html>
 <html>
     <title>FIXFIT</title>
@@ -70,7 +76,7 @@
                     </form>
                     <div>
                         <?php
-                        
+                        session_start(['cookie_lifetime' => 0]);
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
                         // connect to the database  
@@ -108,7 +114,7 @@
                             $result = mysqli_query($conn, $user_check_query);
                             $user = mysqli_fetch_assoc($result);
 
-                             // if user exists
+                            // if user exists
                             if ($user['email'] === $email) {
                                 array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
                             }
@@ -124,16 +130,14 @@
                                 else {
                                     echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                                 }
-                                
+
                                 //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['success'] = "Hi " . $_SESSION['first2'] . ". You can now login -->";
                                 sleep(0.5);
-                                header("location:main.php");
-                                
                             }
-                            elseif  (count($errors) > 0) {
+                            elseif (count($errors) > 0) {
                                 $arrlength=count($errors);
                                 for($x=0;$x<$arrlength;$x++)
                                 {
@@ -143,7 +147,7 @@
                                 //echo "Something went wrong in your registering prosses";
                             }
                         }
-                        
+
                         ?>
                     </div>    
                 </div>
