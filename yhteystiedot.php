@@ -71,7 +71,7 @@
 
         <!--Image Header-->
         <div class="w3-display-container w3-animate-opacity">
-            <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;">
+            <!-- <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;"> -->
         </div>
         <!-- Contact Container -->
 
@@ -81,7 +81,7 @@
                     <h3>Jäikö jokin mietityttämään? Onko sinulla kehitysideoita?</h3>
                     <h3>Ota meihin yhteyttä!</h3>
                 </div>
-                <div class="w3-padding-16 boxover center boxcolor">
+                <div class="w3-padding-16 boxover center boxcolor" style="width:70%">
                     <div class="box w3-right">
                         <i class="fa fa-map-marker w3-text-teal w3-xxlarge"></i><h4>Metropolia<br>Ammattikorkeakoulu</h4>
                     </div>
@@ -132,8 +132,6 @@
                     </footer>
                 </div>
             </div>
-
-
         </div>
 
         <!-- Footer -->
