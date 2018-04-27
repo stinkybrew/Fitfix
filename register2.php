@@ -1,12 +1,31 @@
+<<<<<<< HEAD
 <?php
  
 session_start(['cookie_lifetime' => 0]);
 if (isset($_SESSION['first2'])) {
     header("location:main.php");
 }
+=======
+
+<html lang="en">
+<?php
+session_start(['cookie_lifetime' => 3600]);
+if (isset($_POST['first2'])){
+    echo "<script type='text/javascript'>window.location.href = 'main.php';</script>";
+    exit();
+}    
+/*   
+if (!empty($_SESSION['first2'])) {
+    error_reporting(E_ALL);
+    header('Location: https://users.metropolia.fi/~willetu/fixfit/main.php', true, 302);
+    exit(); 
+}
+else {
+} 
+*/
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
 ?>
 <!DOCTYPE html>
-<html>
     <title>FIXFIT</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,9 +53,9 @@ if (isset($_SESSION['first2'])) {
         <!-- Contact Container -->
         <div class="w3-container">
             <div class="w3-row"><br>
-                <div class="w3-third w3-display-middle" style="top:60%">
+                <div class="w3-third w3-display-middle">
                     <h1 class="w3-center">Rekisteröidy tästä!</h1>
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
+                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="register2.php" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>
                             <input class="w3-input" type="text" name="first" required>
@@ -50,16 +69,16 @@ if (isset($_SESSION['first2'])) {
                             <input class="w3-input" type="date" name="dob" required>
                         </div>
                         <div class="w3-section">
-                            <select name="customers">
-                                <option value="">Sukupuoli:</option>
-                                <option value="man">man</option>
-                                <option value="man">woman</option>
-                                <option value="man">something else</option>
-                            </select>
-                        </div>
-                        <div class="w3-section">
                             <label>Sähköpostiosoite</label>
                             <input class="w3-input" type="email" name="email" placeholder="testi.esimerkki@gmail.com" required>
+                        </div>
+                        <div class="w3-section">
+                            <select name="customers">
+                                <option value="">Sukupuoli:</option>
+                                <option value="man">mies</option>
+                                <option value="man">nainen</option>
+                                <option value="man">muu</option>
+                            </select>
                         </div>
                         <div class="w3-section">
                             <label for="password">Salasana (minimi 8 merkkiä)</label>
@@ -69,14 +88,18 @@ if (isset($_SESSION['first2'])) {
                             <label for="psw-repeat">Toista salasana</label>
                             <input class="w3-input" type="password" name="psw-repeat" required>
                         </div>
-                        <button type="button" onclick="document.getElementById('id01').style.display='inline'" class="w3-right w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
-                        <button type="reset" style="display:inline" class="w3-button w3-large w3-theme" value="Reset">Tyhjennä</button>
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-theme" value="lähetä" name="laheta">
+                        <button type="reset" style="display:inline" class="w3-button w3-large w3-theme" value="Reset">Tyhjennä</button>
 
+                        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-right w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
                     <div>
                         <?php
+<<<<<<< HEAD
                         session_start(['cookie_lifetime' => 0]);
+=======
+                        error_reporting(E_ALL);
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
                         // connect to the database  
@@ -89,19 +112,17 @@ if (isset($_SESSION['first2'])) {
                         // initializing variables
                         $username = "";
                         $email    = "";
-                        $errors = array(); 
+                        $errors = array();
 
                         // REGISTER USER
                         if (isset($_POST['laheta'])) {
                             // receive all input values from the form
-                            $username = mysqli_real_escape_string($conn, $_POST['useremail']);
                             $email = mysqli_real_escape_string($conn, $_POST['email']);
                             $password1 = mysqli_real_escape_string($conn, $_POST['password']);
                             $password2 = mysqli_real_escape_string($conn, $_POST['psw-repeat']);
                             $dob = mysqli_real_escape_string($conn, $_POST['dob']);
                             $first = mysqli_real_escape_string($conn, $_POST['first']);
                             $last = mysqli_real_escape_string($conn, $_POST['last']);
-
                             //echo $_POST['useremail']; AND THIS WORKS ! ! !
                             // by adding (array_push()) corresponding error unto $errors array
                             if ($password1 !== $password2) {
@@ -114,9 +135,16 @@ if (isset($_SESSION['first2'])) {
                             $result = mysqli_query($conn, $user_check_query);
                             $user = mysqli_fetch_assoc($result);
 
+<<<<<<< HEAD
                             // if user exists
                             if ($user['email'] === $email) {
                                 array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
+=======
+                            if ($user) { // if user exists
+                                if ($user['email'] === $email) {
+                                    array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists</b>");
+                                }
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                             }
 
                             // Register user if there are no errors in the form
@@ -130,12 +158,22 @@ if (isset($_SESSION['first2'])) {
                                 else {
                                     echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                                 }
+<<<<<<< HEAD
 
+=======
+                                echo"<br>";
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                                 //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
+                                $_SESSION['blaa'] = $first;
                                 $_SESSION['success'] = "Hi " . $_SESSION['first2'] . ". You can now login -->";
                                 sleep(0.5);
+<<<<<<< HEAD
+=======
+                                echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
+                                
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                             }
                             elseif (count($errors) > 0) {
                                 $arrlength=count($errors);
@@ -146,8 +184,14 @@ if (isset($_SESSION['first2'])) {
                                 }
                                 //echo "Something went wrong in your registering prosses";
                             }
+                            else {
+                            }
                         }
+<<<<<<< HEAD
 
+=======
+                       
+>>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                         ?>
                     </div>    
                 </div>
