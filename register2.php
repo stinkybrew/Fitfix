@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-<?php
- 
-session_start(['cookie_lifetime' => 0]);
-if (isset($_SESSION['first2'])) {
-    header("location:main.php");
-}
-=======
 
 <html lang="en">
 <?php
@@ -23,7 +15,6 @@ if (!empty($_SESSION['first2'])) {
 else {
 } 
 */
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
 ?>
 <!DOCTYPE html>
     <title>FIXFIT</title>
@@ -95,11 +86,7 @@ else {
                     </form>
                     <div>
                         <?php
-<<<<<<< HEAD
-                        session_start(['cookie_lifetime' => 0]);
-=======
                         error_reporting(E_ALL);
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                         // Open config.ini file, that contains login-info for DB.
                         $config = parse_ini_file("../../config.ini");
                         // connect to the database  
@@ -135,16 +122,10 @@ else {
                             $result = mysqli_query($conn, $user_check_query);
                             $user = mysqli_fetch_assoc($result);
 
-<<<<<<< HEAD
-                            // if user exists
-                            if ($user['email'] === $email) {
-                                array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists!</b>");
-=======
                             if ($user) { // if user exists
                                 if ($user['email'] === $email) {
                                     array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists</b>");
                                 }
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                             }
 
                             // Register user if there are no errors in the form
@@ -158,24 +139,17 @@ else {
                                 else {
                                     echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                                 }
-<<<<<<< HEAD
-
-=======
                                 echo"<br>";
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                                 //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['blaa'] = $first;
-                                $_SESSION['success'] = "Hi " . $_SESSION['first2'] . ". You can now login -->";
+                                $_SESSION['success'] = "You can now login -->";
                                 sleep(0.5);
-<<<<<<< HEAD
-=======
                                 echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
                                 
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                             }
-                            elseif (count($errors) > 0) {
+                            elseif  (count($errors) > 0) {
                                 $arrlength=count($errors);
                                 for($x=0;$x<$arrlength;$x++)
                                 {
@@ -187,11 +161,7 @@ else {
                             else {
                             }
                         }
-<<<<<<< HEAD
-
-=======
                        
->>>>>>> 3621188e4e04ec209e23c8e555cffee82975c2a6
                         ?>
                     </div>    
                 </div>

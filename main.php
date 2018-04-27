@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <?php
 session_start(['cookie_lifetime' => 0]);
@@ -27,7 +25,7 @@ fclose($testia);
 
         <!-- Sidebar on click -->
         <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
                 <i class="fa fa-remove"></i>
             </a>
             <a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -50,7 +48,7 @@ fclose($testia);
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 // Check connection
                 if (!$conn) {
-                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
+                    die("Connection failed!: " . mysqli_connect_error());
                 }
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
@@ -70,7 +68,7 @@ fclose($testia);
                         <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Työt</a>
+                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
@@ -129,10 +127,14 @@ fclose($testia);
                         header("Location: main.php");
                         exit();
                     }
-
+                        
                     // action if LOGIN buttom is pressed
+                    $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
-
+                        
+                        if (filter_var($emailtest,FILTER_VALIDATE_EMAIL)) {
+                            echo "<b class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</b>"; 
+                        }
                         //select * user users where username = ..., or something samelike sql-code
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
@@ -153,7 +155,7 @@ fclose($testia);
                                 if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
                                     $_SESSION['first'] = $userfirst;   
-                                    
+
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
@@ -166,7 +168,7 @@ fclose($testia);
                             }
                         }
                         else  {
-                            echo "Väärä sähköpostio-soite tai salasana!";
+                            echo "invalid email-address or password!";
                         }
                         header("location:main.php");
                     }
@@ -187,7 +189,7 @@ fclose($testia);
                 <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">Kirjaudu/luo tunnukset</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
 
             </div>
         </div>
@@ -210,8 +212,8 @@ fclose($testia);
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container"> 
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                    <h4>Kirjaudu tia</h4>
-                    <h5>luo tunnukset <i class="fa fa-smile-o"></i></h5>
+                    <h4>Login or</h4>
+                    <h5>register and account <i class="fa fa-smile-o"></i></h5>
                 </header>
                 <div class="w3-container" style="margin:3%">
                     <div style="background-color:fff" class="w3-hide-medium">
@@ -227,7 +229,7 @@ fclose($testia);
                             <div class="w3-section">
                                 <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
                             </div>
-                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">Luo tunnukset</a>
+                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
                         </form>
 
                     </div>
@@ -247,8 +249,8 @@ fclose($testia);
 
                 <div class="w3-quarter">
                     <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3>Otsikkoa</h3>
-                    <p>pientä tekstiä</p>
+                    <h3>title text</h3>
+                    <p>small text</p>
                 </div>
 
             </div>
@@ -430,7 +432,7 @@ fclose($testia);
                 <div class="w3-col m7">
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
                         <div class="w3-section">      
-                            <label>Nimi</label>
+                            <label>Name</label>
                             <input class="w3-input" type="text" name="Name" required>
                         </div>
                         <div class="w3-section">      
@@ -438,11 +440,11 @@ fclose($testia);
                             <input class="w3-input" type="text" name="Email" required>
                         </div>
                         <div class="w3-section">      
-                            <label>Viesti</label>
+                            <label>Message</label>
                             <input class="w3-input" type="text" name="Message" required>
                         </div>  
                         <input class="w3-check" type="checkbox" checked name="Like">
-                        <label>Tykkää!</label>
+                        <label>I Like it!</label>
                         <button type="submit" class="w3-button w3-right w3-theme">Send</button>
                     </form>
                 </div>
@@ -474,7 +476,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-            <h4>Seuraa</h4>
+            <h4>Follow Us</h4>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
@@ -483,12 +485,16 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-                <span class="w3-text w3-padding w3-teal w3-hide-small">Alkuun</span>   
+                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
                 <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
                     <i class="fa fa-chevron-circle-up"></i></span></a>
             </div>
         </footer>
-
+        <script>
+            function myFunction() {
+                alert("invalid email-address or password!");
+            }
+        </script>
         <script>
             // script for slideshow
             var myIndex = 0;
