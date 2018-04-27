@@ -132,9 +132,6 @@ fclose($testia);
                     $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
                         
-                        if (filter_var($emailtest,FILTER_VALIDATE_EMAIL)) {
-                            echo "<b class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</b>"; 
-                        }
                         //select * user users where username = ..., or something samelike sql-code
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
@@ -152,7 +149,7 @@ fclose($testia);
                                 //echo $userpwd . " " . $useremail;    TEST print for users firstname!!! TÄMÄ TOIMII !
 
                                 // If login email and password are valid or invalid.
-                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
+                                if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
                                     $_SESSION['first'] = $userfirst;   
 
@@ -164,13 +161,13 @@ fclose($testia);
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
-                                }  
+                                }
                             }
                         }
                         else  {
-                            echo "invalid email-address or password!";
+                            echo '<script type="text/javascript">alert("invalid email-address or password!")</script>';
                         }
-                        header("location:main.php");
+                        //header("location:main.php");
                     }
                     mysqli_close($conn);
                     ?>
