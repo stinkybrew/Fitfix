@@ -1,5 +1,20 @@
 
+
+
 <!DOCTYPE html>
+<?php
+session_start(['cookie_lifetime' => 0]);
+if (isset($_SESSION['first2'])) {
+    unset($_SESSION['first2']);
+}
+
+/*
+// Here i open a text file that contains longin function
+$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
+echo fread($testia,filesize("login_function.txt"));
+fclose($testia);
+*/
+?>
 <html>
     <title>FIXFIT</title>
     <meta charset="UTF-8">
@@ -12,7 +27,7 @@
 
         <!-- Sidebar on click -->
         <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -28,22 +43,20 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <?php
-                session_start(['cookie_lifetime' => 3600]);
-                
+
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
                 // connect to the database  
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 // Check connection
                 if (!$conn) {
-                    die("Connection failed!: " . mysqli_connect_error());
+                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
                 }
-                
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
-                    $fields1 = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
-                    echo fread($fields1,filesize("profilenavbar.txt"));
-                    fclose($fields1);
+                    $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
+                    fclose($fields);
                 }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
@@ -57,33 +70,38 @@
                         <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
+                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Työt</a>
                 <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    
+
                     <?php
-                    // Start session!
-                    session_start(['cookie_lifetime' => 3600]);
-                    
-                    // Here i open a text file that contains database connection function
-                    
+
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields2 = fopen("login_register.txt", "r") or die("Unable to open file!");
-                        echo fread($fields2,filesize("login_register.txt"));
-                        fclose($fields2);
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
                     elseif(!empty($_SESSION['email'])){
                         // if user is not yet logged in
-                        $fields3 = fopen("logout.txt", "r") or die("Unable to open file!");
-                        echo fread($fields3,filesize("logout.txt"));
-                        fclose($fields3);
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
                     }
-                    
+
                     // LOGOUT function !
                     $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
@@ -102,29 +120,23 @@
                         if (ini_get("session.use_cookies")) {
                             $params = session_get_cookie_params();
                             setcookie(session_name(), '', time() - 42000,
-                                $params["path"], $params["domain"],
-                                $params["secure"], $params["httponly"]
-                            );
+                                      $params["path"], $params["domain"],
+                                      $params["secure"], $params["httponly"]
+                                     );
                         }
                         session_unset();
                         session_destroy();
-                        header("Location:main.php");
+                        header("Location: main.php");
+                        exit();
                     }
-                    
+
                     // action if LOGIN buttom is pressed
                     if (isset($_POST['login'])){
-                        
-                        $emailtest = $_POST["email"];
-                        if (!filter_var($emailtest, FILTER_VALIDATE_EMAIL)) {
-                          echo "<script type='text/javascript'>alert('invalid email-address!')</script>";
-                          // "<p class='blink_me2' style='color:red;float:right;padding-top:8px;margin-top:0px'>invalid email-address!</p>"; 
-                        }
+
                         //select * user users where username = ..., or something samelike sql-code
-                        
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        $errors = array();
                         //echo $sqlfetch; TÄMÄ HAKU TOIMII!!!
                         // echo $_POST['email']; TÄMÄ HAKU TOIMII!!!
                         // Check data of columns! 
@@ -138,30 +150,27 @@
                                 //echo $userpwd . " " . $useremail;    TEST print for users firstname!!! TÄMÄ TOIMII !
 
                                 // If login email and password are valid or invalid.
-                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))){
+                                if ((htmlentities($postemail)) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
-                                    $_SESSION['first'] = $userfirst;
+                                    $_SESSION['first'] = $userfirst;   
                                     
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
+
                                     } 
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
-                                }
-                                elseif ((htmlentities($postemail)) != $useremail or (htmlentities($_POST['password'] != $userpwd))){
-                                    // Login email and password are INVALID ! ! ! 
-                                    echo "<p class='blink_me2' style='color:red;float:center;padding-top:8px;margin:0px'>invalid email-address or password</p>";
-                                }
-                                else {
-                                    echo "<p style='color:pink;float:center;padding-top:8px;margin:0px'>Hello " . $_SESSION['first2'] . "</p>";
-                                }
+                                }  
                             }
+                        }
+                        else  {
+                            echo "Väärä sähköpostio-soite tai salasana!";
                         }
                         header("location:main.php");
                     }
-                    
+                    mysqli_close($conn);
                     ?>
                 </div>    
                 <div>
@@ -178,8 +187,8 @@
                 <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
-                
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">Kirjaudu/luo tunnukset</button>
+
             </div>
         </div>
         <!-- Image Header -->
@@ -201,8 +210,8 @@
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container"> 
                     <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                    <h4>Login or</h4>
-                    <h5>register and account <i class="fa fa-smile-o"></i></h5>
+                    <h4>Kirjaudu tia</h4>
+                    <h5>luo tunnukset <i class="fa fa-smile-o"></i></h5>
                 </header>
                 <div class="w3-container" style="margin:3%">
                     <div style="background-color:fff" class="w3-hide-medium">
@@ -218,13 +227,13 @@
                             <div class="w3-section">
                                 <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
                             </div>
-                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
+                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">Luo tunnukset</a>
                         </form>
-                        
+
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
- 
+
                 </footer>
             </div>
         </div>
@@ -238,8 +247,8 @@
 
                 <div class="w3-quarter">
                     <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3>title text</h3>
-                    <p>small text</p>
+                    <h3>Otsikkoa</h3>
+                    <p>pientä tekstiä</p>
                 </div>
 
             </div>
@@ -421,7 +430,7 @@
                 <div class="w3-col m7">
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
                         <div class="w3-section">      
-                            <label>Name</label>
+                            <label>Nimi</label>
                             <input class="w3-input" type="text" name="Name" required>
                         </div>
                         <div class="w3-section">      
@@ -429,11 +438,11 @@
                             <input class="w3-input" type="text" name="Email" required>
                         </div>
                         <div class="w3-section">      
-                            <label>Message</label>
+                            <label>Viesti</label>
                             <input class="w3-input" type="text" name="Message" required>
                         </div>  
                         <input class="w3-check" type="checkbox" checked name="Like">
-                        <label>I Like it!</label>
+                        <label>Tykkää!</label>
                         <button type="submit" class="w3-button w3-right w3-theme">Send</button>
                     </form>
                 </div>
@@ -465,7 +474,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-            <h4>Follow Us</h4>
+            <h4>Seuraa</h4>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
@@ -474,7 +483,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+                <span class="w3-text w3-padding w3-teal w3-hide-small">Alkuun</span>   
                 <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
                     <i class="fa fa-chevron-circle-up"></i></span></a>
             </div>
@@ -489,7 +498,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
                 var i;
                 var x = document.getElementsByClassName("mySlides");
                 for (i = 0; i < x.length; i++) {
-                   x[i].style.display = "none";  
+                    x[i].style.display = "none";  
                 }
                 myIndex++;
                 if (myIndex > x.length) {myIndex = 1}    
@@ -497,7 +506,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
                 setTimeout(carousel, 4000); // Change image every 4 seconds
             }
         </script>
-        
+
         <script>
             // Script for side navigation
             function w3_open() {
@@ -511,7 +520,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
             }
-            
+
             // Used to toggle the menu on smaller screens when clicking on the menu button
             function openNav() {
                 var x = document.getElementById("navDemo");
