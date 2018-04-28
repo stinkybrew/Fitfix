@@ -103,8 +103,6 @@ fclose($testia);
                     // LOGOUT function !
                     $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
-                        session_start();
-                        $_SESSION = array();
                         // Update login info to database!
                         $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'";
                         if(mysqli_query($conn, $logout)){
