@@ -1,5 +1,11 @@
 
 <!DOCTYPE html>
+<?php
+session_start(['cookie_lifetime' => 0]);
+if (isset($_SESSION['first2'])) {
+    unset($_SESSION['first2']);
+}
+?>
 <html>
     <title>W3.CSS Template</title>
     <meta charset="UTF-8">
@@ -91,8 +97,6 @@
                         session_destroy();
                         header("Location:main.php");
                     }
-                    header("location:main.php");
-                    
                     ?>
                 </div>    
                 <div>
