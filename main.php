@@ -4,7 +4,7 @@
 session_start(['cookie_lifetime' => 0]);
 if (isset($_SESSION['first2'])) {
     unset($_SESSION['first2']);
-    
+}
 // Open config.ini file, that contains login-info for DB.
 $config = parse_ini_file("../../config.ini");
 // connect to the database  
