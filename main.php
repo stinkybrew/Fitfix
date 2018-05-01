@@ -5,14 +5,13 @@ session_start(['cookie_lifetime' => 0]);
 if (isset($_SESSION['first2'])) {
     unset($_SESSION['first2']);
 }
-// Open config.ini file, that contains login-info for DB.
-$config = parse_ini_file("../../config.ini");
-// connect to the database  
-$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-// Check connection
-if (!$conn) {
-    die("Connection failed!: " . mysqli_connect_error());
-}
+
+/*
+// Here i open a text file that contains longin function
+$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
+echo fread($testia,filesize("login_function.txt"));
+fclose($testia);
+*/
 ?>
 <html>
     <title>FIXFIT</title>
@@ -104,6 +103,8 @@ if (!$conn) {
                     // LOGOUT function !
                     $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
+                        session_start();
+                        $_SESSION = array();
                         // Update login info to database!
                         $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'";
                         if(mysqli_query($conn, $logout)){
@@ -126,11 +127,11 @@ if (!$conn) {
                         header("Location: main.php");
                         exit();
                     }
-
+                        
                     // action if LOGIN buttom is pressed
                     $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
-
+                        
                         //select * user users where username = ..., or something samelike sql-code
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
@@ -166,7 +167,7 @@ if (!$conn) {
                         else  {
                             echo '<script type="text/javascript">alert("invalid email-address or password!")</script>';
                         }
-                        //header("location:main.php");
+                        header("location:main.php");
                     }
                     mysqli_close($conn);
                     ?>
@@ -478,7 +479,7 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
             <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-            <p>Powered by <a href="main.php" target="_blank">&copy;Team FixFit</a></p>
+            <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
                 <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
