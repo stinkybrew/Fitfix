@@ -4,14 +4,15 @@
 session_start(['cookie_lifetime' => 0]);
 if (isset($_SESSION['first2'])) {
     unset($_SESSION['first2']);
+    
+// Open config.ini file, that contains login-info for DB.
+$config = parse_ini_file("../../config.ini");
+// connect to the database  
+$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+// Check connection
+if (!$conn) {
+    die("Connection failed!: " . mysqli_connect_error());
 }
-
-/*
-// Here i open a text file that contains longin function
-$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
-echo fread($testia,filesize("login_function.txt"));
-fclose($testia);
-*/
 ?>
 <html>
     <title>FIXFIT</title>
@@ -125,11 +126,11 @@ fclose($testia);
                         header("Location: main.php");
                         exit();
                     }
-                        
+
                     // action if LOGIN buttom is pressed
                     $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
-                        
+
                         //select * user users where username = ..., or something samelike sql-code
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
                         $result = $conn->query($sqlfetch);
