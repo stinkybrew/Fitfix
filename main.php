@@ -292,7 +292,6 @@ fclose($testia);
                     </li>
                 </ul>
             </div>
-        </div>
 
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
@@ -354,6 +353,7 @@ fclose($testia);
                 </li>
             </ul>
         </div>
+     </div>
        
    
 
