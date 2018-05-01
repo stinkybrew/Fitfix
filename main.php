@@ -57,19 +57,18 @@ fclose($testia);
                     fclose($fields);
                 }
                 ?>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
+                    <div class="w3-dropdown-hover w3-hide-small">
+                        <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+
+                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
                     </div>
                 </div>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
 
@@ -177,17 +176,22 @@ fclose($testia);
                     </a>
                 </div>
             </div>
-
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
-                <a href="#work" class="w3-bar-item w3-button">Workout</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
-                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
+                <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
+                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
 
+                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+                    </div>
+                </div>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
             </div>
         </div>
         <!-- Image Header -->
@@ -237,72 +241,7 @@ fclose($testia);
             </div>
         </div>
 
-        <!-- Team Container -->
-        <div class="w3-container w3-padding-64 w3-center" id="team">
-            <h2>jotain tekstiä!</h2>
-            <p>kuvatekstiä</p>
 
-            <div class="w3-row"><br>
-
-                <div class="w3-quarter">
-                    <img src="/img/avatar.jpg" alt="This could be image here" style="width:45%" class="w3-circle w3-hover-opacity">
-                    <h3>title text</h3>
-                    <p>small text</p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Work Row -->
-        <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-            <div class="w3-quarter">
-                <h2>Workout</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-
-            <div class="w3-quarter">
-                <div class="w3-card w3-white">
-                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                    <div class="w3-container">
-                        <h3>Treeni 1</h3>
-                        <h4>Ohjelma</h4>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-quarter">
-                <div class="w3-card w3-white">
-                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                    <div class="w3-container">
-                        <h3>Treeni 2</h3>
-                        <h4>Ohjelma</h4>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w3-quarter">
-                <div class="w3-card w3-white">
-                    <img src="img/greenbanner.png" alt="bannergreen" style="width:100%;margin-top:4px">
-                    <div class="w3-container">
-                        <h3>Treeni 3</h3>
-                        <h4>Ohjelma</h4>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                        <p>Blablabla</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!-- Container -->
         <div class="w3-container" style="position:relative">
@@ -415,61 +354,8 @@ fclose($testia);
                 </li>
             </ul>
         </div>
-        <!-- Contact Container -->
-        <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-            <div class="w3-row">
-                <div class="w3-col m5">
-                    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
-                    <h3>Address</h3>
-                    <p>Something funny text</p>
-                    <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Helsinki, FI</p>
-                    <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  +00 1515151515</p>
-                    <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  test@test.com</p>
-                </div>
-                <div class="w3-col m7">
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
-                        <div class="w3-section">      
-                            <label>Name</label>
-                            <input class="w3-input" type="text" name="Name" required>
-                        </div>
-                        <div class="w3-section">      
-                            <label>Email</label>
-                            <input class="w3-input" type="text" name="Email" required>
-                        </div>
-                        <div class="w3-section">      
-                            <label>Message</label>
-                            <input class="w3-input" type="text" name="Message" required>
-                        </div>  
-                        <input class="w3-check" type="checkbox" checked name="Like">
-                        <label>I Like it!</label>
-                        <button type="submit" class="w3-button w3-right w3-theme">Send</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Google Maps -->
-        <div id="googleMap" style="width:100%;height:420px;"></div>
-        <script>
-            function myMap()
-            {
-                myCenter=new google.maps.LatLng(41.878114, -87.629798);
-                var mapOptions= {
-                    center:myCenter,
-                    zoom:12, scrollwheel: true, draggable: true,
-                    mapTypeId:google.maps.MapTypeId.ROADMAP
-                };
-                var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
-
-                var marker = new google.maps.Marker({
-                    position: myCenter,
-                });
-                marker.setMap(map);
-            }
-        </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-        <!-- To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp -->
+       
+   
 
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
