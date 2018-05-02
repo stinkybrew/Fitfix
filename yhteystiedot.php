@@ -43,7 +43,7 @@
                         <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-clolor:grey">Yhteystiedot</a>
                 <div>
                     <?php
                     session_start(['cookie_lifetime' => 3600]);
@@ -57,7 +57,6 @@
                         die("Connection failed!: " . mysqli_connect_error());
                     }
                     
-                    $main = "main.php";
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in
@@ -89,7 +88,6 @@
             <!-- <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;"> -->
         </div>
         <!-- Contact Container -->
-
         <div class="w3-container w3-padding-24" style="margin-top:40px;margin-bottom:120px">
             <div class="w3-center w3-card w3-padding-16 backroundcolor center">
                 <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span>
@@ -108,7 +106,6 @@
                         <br>
                         <h4>Voit myös antaa palautetta!</h4>
                         <p><i class="fa fa-chevron-circle-down w3-center w3-xxlarge"></i></p>
-
                         <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Palaute">Palaute</button>
                     </div>
                 </div>
@@ -136,11 +133,9 @@
                             </div>
                             <input class="w3-check" type="checkbox" checked name="like">
                             <label>I Like it!</label>
-
                             <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
                             <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
                         </form>
-
                     </div>
                     <footer class="w3-container w3-teal">
                         <p>Kiitos palauteesta!</p>
@@ -157,7 +152,7 @@
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
             <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-            <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
+            <p>Powered by <a href="main.php" target="_blank">&copy;Team FixFit</a></p>
 
             <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
                 <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   

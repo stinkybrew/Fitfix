@@ -187,8 +187,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-hover-none:hover{box-shadow:none!important}
 
 /* Colors */
-.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#01579b!important}
-.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#b3e5fc!important}
+.w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#BE2400!important}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#ccc!important}
 .w3-border-teal,.w3-hover-border-teal:hover{border-color:#01579b!important}
 
 /* Cursor pointer */

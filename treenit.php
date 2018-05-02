@@ -144,9 +144,7 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
             </div>
-
-            <!--modals for navbar-->
-
+        
             <!-- Aloittelijalle informaatiota -->
 
             <div id="id01" class="w3-modal">
@@ -551,7 +549,7 @@ elseif(!empty($_SESSION['email'])){
                 <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
                 <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
                 <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                <p>Powered by <a href="main.php" target="_blank">Team FixFit</a></p>
+                <p>Powered by <a href="main.php" target="_blank">&copy;Team FixFit</a></p>
 
                 <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
                     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
