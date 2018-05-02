@@ -56,6 +56,22 @@ elseif(!empty($_SESSION['email'])){
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
+                <?php
+                // Open config.ini file, that contains login-info for DB.
+                $config = parse_ini_file("../../config.ini");
+                // connect to the database  
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                // Check connection
+                if (!$conn) {
+                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
+                }
+                if(!empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("profilenavbar.txt", "r") or die("Tiedoston avaaminen epäonnistui!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
+                    fclose($fields);
+                }
+                ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -69,6 +85,84 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
+                                <div>
+                    <?php
+                    $config = parse_ini_file("../../config.ini");
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    // checs if session is on. if its no, login navbar field is visible!
+                    if(empty($_SESSION['email'])){
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
+                        echo fread($fields,filesize("login_register.txt"));
+                        fclose($fields);
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
+                    }
+                    elseif(!empty($_SESSION['email'])){       
+                        $fields = fopen("logout.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hei " . $_SESSION['first'] . "</b>";
+                    }
+                    // LOGOUT function !
+                    $postemail = $_POST['email'];
+                    if(isset($_POST['logout'])) {
+                        session_start();
+                        $_SESSION = array();
+                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'"; // Update login info to database!
+                        if(mysqli_query($conn, $logout)){
+                            echo $userlogin;
+                            echo $logout;
+                        } 
+                        else {
+                            echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                        }
+                        if (ini_get("session.use_cookies")) {
+                            $params = session_get_cookie_params();
+                            setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+                        }
+                        session_unset();
+                        session_destroy();
+                        header("Location: main.php");
+                        exit();
+                    }
+                    // action if LOGIN buttom is pressed
+                    $emailtest = $_POST['email'];
+                    if (isset($_POST['login'])){
+                        $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";  //select * user users where username = ..., or something samelike sql-code
+                        $result = $conn->query($sqlfetch);
+                        $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
+                        if ($result->num_rows > 0) {                    // Check data of columns!     
+                            while($row = $result->fetch_assoc()) {      // output data of rows needed
+                                $userlogin = $row["loggedin"];
+                                $userfirst = $row["first"];
+                                $useremail = $row["email"];
+                                $userpwd = $row["password"];
+                                // If login email and password are valid or invalid.
+                                if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
+                                    $_SESSION['email'] = $useremail;
+                                    $_SESSION['first'] = $userfirst;   
+
+                                    // UPDATE loggedin to 1, and 1 means that you are logged in!
+                                    $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
+                                    if(mysqli_query($conn, $updatelogin)){
+
+                                    } 
+                                    else {
+                                        echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                                    }
+                                }
+                            }
+                        }
+                        else  {
+                            echo '<script type="text/javascript">alert("invalid email-address or password!")</script>';
+                        }
+                        header("location:main.php");
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </div>  
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
