@@ -25,7 +25,7 @@ fclose($testia);
 
         <!-- Sidebar on click -->
         <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -48,11 +48,11 @@ fclose($testia);
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 // Check connection
                 if (!$conn) {
-                    die("Connection failed!: " . mysqli_connect_error());
+                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
                 }
                 if(!empty($_SESSION['email'])){
                     // if user is not yet logged in
-                    $fields = fopen("profilenavbar.txt", "r") or die("Unable to open file!");
+                    $fields = fopen("profilenavbar.txt", "r") or die("Tiedoston avaaminen epäonnistui!");
                     echo fread($fields,filesize("profilenavbar.txt"));
                     fclose($fields);
                 }
@@ -73,26 +73,20 @@ fclose($testia);
                 <div>
 
                     <?php
-
-                    // Open config.ini file, that contains login-info for DB.
                     $config = parse_ini_file("../../config.ini");
-                    // connect to the database  
                     $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                    // Check connection
                     if (!$conn) {
                         die("Connection failed!: " . mysqli_connect_error());
                     }
 
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
-                        // if user is not yet logged in
-                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
+                        $fields = fopen("login_register.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
                         echo fread($fields,filesize("login_register.txt"));
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
-                    elseif(!empty($_SESSION['email'])){
-                        // if user is not yet logged in
+                    elseif(!empty($_SESSION['email'])){       
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
@@ -104,8 +98,7 @@ fclose($testia);
                     if(isset($_POST['logout'])) {
                         session_start();
                         $_SESSION = array();
-                        // Update login info to database!
-                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'";
+                        $logout = "UPDATE user SET loggedin = 0 WHERE email = '$postemail'"; // Update login info to database!
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
@@ -113,40 +106,28 @@ fclose($testia);
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
-
                         if (ini_get("session.use_cookies")) {
                             $params = session_get_cookie_params();
-                            setcookie(session_name(), '', time() - 42000,
-                                      $params["path"], $params["domain"],
-                                      $params["secure"], $params["httponly"]
-                                     );
+                            setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
                         }
                         session_unset();
                         session_destroy();
                         header("Location: main.php");
                         exit();
                     }
-                        
+      
                     // action if LOGIN buttom is pressed
                     $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
-                        
-                        //select * user users where username = ..., or something samelike sql-code
-                        $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";
+                        $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";  //select * user users where username = ..., or something samelike sql-code
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        //echo $sqlfetch; TÄMÄ HAKU TOIMII!!!
-                        // echo $_POST['email']; TÄMÄ HAKU TOIMII!!!
-                        // Check data of columns! 
-                        if ($result->num_rows > 0) {
-                            // output data of rows needed
-                            while($row = $result->fetch_assoc()) {
+                        if ($result->num_rows > 0) {                    // Check data of columns!     
+                            while($row = $result->fetch_assoc()) {      // output data of rows needed
                                 $userlogin = $row["loggedin"];
                                 $userfirst = $row["first"];
                                 $useremail = $row["email"];
                                 $userpwd = $row["password"];
-                                //echo $userpwd . " " . $useremail;    TEST print for users firstname!!! TÄMÄ TOIMII !
-
                                 // If login email and password are valid or invalid.
                                 if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
@@ -207,7 +188,6 @@ fclose($testia);
                 <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">mainosbanneri testiä</button>
             </div>
         </div>
-
         <!-- Modal -->
         <div id="id01" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
@@ -240,15 +220,11 @@ fclose($testia);
                 </footer>
             </div>
         </div>
-
-
-
         <!-- Container -->
         <div class="w3-container" style="position:relative">
             <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
-
         <!-- Pikatreenit Row -->
         <div class="w3-row-padding w3-center w3-padding-64" id="pikatreenit">
             <h2>Päivän pikareenit</h2>
@@ -272,7 +248,6 @@ fclose($testia);
                     </li>
                 </ul>
             </div>
-
             <div class="w3-third w3-margin-bottom">
                 <ul class="w3-ul w3-border w3-hover-shadow">
                     <li class="w3-theme">
@@ -292,7 +267,6 @@ fclose($testia);
                     </li>
                 </ul>
             </div>
-
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
                 <li class="w3-theme">
@@ -313,7 +287,6 @@ fclose($testia);
                 </li>
             </ul>
         </div>
-
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
                 <li class="w3-theme">
@@ -333,7 +306,6 @@ fclose($testia);
                 </li>
             </ul>
         </div>
-
         <div class="w3-third w3-margin-bottom">
             <ul class="w3-ul w3-border w3-hover-shadow">
                 <li class="w3-theme">
@@ -354,9 +326,6 @@ fclose($testia);
             </ul>
         </div>
      </div>
-       
-   
-
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
             <h4>Follow Us</h4>
@@ -395,7 +364,6 @@ fclose($testia);
                 setTimeout(carousel, 4000); // Change image every 4 seconds
             }
         </script>
-
         <script>
             // Script for side navigation
             function w3_open() {
@@ -404,12 +372,10 @@ fclose($testia);
                 x.style.paddingTop = "10%";
                 x.style.display = "block";
             }
-
             // Close side navigation
             function w3_close() {
                 document.getElementById("mySidebar").style.display = "none";
             }
-
             // Used to toggle the menu on smaller screens when clicking on the menu button
             function openNav() {
                 var x = document.getElementById("navDemo");
