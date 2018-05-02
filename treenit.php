@@ -12,7 +12,6 @@ if (!$conn) {
     die("Connection failed!: " . mysqli_connect_error());
 }
 
-$main = "main.php";
 // checs if session is on. if its no, login navbar field is visible!
 if(empty($_SESSION['email'])){
     // if user is not yet logged in

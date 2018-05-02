@@ -180,8 +180,8 @@ fclose($testia);
             <img class="mySlides w3-animate-left" src="img/strong-ladies_wider.jpg" alt="rflexing women" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/jenny-hill-wider.jpg" alt="runningman in the field" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/ayo-ogunseinde-wider.jpg" alt="pushups" style="width:100%;min-height:150px;max-height:600px;">
-            <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <h1 class="w3-xlarge w3-theme w3-hover-teal" style="padding:10px"><img src="img/FixFit.png" alt="fixfit_logo">Liiku ja kehity!</h1>
+            <div class="w3-container w3-display-bottomleft w3-margin-bottom right_marging">  
+                <h1 class="w3-xlarge" style="padding:10px"><img src="img/FixFit.png" alt="fixfit_logo" style="size:50%"></h1>
             </div>
         </div>
         <!-- Modal -->
