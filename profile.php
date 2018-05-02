@@ -112,106 +112,168 @@ if (isset($_SESSION['first2'])) {
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
             </div>
         </div>
-        <!-- profile -->
-        <div class="w3-container w3-padding-64">
-            <!--Profiili-->
-            <div class="w3-row">
-                <div class="w3-container center2">
-                    <div class="w3-container w3-padding w3-card-4 shadow center backgroundcolor pad">
-                        <div class="w3-round w3-container">
-                            <p class="w3-center"><img src="img/FixFit.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-                        </div>
-                        <hr>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Pituus</label>
-                            <span class="w3-right" value="<?php echo $pituus?>"></span>
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Paino</label>
-                            <span class="w3-right" value="<?php ?>"></span>
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Tavoite paino</label>
-                            <span class="w3-right" value="<?php echo "select target from user where email = '" . $_POST['email'] . "'"?>"></span>
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>BMI</label>
-                            <span class="w3-right" id="output"></span>
-                        </div>
-                        <br><hr>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-transgender-alt fa-fw w3-margin-right w3-text-theme"></i>Sukupuoli</label>
-                            <span class="w3-right" value="<?php echo $sukupuoli?>"></span>
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>Kaupunki</label>
-                            <span class="w3-right" value="<?php echo $kaupunki?>"></span>
-                        </div>
-                        <div class="w3-container pad2">
-                            <br>
-                            <label>Minusta</label>
-                            <textarea style="height:100%; width: 100%" type="text" maxlength="250" class="w3-right w3-input" value="<?php echo $minusta?>" readonly></textarea>
-                        </div>
-                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium w3-theme w3-hover-teal w3 w3-right" title="Muokkaa">Muokkaa</button>
+        
+    <!--muokkaus modaali-->
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-top">
+            <header class="w3-container w3-teal w3-display-container"> 
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                <h4>Tietojen muokkaus</h4>
+            </header>
+            <div class="w3-container">
+                <form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action="" enctype="multipart/form-data">
+
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Pituus</label>
+                        <input class="inputs" type="number" name="height" step="0.01" placeholder="m">
                     </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Paino</label>
+                        <input class="inputs" type="number" name="weight" placeholder="kg">
+                    </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Tavoite paino</label>
+                        <input class="inputs" type="number" name="weight2" placeholder="kg">
+                    </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">BMI</label>
+                        <input type="button" value="Laske" onclick="Laske()">
+                    </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Sukupuoli</label>
+                        <select class="inputs" name="gender">
+                            <option value="man">Mies</option>
+                            <option value="woman">Nainen</option>
+                            <option value="other">Muu</option>
+                            <option value="no">En halua kertoa</option>
+                        </select>
+                    </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Kaupunki</label>
+                        <input class="inputs" type="text" name="town">
+                    </div>
+                    <div class="w3-container pad2">
+                        <label class="labels w3-left">Minusta</label>
+                        <textarea style="height:auto" class="w3-input" type="text" name="minusta" maxlength="500" rows="4" cols="50"></textarea> 
+                    </div>
+
+                    <button type="reset" style="display:inline" class="w3-button w3-medium w3-right w3-theme" value="Reset">Tyhjennä</button>
+                    <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-medium w3-right w3-theme" value="Tallenna" name="Tallenna" onclick="">
+                </form>
+            </div>
+            <footer class="w3-container w3-teal">
+                <p>Modal footer</p>
+            </footer>
+        </div>
+    </div>
+
+    <?php
+
+    $config = parse_ini_file("../../config.ini");
+    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                                  // Check connection
+    if (!$conn) {
+      die("Connection failed!: " . mysqli_connect_error());
+  }
+
+  if(isset($_SESSION['email'])){
+
+      $email = mysqli_real_escape_string($conn, $_SESSION['email']);
+      $checkemail = "SELECT email FROM weight WHERE email = '$email'";
+      $result1 = mysqli_query($conn, $checkemail);
+      $check = mysqli_fetch_assoc($result1);
+
+      if ($check) { // if user exists
+        if ($check['email'] === $email) {
+            //echo "User already exist"; toimii!
+        }
+    } else {
+     $update = "INSERT INTO weight (email) VALUES ('$email')";
+     $result2 = mysqli_query($conn, $update);
+     $check2 = mysqli_fetch_assoc($result2);
+       //var_dump($result2);
+ }
+
+
+ if(isset($_POST['Tallenna'])){
+
+    $height = mysqli_real_escape_string($conn, $_POST['height']);
+    $weight = mysqli_real_escape_string($conn, $_POST['weight']);
+    $goal = mysqli_real_escape_string($conn, $_POST['weight2']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);   
+    $city = mysqli_real_escape_string($conn, $_POST['town']);
+    $bio = mysqli_real_escape_string($conn, $_POST['minusta']);
+
+    $sql1 = "UPDATE user SET height = '$height', gender = '$gender', city = '$city', bio = '$bio' WHERE email = '$email'";
+    $query1 = mysqli_query($conn, $sql1);
+    //$recheck1 = mysqli_fetch_assoc($query1);
+    //echo $sql1; toimii
+
+    $sql2 = "UPDATE weight SET date = NOW(), value = '$weight', target = '$goal' WHERE email = '$email'";
+    $query2 = mysqli_query($conn, $sql2);
+    //$recheck2 = mysqli_fetch_assoc($query2);
+    //echo $sql2; toimii
+
+    $sql3 = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
+    $result3 = mysqli_query($conn, $sql3);
+
+    $sql4 = "SELECT value, target FROM weight WHERE email = '$email'";
+    $result4 = mysqli_query($conn, $sql4);
+    
+                              // output data of each row
+    $row = $result3->fetch_assoc();
+    $row2 = $result4->fetch_assoc();
+
+    
+}
+}
+
+?>
+<!-- profile -->
+<div class="w3-container w3-padding-64">
+    <!--Profiili-->
+    <div class="w3-row">
+        <div class="w3-container center2">
+            <div class="w3-container w3-padding w3-card-4 shadow center backgroundcolor pad">
+                <div class="w3-round w3-container">
+                    <p class="w3-center"><img src="img/FixFit.png" class="w3-circle" style="height:150px;width:150px" alt="Avatar"></p>
                 </div>
+                <hr>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Pituus</label>
+                    <span class="w3-right"><?php echo $row["height"];?></span>
+                </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Paino</label>
+                    <span class="w3-right"><?php echo $row2["value"];?></span>
+                </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Tavoite paino</label>
+                    <span class="w3-right"><?php echo $row2["target"];?></span>
+                </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>BMI</label>
+                    <span class="w3-right" id="output"></span>
+                </div>
+                <br><hr>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-transgender-alt fa-fw w3-margin-right w3-text-theme"></i>Sukupuoli</label>
+                    <span class="w3-right"><?php echo $row["gender"];?></span>
+                </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>Kaupunki</label>
+                    <span class="w3-right"><?php echo $row["city"];?></span>
+                </div>
+                <div class="w3-container pad2">
+                    <br>
+                    <label>Minusta</label>
+                    <textarea style="height:100%; width: 100%" type="text" maxlength="250" class="w3-right w3-input" readonly><?php echo $row["bio"];?></textarea>
+                </div>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium w3-theme w3-hover-teal w3 w3-right" title="Muokkaa">Muokkaa</button>
             </div>
         </div>
-
-        <div id="id01" class="w3-modal">
-            <div class="w3-modal-content w3-card-4 w3-animate-top">
-                <header class="w3-container w3-teal w3-display-container"> 
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                    <h4>Tietojen muokkaus</h4>
-                </header>
-                <div class="w3-container">
-                    <form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action="" enctype="multipart/form-data">
-
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Pituus</label>
-                            <input class="inputs" type="number" name="height" step="0.01" placeholder="m">
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Paino</label>
-                            <input class="inputs" type="number" name="weight" placeholder="kg">
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Tavoite paino</label>
-                            <input class="inputs" type="number" name="weight2" placeholder="kg">
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">BMI</label>
-                            <input type="button" value="Laske" onclick="Laske()"/>
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Sukupuoli</label>
-                            <select class="inputs" name="gender">
-                                <option value="man">Mies</option>
-                                <option value="woman">Nainen</option>
-                                <option value="other">Muu</option>
-                                <option value="no">En halua kertoa</option>
-                            </select>
-                        </div>
-
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Kaupunki</label>
-                            <input class="inputs" type="text" name="town">
-                        </div>
-                        <div class="w3-container pad2">
-                            <label class="labels w3-left">Minusta</label>
-                            <textarea style="height:auto" class="w3-input" type="text" name="minusta" maxlength="500" rows="4" cols="50"></textarea> 
-                        </div>
-
-                        <button type="reset" style="display:inline" class="w3-button w3-medium w3-right w3-theme" value="Reset">Tyhjennä</button>
-                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-medium w3-right w3-theme" value="Tallenna" name="Tallenna" onclick="">
-                    </form>
-                </div>
-                <footer class="w3-container w3-teal">
-                    <p>Modal footer</p>
-                </footer>
-            </div>
-        </div>
-
+    </div>
+</div>
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
             <h4>Follow Us</h4>
