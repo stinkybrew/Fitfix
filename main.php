@@ -219,7 +219,7 @@ fclose($testia);
             <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
-                <!-- Pikatreenit Row -->
+                 <!-- Pikatreenit Row -->
         <hr class="hr">
         <div class="w3-container w3-padding-small w3-center">
             <div class="w3-row-padding w3-center w3-padding-small" id="pikatreenit">
@@ -332,6 +332,7 @@ fclose($testia);
                 </div>
             </div>
         </div>
+
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
             <h4>Seuraa meitä</h4>
