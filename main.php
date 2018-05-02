@@ -57,7 +57,7 @@ fclose($testia);
                 }
                 ?>
                     <div class="w3-dropdown-hover w3-hide-small">
-                        <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
+                        <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit</a><i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                         <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                         <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
@@ -155,7 +155,7 @@ fclose($testia);
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
                 <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
+                    <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit</a><i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
 
                         <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
