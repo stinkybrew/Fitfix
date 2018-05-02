@@ -356,7 +356,7 @@ fclose($testia);
                 myIndex++;
                 if (myIndex > x.length) {myIndex = 1}    
                 x[myIndex-1].style.display = "block";  
-                setTimeout(carousel, 4000); // Change image every 4 seconds
+                setTimeout(carousel, 8000); // Change image every 8 seconds
             }
         </script>
         <script>
