@@ -265,18 +265,18 @@ elseif(!empty($_SESSION['email'])){
             <div class="w3-container w3-padding-large w3-center">
                 <p class="w3-xxxlarge">Treenejä lihasryhmien mukaan</p>
             </div>
-            <!-- Treenit joka kehon osalle erikseen -->
-            <hr class="hr">
-            <div class="w3-container w3-padding-small w3-center">
-                <div class="w3-container w3-padding-small w3-center" id="Käsitreenit">
-                    <div class="w3-container w3-padding-large w3-center">
-                        <p class="w3-xxlarge">Käsitreenit</p>
-                    </div>
-
-                    <div class="w3-third w3-margin-bottom">
+             <!-- Treenit joka kehon osalle erikseen -->
+        <hr class="hr">
+        <div class="w3-container w3-padding-small w3-center">
+            <div class="w3-container w3-padding-small w3-center" id="Käsitreenit">
+                <div class="w3-container w3-padding-large w3-center">
+                    <p class="w3-xxlarge">Käsitreenit</p>
+                </div>
+                <div class="w3-padding-16 treenit">
+                    <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
-                                <p class="w3-xlarge">Hauikset</p>
+                                <h3>Hauikset</h3>
                             </li>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
                             </iframe>
@@ -286,10 +286,10 @@ elseif(!empty($_SESSION['email'])){
                         </ul>
                     </div>
 
-                    <div class="w3-third w3-margin-bottom">
+                    <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
-                                <p class="w3-xlarge">Ojentajat</p>
+                                <h3>Ojentajat</h3>
                             </li>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/8B_uf-lR8cI?" frameborder="0" allowfullscreen>
                             </iframe>
@@ -299,10 +299,10 @@ elseif(!empty($_SESSION['email'])){
                             </li>
                         </ul>
                     </div>
-                    <div class="w3-third w3-margin-bottom">
+                    <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
-                                <p class="w3-xlarge">Kyynärvarret</p>
+                                <h3>Kyynärvarret</h3>
                             </li>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/kSxKXaxujRg?" frameborder="0" allowfullscreen>
                             </iframe>
@@ -317,192 +317,210 @@ elseif(!empty($_SESSION['email'])){
 
             <hr class="hr">
             <div class="w3-container w3-padding-32 w3-center" id="Jalkatreenit">
-                <p class="w3-xxlarge">Jalkatreenit</p>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">1.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/4H920oAfowE?" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                <div class="w3-container w3-padding-large w3-center">
+                    <p class="w3-xxlarge">Jalkatreenit</p>
                 </div>
+                <div class="w3-padding-16 treenit">
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 1</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/4H920oAfowE?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">2.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
-                        </iframe>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">3.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/MAHMUc3vEWo?" frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treenit 2</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 3</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/MAHMUc3vEWo?" frameborder="0" allowfullscreen>
+                            </iframe>
+
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
             <hr class="hr">
             <div class="w3-container w3-padding-32 w3-center" id="Rintatreenit">
-                <p class="w3-xxlarge">Rintatreenit</p>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">1.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                <div class="w3-container w3-padding-large w3-center">
+                    <p class="w3-xxlarge">Rintatreenit</p>
                 </div>
+                <div class="w3-padding-16 treenit">    
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 1</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">2.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/XqPe_iAm8lI?" frameborder="0" allowfullscreen>
-                        </iframe>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">3.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/FU_5LPjtjus?" frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treenit 2</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/XqPe_iAm8lI?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 3</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/FU_5LPjtjus?" frameborder="0" allowfullscreen>
+                            </iframe>
+
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <hr class="hr">
             <div class="w3-container w3-padding-32 w3-center" id="Vatsatreenit">
-                <p class="w3-xxlarge">Vatsatreenit</p>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">1.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                <div class="w3-container w3-padding-large w3-center">
+                    <p class="w3-xxlarge">Vatsatreenit</p>
                 </div>
+                <div class="w3-padding-16 treenit">
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 1</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">2.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/LgdoQgmCA-A?" frameborder="0" allowfullscreen>
-                        </iframe>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">3.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/9VsDP584zyQ?" frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 2</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/LgdoQgmCA-A?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 3</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/9VsDP584zyQ?" frameborder="0" allowfullscreen>
+                            </iframe>
+
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <hr class="hr">
 
             <div class="w3-container w3-padding-64 w3-center" id="Selkätreenit">
-                <p class="w3-xxlarge">Selkätreenit</p>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">1.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
-                        </iframe>
-
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                <div class="w3-container w3-padding-large w3-center">
+                    <p class="w3-xxlarge">Selkätreenit</p>
                 </div>
+                <div class="w3-padding-16 treenit">
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 1</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">2.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
-                        </iframe>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
-                            <p class="w3-xlarge">3.</p>
-                        </li>
-                        <iframe width="100%" height="344" src="https://www.youtube.com/embed/pjkZUmzvb1M?" frameborder="0" allowfullscreen>
-                        </iframe>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 2</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
+                            </iframe>
 
-                        <li class="w3-theme-l5 w3-padding-24">
-                            <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="treenitpad w3-third w3-margin-bottom">
+                        <ul class="w3-ul w3-border w3-hover-shadow">
+                            <li class="w3-theme">
+                                <h3>Treeni 3</h3>
+                            </li>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/pjkZUmzvb1M?" frameborder="0" allowfullscreen>
+                            </iframe>
+
+                            <li class="w3-theme-l5 w3-padding-24">
+                                <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
 
+        <hr class="hr">
+        <!-- Koko keho Row -->
+        <div class="w3-row-padding w3-center w3-padding-64" id="Kokokehon">
+            <div class="w3-container w3-padding-24 w3-center">
+                <p class="w3-xxxlarge">Koko kehon treenejä</p>
+            </div>
             <hr class="hr">
-            <!-- Koko keho Row -->
-            <div class="w3-row-padding w3-center w3-padding-64" id="Kokokehon">
-                <div class="w3-container w3-padding-24 w3-center">
-                    <p class="w3-xxxlarge">Koko kehon treenejä</p>
-                </div>
-                <hr class="hr">
-                <div class="w3-container w3-padding"><h2 class="w3-wide">Valitse tasosi mukaan!</h2></div>
-                <div class="w3-third w3-margin-bottom">
+            <div class="w3-container w3-padding"><h2 class="w3-wide">Valitse tasosi mukaan!</h2></div>
+            <div class="w3-padding-16 treenit">
+                <div class="treenitpad w3-third w3-margin-bottom">
                     <ul class="w3-ul w3-border w3-hover-shadow">
                         <li class="w3-theme">
                             <p class="w3-xlarge">Aloittelija</p>
@@ -515,7 +533,7 @@ elseif(!empty($_SESSION['email'])){
                     </ul>
                 </div>
 
-                <div class="w3-third w3-margin-bottom">
+                <div class="treenitpad w3-third w3-margin-bottom">
                     <ul class="w3-ul w3-border w3-hover-shadow">
                         <li class="w3-theme">
                             <p class="w3-xlarge">Keskitaso</p>
@@ -528,7 +546,7 @@ elseif(!empty($_SESSION['email'])){
                     </ul>
                 </div>
 
-                <div class="w3-third w3-margin-bottom">
+                <div class="treenitpad w3-third w3-margin-bottom">
                     <ul class="w3-ul w3-border w3-hover-shadow">
                         <li class="w3-theme">
                             <p class="w3-xlarge">Vaikea</p>
@@ -541,6 +559,7 @@ elseif(!empty($_SESSION['email'])){
                     </ul>
                 </div>
             </div>
+        </div>
             <!-- Footer -->
             <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
                 <h4>Follow Us</h4>
