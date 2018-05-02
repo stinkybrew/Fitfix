@@ -57,7 +57,7 @@ fclose($testia);
                 }
                 ?>
                     <div class="w3-dropdown-hover w3-hide-small">
-                        <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit</a><i class="fa fa-caret-down"></i></button>
+                        <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                         <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                         <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
@@ -235,9 +235,9 @@ fclose($testia);
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" frameborder="0" allowfullscreen>
                             </iframe>
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
-                            <li class="w3-padding-16">syviä</li>
-                            <li class="w3-padding-16">suoria</li>
-                            <li class="w3-padding-16">vinoja vatsalihaksia</li>
+                            <li class="w3-padding-16">Syviä</li>
+                            <li class="w3-padding-16">Suoria</li>
+                            <li class="w3-padding-16">Vinoja vatsalihaksia</li>
                             <li><h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
                                 <span class="w3-opacity">6min</span>
                             </li>

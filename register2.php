@@ -79,10 +79,8 @@ else {
                             <label for="psw-repeat">Toista salasana</label>
                             <input class="w3-input" type="password" name="psw-repeat" required>
                         </div>
-                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-large w3-theme" value="lähetä" name="laheta">
-                        <button type="reset" style="display:inline" class="w3-button w3-large w3-theme" value="Reset">Tyhjennä</button>
-
-                        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-right w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
+                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-large w3-theme" value="lähetä" name="laheta">
+                        <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
                     <div>
                         <?php
