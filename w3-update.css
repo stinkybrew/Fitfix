@@ -234,7 +234,7 @@ hr {
 	border-top: 3px double #8c8b8b;
 }
 .treenitpad{padding: 0 10px;}
-
+.treenit{width: 75%; margin: 0 auto;}
 .textdeco{text-decoration: none;}
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
