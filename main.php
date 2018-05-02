@@ -171,12 +171,11 @@ fclose($testia);
         </div>
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
-            <img class="mySlides" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/jogging-wide.jpg" alt="jogging men" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/runner-in-snow-wider.jpg" alt="running in the snow" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/running-cloudy-day_wider.jpg" alt="running in cloudy fields" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/stretching-legs-pre-run_wider.jpg" alt="Streching" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider7.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/strong-ladies_wider.jpg" alt="rflexing women" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/jenny-hill-wider.jpg" alt="runningman in the field" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/ayo-ogunseinde-wider.jpg" alt="pushups" style="width:100%;min-height:150px;max-height:600px;">
