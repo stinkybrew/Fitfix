@@ -43,7 +43,7 @@
                         <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-clolor:grey">Yhteystiedot</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey">Yhteystiedot</a>
                 <div>
                     <?php
                     session_start(['cookie_lifetime' => 3600]);
