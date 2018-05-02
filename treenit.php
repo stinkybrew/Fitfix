@@ -159,7 +159,7 @@ elseif(!empty($_SESSION['email'])){
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
-                        <p>TEAM FIXFIT/LOGO</p>
+                        <p>TEAM <img src="img/FixFit.png" style="width:15%"></p>
                     </footer>
                 </div>
             </div>
@@ -177,7 +177,7 @@ elseif(!empty($_SESSION['email'])){
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
-                        <p>TEAM FIXFIT/LOGO</p>
+                        <p>TEAM <img src="img/FixFit.png" style="width:15%"></p>
                     </footer>
                 </div>
             </div>
@@ -208,7 +208,7 @@ elseif(!empty($_SESSION['email'])){
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
-                        <p>TEAM FIXFIT/LOGO</p>
+                        <p>TEAM <img src="img/FixFit.png" style="width:15%"></p>
                     </footer>
                 </div>
             </div>
@@ -236,7 +236,7 @@ elseif(!empty($_SESSION['email'])){
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
-                        <p>TEAM FIXFIT/LOGO</p>
+                        <p>TEAM <img src="img/FixFit.png" style="width:15%"></p>
                     </footer>
                 </div>
             </div>
@@ -257,7 +257,7 @@ elseif(!empty($_SESSION['email'])){
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
-                        <p>TEAM FIXFIT/LOGO</p>
+                        <p>TEAM <img src="img/FixFit.png" style="width:15%"></p>
                     </footer>
                 </div>
             </div>
