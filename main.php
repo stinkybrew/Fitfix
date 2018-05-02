@@ -41,7 +41,6 @@ fclose($testia);
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <?php
-
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
                 // connect to the database  
@@ -60,7 +59,6 @@ fclose($testia);
                     <div class="w3-dropdown-hover w3-hide-small">
                         <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-
                         <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                         <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
                         <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
@@ -71,7 +69,6 @@ fclose($testia);
                 </div>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-
                     <?php
                     $config = parse_ini_file("../../config.ini");
                     $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
