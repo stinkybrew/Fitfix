@@ -172,12 +172,14 @@ fclose($testia);
         <!-- Image Header -->
         <div class="w3-display-container w3-animate-opacity">
             <img class="mySlides" src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider2.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider3.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider4.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider5.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
-            <img class="mySlides w3-animate-left" src="img/running_man_wider6.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/jogging-wide.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/runner-in-snow-wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/running-cloudy-day_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/stretching-legs-pre-run_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/running_man_wider7.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/strong-ladies_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/jenny-hill-wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
+            <img class="mySlides w3-animate-left" src="img/ayo-ogunseinde-wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
                 <h1 class="w3-xlarge w3-theme w3-hover-teal" style="padding:10px">Liiku ja kehity!</h1>
             </div>
