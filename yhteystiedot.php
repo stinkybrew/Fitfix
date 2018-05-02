@@ -16,7 +16,22 @@
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
-                <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                 <?php
+                // Open config.ini file, that contains login-info for DB.
+                $config = parse_ini_file("../../config.ini");
+                // connect to the database  
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                // Check connection
+                if (!$conn) {
+                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
+                }
+                if(!empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("profilenavbar.txt", "r") or die("Tiedoston avaaminen epäonnistui!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
+                    fclose($fields);
+                }
+                ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -63,8 +78,8 @@
 
                 <!-- Navbar on small screens -->
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                    <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                    <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
+                    <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
+                    <a href="yhteystiedot.php" class="w3-bar-item w3-button" style="background-color:grey">Yhteystiedot</a>
                 </div>
             </div>
         </div>
@@ -75,7 +90,7 @@
         </div>
         <!-- Contact Container -->
 
-        <div class="w3-container w3-padding-24">
+        <div class="w3-container w3-padding-24" style="margin-top:40px;margin-bottom:120px">
             <div class="w3-center w3-card w3-padding-16 backroundcolor center">
                 <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span>
                     <h3>Jäikö jokin mietityttämään? Onko sinulla kehitysideoita?</h3>

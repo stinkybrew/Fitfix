@@ -12,7 +12,7 @@
 
         <!-- Sidebar on click -->
         <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <a href="#" class="w3-bar-item w3-button">Link 1</a>
@@ -26,8 +26,24 @@
         <div class="w3-top">
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-                <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-                <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profiili</a>
+                <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>FIXFIT</a>
+                <?php
+
+                // Open config.ini file, that contains login-info for DB.
+                $config = parse_ini_file("../../config.ini");
+                // connect to the database  
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                // Check connection
+                if (!$conn) {
+                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
+                }
+                if(!empty($_SESSION['email'])){
+                    // if user is not yet logged in
+                    $fields = fopen("profilenavbar.txt", "r") or die("Tiedoston avaaminen epäonnistui!");
+                    echo fread($fields,filesize("profilenavbar.txt"));
+                    fclose($fields);
+                }
+                ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
@@ -39,22 +55,9 @@
                         <a href="treenit.php#Koko kehon" class="w3-bar-item w3-button">Koko kehon</a>
                     </div>
                 </div>
-                <a href="#work" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Work</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Pikareenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
-                    <a href="register.php" style="float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
-                    <div style="float:right;background-color:fff" class="w3-hide-small">
-                        <form action=".php">
-                            <label for="psw"></label>
-                            <input style="margin-top:5px" type="text" id="psw" name="password" placeholder="Password..">
-                            <label for="email"></label>
-                            <input style="margin-top:5px" type="text" id="email" name="email adress" placeholder="email adress..">
-                            <input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" value="Login">
-                        </form>
-                    </div>
-                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
-                    </a>
+ 
                 </div>
             </div>
             <!-- Navbar on small screens -->
@@ -78,11 +81,10 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI! Sinut ohjataa etusivulle 5sekunnin päästä.</h1></button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
             </div>
         </div>
         <div style="margin-top: 50px;font-size: 150%">
-
         </div>    
         <!-- Modal -->
         <div id="id01" class="w3-modal">

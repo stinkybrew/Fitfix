@@ -90,7 +90,7 @@ fclose($testia);
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hello " . $_SESSION['first'] . "</b>";
+                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hei " . $_SESSION['first'] . "</b>";
                     }
 
                     // LOGOUT function !
@@ -328,7 +328,7 @@ fclose($testia);
      </div>
         <!-- Footer -->
         <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-            <h4>Follow Us</h4>
+            <h4>Seuraa meitä</h4>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
             <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
