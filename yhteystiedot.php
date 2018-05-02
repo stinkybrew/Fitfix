@@ -16,7 +16,7 @@
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
-                 <?php
+                <?php
                 session_start(['cookie_lifetime' => 3600]);
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
@@ -34,15 +34,17 @@
                 }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button textdeco" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
-                    </div>
+                    <form action="treenit.php">
+                        <button class="w3-button textdeco" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                            <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                            <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                            <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                            <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                            <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                            <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko kehon</a>
+                        </div>
+                    </form>    
                 </div>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey">Yhteystiedot</a>
                 <div>
@@ -55,7 +57,7 @@
                     if (!$conn) {
                         die("Connection failed!: " . mysqli_connect_error());
                     }
-                    
+
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         // if user is not yet logged in

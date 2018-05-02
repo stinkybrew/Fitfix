@@ -56,16 +56,18 @@ fclose($testia);
                     fclose($fields);
                 }
                 ?>
-                    <div class="w3-dropdown-hover w3-hide-small">
+                <div class="w3-dropdown-hover w3-hide-small">
+                    <form action="treenit.php">
                         <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-                    </div>
+                            <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                            <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                            <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                            <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                            <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                            <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+                        </div>
+                    </form>    
                 </div>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
@@ -219,7 +221,7 @@ fclose($testia);
             <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
-                 <!-- Pikatreenit Row -->
+        <!-- Pikatreenit Row -->
         <hr class="hr">
         <div class="w3-container w3-padding-small w3-center">
             <div class="w3-row-padding w3-center w3-padding-small" id="pikatreenit">
