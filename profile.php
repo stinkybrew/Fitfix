@@ -35,7 +35,7 @@ if (isset($_SESSION['first2'])) {
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
                 <a href="profile.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey">Profiili</a>
                 <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
+                    <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
                     <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                         <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                         <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
