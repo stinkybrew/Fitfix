@@ -122,11 +122,11 @@
                     <div class="w3-container">
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
                             <div class="w3-section">
-                                <label>Name</label>
+                                <label>Nimi</label>
                                 <input class="w3-input" type="text" name="name">
                             </div>
                             <div class="w3-section">
-                                <label>Email</label>
+                                <label>Sähköposti</label>
                                 <input class="w3-input" type="email" name="email">
                             </div>
                             <div class="w3-section">
@@ -134,7 +134,7 @@
                                 <textarea style="height:auto" class="w3-input" type="text" name="message" maxlength="500" rows="4" cols="50"></textarea> 
                             </div>
                             <input class="w3-check" type="checkbox" checked name="like">
-                            <label>I Like it!</label>
+                            <label>Tykkään</label>
                             <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
                             <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
                         </form>
