@@ -75,7 +75,6 @@ fclose($testia);
                     if (!$conn) {
                         die("Connection failed!: " . mysqli_connect_error());
                     }
-
                     // checs if session is on. if its no, login navbar field is visible!
                     if(empty($_SESSION['email'])){
                         $fields = fopen("login_register.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
@@ -89,7 +88,6 @@ fclose($testia);
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hei " . $_SESSION['first'] . "</b>";
                     }
-
                     // LOGOUT function !
                     $postemail = $_POST['email'];
                     if(isset($_POST['logout'])) {
@@ -112,7 +110,6 @@ fclose($testia);
                         header("Location: main.php");
                         exit();
                     }
-      
                     // action if LOGIN buttom is pressed
                     $emailtest = $_POST['email'];
                     if (isset($_POST['login'])){
@@ -213,7 +210,6 @@ fclose($testia);
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-
                 </footer>
             </div>
         </div>
