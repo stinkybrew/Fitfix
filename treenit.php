@@ -98,7 +98,7 @@ elseif(!empty($_SESSION['email'])){
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                         echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal">' . $_SESSION['first'] . '</a>';
+                         echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme w3-large"></i>' . $_SESSION['first'] . '</a>';
                     }
                     // LOGOUT function !
                     $postemail = $_POST['email'];
