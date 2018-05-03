@@ -59,7 +59,7 @@ elseif(!empty($_SESSION['email'])){
                 <?php
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
-                // connect to the database  
+                // connect to the database
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 // Check connection
                 if (!$conn) {
@@ -99,7 +99,7 @@ elseif(!empty($_SESSION['email'])){
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
-                    elseif(!empty($_SESSION['email'])){       
+                    elseif(!empty($_SESSION['email'])){
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
@@ -114,7 +114,7 @@ elseif(!empty($_SESSION['email'])){
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
-                        } 
+                        }
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
@@ -133,7 +133,7 @@ elseif(!empty($_SESSION['email'])){
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";  //select * user users where username = ..., or something samelike sql-code
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        if ($result->num_rows > 0) {                    // Check data of columns!     
+                        if ($result->num_rows > 0) {                    // Check data of columns!
                             while($row = $result->fetch_assoc()) {      // output data of rows needed
                                 $userlogin = $row["loggedin"];
                                 $userfirst = $row["first"];
@@ -142,13 +142,13 @@ elseif(!empty($_SESSION['email'])){
                                 // If login email and password are valid or invalid.
                                 if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
-                                    $_SESSION['first'] = $userfirst;   
+                                    $_SESSION['first'] = $userfirst;
 
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
 
-                                    } 
+                                    }
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
@@ -162,7 +162,7 @@ elseif(!empty($_SESSION['email'])){
                     }
                     mysqli_close($conn);
                     ?>
-                </div>  
+                </div>
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -237,7 +237,7 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
             </div>
-        
+
             <!-- Aloittelijalle informaatiota -->
 
             <div id="id01" class="w3-modal">
@@ -306,7 +306,7 @@ elseif(!empty($_SESSION['email'])){
                     </footer>
                 </div>
             </div>
-            <!-- Kardiosta -->  
+            <!-- Kardiosta -->
             <div id="id04" class="w3-modal">
                 <div class="w3-modal-content w3-card-4 w3-animate-top">
                     <header class="w3-container w3-teal w3-display-container">
@@ -462,7 +462,7 @@ elseif(!empty($_SESSION['email'])){
                 <div class="w3-container w3-padding-large w3-center">
                     <p class="w3-xxlarge">Rintatreenit</p>
                 </div>
-                <div class="w3-padding-16 treenit">    
+                <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
