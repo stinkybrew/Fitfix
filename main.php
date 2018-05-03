@@ -372,6 +372,7 @@ fclose($testia);
                 x[myIndex-1].style.display = "block";  
                 setTimeout(carousel, 8000); // Change image every 8 seconds
             }
+            
         </script>
         <script>
             // Script for side navigation
