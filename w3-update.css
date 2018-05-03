@@ -200,6 +200,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 /*Yhteystiedot* /*Profiili*/ /*Register*/
 .center{width: 50%; margin: 0 auto;}
+.center2{width: 75%; margin: 0 auto;}
+.center3{width: 60%; margin: 0 auto;}
 
 .box{display: inline-block; width: 50%; padding: 0 5px;}
 .boxunder{display: inline-block;width: 100%;}
@@ -210,7 +212,13 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .inputs{width: 50%}
 .pad{height: 100%}
 .pad2{padding: 2px 0 0 0;}
+.pad3{padding: 2.5px 0}
 .leveys{width: 50%}
+.inputbox{background: none; border: none; text-align: right; width: 40%}
+.spantext{width: 10%}
+form.profiili{border-style: inset; border-width: 15px; border-color:red}
+form.fontti{font-size: 18px; font-style: normal;}
+textarea.area{height: 100%; width: 100%; display: block; background: none; border: none; padding: 0; resize: none; font-style: italic;}
 
 /* backgroundimage */
 .backgroundimg {background:url("img/greybackground.jpg");}
