@@ -70,7 +70,7 @@ fclose($testia);
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                        echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal">' . $_SESSION['first'] . '</a>';
+                        echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme w3-large"></i>' . $_SESSION['first'] . '</a>';
                     }
                     // LOGOUT function !
                     $postemail = $_POST['email'];
@@ -130,10 +130,6 @@ fclose($testia);
                     mysqli_close($conn);
                     ?>
                 </div>    
-                <div>
-                    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i>
-                    </a>
-                </div>
             </div>
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
