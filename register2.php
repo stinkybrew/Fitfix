@@ -45,7 +45,7 @@ else {
         <div class="w3-container">
             <div class="w3-row"><br>
                 <div class="w3-third w3-display-middle">
-                    <h1 class="w3-center" style="margin-top:190px">Rekisteröidy tästä!</h1>
+                    <h1 class="w3-center margintop">Rekisteröidy tästä!</h1>
                     <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="register2.php" method="post">
                         <div class="w3-section">
                             <label>Etunimi</label>

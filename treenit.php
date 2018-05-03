@@ -59,7 +59,7 @@ elseif(!empty($_SESSION['email'])){
                 <?php
                 // Open config.ini file, that contains login-info for DB.
                 $config = parse_ini_file("../../config.ini");
-                // connect to the database
+                // connect to the database  
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 // Check connection
                 if (!$conn) {
@@ -100,7 +100,7 @@ elseif(!empty($_SESSION['email'])){
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
-                    elseif(!empty($_SESSION['email'])){
+                    elseif(!empty($_SESSION['email'])){       
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
@@ -115,7 +115,7 @@ elseif(!empty($_SESSION['email'])){
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
-                        }
+                        } 
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
@@ -134,7 +134,7 @@ elseif(!empty($_SESSION['email'])){
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";  //select * user users where username = ..., or something samelike sql-code
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        if ($result->num_rows > 0) {                    // Check data of columns!
+                        if ($result->num_rows > 0) {                    // Check data of columns!     
                             while($row = $result->fetch_assoc()) {      // output data of rows needed
                                 $userlogin = $row["loggedin"];
                                 $userfirst = $row["first"];
@@ -143,13 +143,13 @@ elseif(!empty($_SESSION['email'])){
                                 // If login email and password are valid or invalid.
                                 if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
-                                    $_SESSION['first'] = $userfirst;
+                                    $_SESSION['first'] = $userfirst;   
 
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
 
-                                    }
+                                    } 
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
@@ -163,7 +163,7 @@ elseif(!empty($_SESSION['email'])){
                     }
                     mysqli_close($conn);
                     ?>
-                </div>
+                </div>  
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -237,22 +237,6 @@ elseif(!empty($_SESSION['email'])){
                     <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-medium" title="Treeneistä"><b>Treeneistä</b></button>
                 </div>
             </div>
-<<<<<<< HEAD
-
-            <!-- Aloittelijalle informaatiota -->
-
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Aloittelijalle</h4>
-                    </header>
-                    <div class="w3-container">
-                        <div class="w3-container w3-card-4 w3-padding-16">
-                            <h5>Aloittelijalla tietoa treenaamisesta</h5>
-                            <p>Infoa</p>
-                        </div>
-=======
         </div>
 
         <!-- Aloittelijalle informaatiota -->
@@ -267,7 +251,6 @@ elseif(!empty($_SESSION['email'])){
                     <div class="w3-container w3-card-4 w3-padding-16">
                         <h5>Aloittelijalla tietoa treenaamisesta</h5>
                         <p>Infoa</p>
->>>>>>> 6afe8493540e2a6b432c2285c4c9f51f0fa5af70
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
@@ -323,30 +306,6 @@ elseif(!empty($_SESSION['email'])){
                     <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
                 </footer>
             </div>
-<<<<<<< HEAD
-            <!-- Kardiosta -->
-            <div id="id04" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container">
-                        <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Kardiosta</h4>
-                    </header>
-                    <div class="w3-container">
-                        <div class="w3-container w3-card-4 w3-padding-16">
-
-                            <p>Kardiota on hyvä tehdä joka päivä (jopa jalkapäivänä).</p>
-                            <p>Kardioita kalorinpolttotehokkuuden mukaan:</p><br>
-                            <p>1. </p>
-                            <p>2. </p>
-                            <p>3. </p>
-                            <p>4. </p>
-                            <p>5. </p>
-                            <p>6. </p>
-                            <p>7. </p>
-                            <p>8. </p>
-                            <p>9. </p>
-                        </div>
-=======
         </div>
         <!-- Kardiosta -->  
         <div id="id04" class="w3-modal">
@@ -369,7 +328,6 @@ elseif(!empty($_SESSION['email'])){
                         <p>7. </p>
                         <p>8. </p>
                         <p>9. </p>
->>>>>>> 6afe8493540e2a6b432c2285c4c9f51f0fa5af70
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
@@ -505,7 +463,7 @@ elseif(!empty($_SESSION['email'])){
                 <div class="w3-container w3-padding-large w3-center">
                     <p class="w3-xxlarge">Rintatreenit</p>
                 </div>
-                <div class="w3-padding-16 treenit">
+                <div class="w3-padding-16 treenit">    
                     <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
