@@ -7,7 +7,7 @@ if (isset($_SESSION['first2'])) {
 }
 ?>
 <html>
-    <title>W3.CSS Template</title>
+    <title>Fixfit</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="w3-update.css">
@@ -106,11 +106,10 @@ if (isset($_SESSION['first2'])) {
                 <h4>Tietojen muokkaus</h4>
             </header>
             <div class="w3-container">
-                <form class="w3-container w3-card-4 w3-padding-16 w3-white" method="post" action="" enctype="multipart/form-data">
-
+                <form class="w3-container w3-card-4 w3-padding-16 w3-white fontti" method="post" action="" enctype="multipart/form-data">
                     <div class="w3-container pad2">
                         <label class="labels w3-left">Pituus</label>
-                        <input class="inputs" type="number" name="height" step="0.01" placeholder="m">
+                        <input class="inputs" type="number" step="0.01" name="height" placeholder="m">
                     </div>
                     <div class="w3-container pad2">
                         <label class="labels w3-left">Paino</label>
@@ -119,10 +118,6 @@ if (isset($_SESSION['first2'])) {
                     <div class="w3-container pad2">
                         <label class="labels w3-left">Tavoite paino</label>
                         <input class="inputs" type="number" name="weight2" placeholder="kg">
-                    </div>
-                    <div class="w3-container pad2">
-                        <label class="labels w3-left">BMI</label>
-                        <input type="button" value="Laske" onclick="Laske()">
                     </div>
                     <div class="w3-container pad2">
                         <label class="labels w3-left">Sukupuoli</label>
@@ -141,8 +136,6 @@ if (isset($_SESSION['first2'])) {
                         <label class="labels w3-left">Minusta</label>
                         <textarea style="height:auto" class="w3-input" type="text" name="minusta" maxlength="500" rows="4" cols="50"></textarea> 
                     </div>
-
-                    <button type="reset" style="display:inline" class="w3-button w3-medium w3-right w3-theme" value="Reset">Tyhjennä</button>
                     <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-medium w3-right w3-theme" value="Tallenna" name="Tallenna" onclick="">
                 </form>
             </div>
@@ -167,6 +160,10 @@ if (isset($_SESSION['first2'])) {
       $checkemail = "SELECT email FROM weight WHERE email = '$email'";
       $result1 = mysqli_query($conn, $checkemail);
       $check = mysqli_fetch_assoc($result1);
+      $birthday = "SELECT date_of_birth FROM user WHERE email = '$email'";
+      $bdquery = mysqli_query($conn, $birthday);
+
+      $row3 = $bdquery->fetch_assoc();
 
       if ($check) { // if user exists
         if ($check['email'] === $email) {
@@ -179,15 +176,14 @@ if (isset($_SESSION['first2'])) {
        //var_dump($result2);
  }
 
-
  if(isset($_POST['Tallenna'])){
 
-    $height = mysqli_real_escape_string($conn, $_POST['height']);
-    $weight = mysqli_real_escape_string($conn, $_POST['weight']);
-    $goal = mysqli_real_escape_string($conn, $_POST['weight2']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);   
-    $city = mysqli_real_escape_string($conn, $_POST['town']);
-    $bio = mysqli_real_escape_string($conn, $_POST['minusta']);
+    $height = mysqli_real_escape_string($conn, htmlentities($_POST['height']));
+    $weight = mysqli_real_escape_string($conn, htmlentities($_POST['weight']));
+    $goal = mysqli_real_escape_string($conn, htmlentities($_POST['weight2']));
+    $gender = mysqli_real_escape_string($conn, htmlentities($_POST['gender']));   
+    $city = mysqli_real_escape_string($conn, htmlentities($_POST['town']));
+    $bio = mysqli_real_escape_string($conn, htmlentities($_POST['minusta']));
 
     $sql1 = "UPDATE user SET height = '$height', gender = '$gender', city = '$city', bio = '$bio' WHERE email = '$email'";
     $query1 = mysqli_query($conn, $sql1);
@@ -205,12 +201,21 @@ if (isset($_SESSION['first2'])) {
     $sql4 = "SELECT value, target FROM weight WHERE email = '$email'";
     $result4 = mysqli_query($conn, $sql4);
     
-                              // output data of each row
+    // output data of each row
     $row = $result3->fetch_assoc();
     $row2 = $result4->fetch_assoc();
 
-    
+}else{
+    $sqldb = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
+    $resultdb = mysqli_query($conn, $sqldb);
+
+    $sqldb2 = "SELECT value, target FROM weight WHERE email = '$email'";
+    $resultdb2 = mysqli_query($conn, $sqldb2);
+
+    $row = $resultdb->fetch_assoc();
+    $row2 = $resultdb2->fetch_assoc();
 }
+
 }
 
 ?>
@@ -218,44 +223,55 @@ if (isset($_SESSION['first2'])) {
 <div class="w3-container w3-padding-64">
     <!--Profiili-->
     <div class="w3-row">
-        <div class="w3-container center2">
-            <div class="w3-container w3-padding w3-card-4 shadow center backgroundcolor pad">
-                <div class="w3-round w3-container">
-                    <p class="w3-center"><img src="img/FixFit.png" class="w3-circle" style="height:150px;width:150px" alt="Avatar"></p>
+        <div class="w3-container center3">
+            <form action="" method="post" class="w3-container w3-padding w3-card-4 center backgroundcolor profiili fontti pad">
+                <div class="w3-container w3-center pad2">
+                    <h2><?php echo $_SESSION['first'];?></h2><br>
                 </div>
                 <hr>
                 <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Pituus</label>
-                    <span class="w3-right"><?php echo $row["height"];?></span>
+                    <label class="labels w3-left">Syntymäaika</label>
+                    <span class="w3-right"><?php echo $row3["date_of_birth"];?></span>
                 </div>
                 <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Paino</label>
-                    <span class="w3-right"><?php echo $row2["value"];?></span>
-                </div>
-                <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>Tavoite paino</label>
-                    <span class="w3-right"><?php echo $row2["target"];?></span>
-                </div>
-                <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-circle fa-fw w3-margin-right w3-text-theme"></i>BMI</label>
-                    <span class="w3-right" id="output"></span>
-                </div>
-                <br><hr>
-                <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-transgender-alt fa-fw w3-margin-right w3-text-theme"></i>Sukupuoli</label>
+                    <label class="labels w3-left">Sukupuoli</label>
                     <span class="w3-right"><?php echo $row["gender"];?></span>
                 </div>
                 <div class="w3-container pad2">
-                    <label class="labels w3-left"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>Kaupunki</label>
+                    <label class="labels w3-left">Kaupunki</label>
                     <span class="w3-right"><?php echo $row["city"];?></span>
                 </div>
+                <hr>
                 <div class="w3-container pad2">
-                    <br>
-                    <label>Minusta</label>
-                    <textarea style="height:100%; width: 100%" type="text" maxlength="250" class="w3-right w3-input" readonly><?php echo $row["bio"];?></textarea>
+                    <label class="labels w3-left">Pituus (m)</label>
+                    <input class="w3-right inputbox" type="text" id="height" value="<?php echo $row["height"];?>" readonly>
                 </div>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium w3-theme w3-hover-teal w3 w3-right" title="Muokkaa">Muokkaa</button>
-            </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left">Paino (kg)</label>
+                    <input class="w3-right inputbox" type="text" id="weight" value="<?php echo $row2["value"];?>" readonly>
+                </div>
+                <div class="w3-container pad2">
+                    <label class="labels w3-left">Tavoite paino (kg)</label>
+                    <span class="w3-right"><?php echo $row2["target"];?></span>
+                </div>
+                <hr>
+                <div class="w3-container w3-center pad2">
+                    <label class="pad3" style="width: 100%;">Haluatko tietää oman BMI:n eli painoindeksin?</label><br>                    
+                    <div class="w3-container">
+                        <input type="button" value="Laske BMI!" onclick="Laske()"><br>
+                        <span id="output"></span>
+                    </div>
+                    <a class="pad3" href="https://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01001" alt="painoindeksista">Lue lisää painoindeksistä.</a>
+                </div>
+                <hr>
+                <div class="w3-container pad2">
+                    <label>Kerro jotain itsestäsi <i class="fa fa-smile-o fa-fw"></i></label>
+                    <textarea wrap="off" cols="30" rows="5" maxlength="250" class="w3-left w3-input area" readonly><?php echo $row["bio"];?></textarea>
+                </div>
+                <div>
+                    <button type="button" class="w3-button w3-teal w3-right" onclick="document.getElementById('id01').style.display='block'" title="Muokkaa">Muokkaa profiilia</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -296,7 +312,18 @@ if (isset($_SESSION['first2'])) {
                     x.className = x.className.replace(" w3-show", "");
                 }
             }
-            
+               function Laske(){
+                //Obtain user inputs
+                var height = Number(document.getElementById("height").value);
+
+                var weight = Number(document.getElementById("weight").value);
+
+                //Perform calculation
+                var BMI = weight / Math.pow(height,2);
+                //Display result of calculation
+
+                document.getElementById("output").innerHTML = Math.round(BMI * 100)/100;
+            }
         </script>
 
     </body>
