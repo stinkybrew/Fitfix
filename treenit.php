@@ -73,19 +73,20 @@ elseif(!empty($_SESSION['email'])){
                 }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications" style="background-color:grey"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-
-                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-                    </div>
+                    <form action="treenit.php">
+                        <button class="w3-button" title="Notifications" style="background-color:grey"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
+                        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+                            <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                            <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                            <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                            <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                            <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                            <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+                        </div>
+                    </form>
                 </div>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
-                                <div>
+                <div>
                     <?php
                     $config = parse_ini_file("../../config.ini");
                     $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
@@ -194,49 +195,49 @@ elseif(!empty($_SESSION['email'])){
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
             </div>
         </div>
-            <!-- Sivuston kouluttajat -->
-            <div class="w3-display-container w3-animate-opacity">
-                <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
-                    <h2 class="w3-wide"><i class="fa"></i>Sivustolla esiintyvät kouluttajat</h2>
-                    <div class="w3-display-container w3-third">
-                        <img src="img/athlean-x.jpg" alt="jeff" style="width:100%;margin-top:4px">
-                        <h2>1. Jeff Cavalieren</h2>
-                        <p>Jeff on fysiatri ja ammattilaisurheilijoiden kouluttaja, jonka videoista oppii lihaskuntoharjoittelulle olennaista anatomiaa, oikeaoppisia liikkeitä ja muuta tärkeätä tietoa treenaamisesta.</p>
-                    </div>
-                    <div class="w3-display-container w3-third nro2">
-                        <img src="img/chris.jpg" alt="Chris Heria" style="width:100%;margin-top:4px">
-                        <h2>2. Chris Heria</h2>
-                        <p>Chris on uskomattoman vahva voimistelija, joka opettaa paljon kehonpainoa hyödyntäviä voimistelutreenejä kaikentasoisille ihmisille.</p>
-                    </div>
-                    <div class="w3-display-container w3-third nro3">
-                        <img src="img/scooby.jpg" alt="Scooby" style="width:100%;height:100%;margin-top:4px">
-                        <h2>3. Scooby</h2>
-                        <p>Scoobilta löytyy hyviä ratkaisuja urheiluvälineiden hankkimiseen ja kotitreeneihin</p>
-                    </div>
+        <!-- Sivuston kouluttajat -->
+        <div class="w3-display-container w3-animate-opacity">
+            <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+                <h2 class="w3-wide"><i class="fa"></i>Sivustolla esiintyvät kouluttajat</h2>
+                <div class="w3-display-container w3-third">
+                    <img src="img/athlean-x.jpg" alt="jeff" style="width:100%;margin-top:4px">
+                    <h2>1. Jeff Cavalieren</h2>
+                    <p>Jeff on fysiatri ja ammattilaisurheilijoiden kouluttaja, jonka videoista oppii lihaskuntoharjoittelulle olennaista anatomiaa, oikeaoppisia liikkeitä ja muuta tärkeätä tietoa treenaamisesta.</p>
+                </div>
+                <div class="w3-display-container w3-third nro2">
+                    <img src="img/chris.jpg" alt="Chris Heria" style="width:100%;margin-top:4px">
+                    <h2>2. Chris Heria</h2>
+                    <p>Chris on uskomattoman vahva voimistelija, joka opettaa paljon kehonpainoa hyödyntäviä voimistelutreenejä kaikentasoisille ihmisille.</p>
+                </div>
+                <div class="w3-display-container w3-third nro3">
+                    <img src="img/scooby.jpg" alt="Scooby" style="width:100%;height:100%;margin-top:4px">
+                    <h2>3. Scooby</h2>
+                    <p>Scoobilta löytyy hyviä ratkaisuja urheiluvälineiden hankkimiseen ja kotitreeneihin</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Modal navbar -->
-            <div class="w3-bar w3-theme-d2 w3-left-align">
-                <div class="w3-container centertreenit">
-                    <div class="w3-bar-item w3-button" style="display:block">
-                        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium" title="Aloittelijoille"><b>Aloittelijat</b></button>
-                    </div>
-                    <div class="w3-bar-item w3-button" style="display:block">
-                        <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-medium" title="Terveys"><b>Terveys</b></button>
-                    </div>
+        <!-- Modal navbar -->
+        <div class="w3-bar w3-theme-d2 w3-left-align">
+            <div class="w3-container centertreenit">
+                <div class="w3-bar-item w3-button" style="display:block">
+                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium" title="Aloittelijoille"><b>Aloittelijat</b></button>
+                </div>
+                <div class="w3-bar-item w3-button" style="display:block">
+                    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-medium" title="Terveys"><b>Terveys</b></button>
+                </div>
 
-                    <div class="w3-bar-item w3-button" style="display:block">
-                        <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-medium" title="Ruokavalio"><b>Ruokavalio</b></button>
-                    </div>
-                    <div class="w3-bar-item w3-button" style="display:block">
-                        <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-medium" title="Kardiosta"><b>Kardiosta</b></button>
-                    </div>
-                    <div class="w3-bar-item w3-button" style="display:block">
-                        <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-medium" title="Treeneistä"><b>Treeneistä</b></button>
-                    </div>
+                <div class="w3-bar-item w3-button" style="display:block">
+                    <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-medium" title="Ruokavalio"><b>Ruokavalio</b></button>
+                </div>
+                <div class="w3-bar-item w3-button" style="display:block">
+                    <button onclick="document.getElementById('id04').style.display='block'" class="w3-button w3-medium" title="Kardiosta"><b>Kardiosta</b></button>
+                </div>
+                <div class="w3-bar-item w3-button" style="display:block">
+                    <button onclick="document.getElementById('id05').style.display='block'" class="w3-button w3-medium" title="Treeneistä"><b>Treeneistä</b></button>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <!-- Aloittelijalle informaatiota -->
 
@@ -251,61 +252,78 @@ elseif(!empty($_SESSION['email'])){
                             <h5>Aloittelijalla tietoa treenaamisesta</h5>
                             <p>Infoa</p>
                         </div>
-                    </div>
-                    <footer class="w3-container w3-teal">
-                        <p>TEAM <img src="img/FixFit_red_white-border.png" style="width:12%"></p>
-                    </footer>
-                </div>
-            </div>
-            <!-- TERVEYS -->
-            <div id="id02" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container">
-                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Terveys</h4>
-                    </header>
-                    <div class="w3-container">
-                        <div class="w3-container w3-card-4 w3-padding-16">
-                            <h5>Tietoa terveydestä</h5>
-                            <p>Terveys...</p>
-                        </div>
-                    </div>
-                    <footer class="w3-container w3-teal">
-                        <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
-                    </footer>
-                </div>
-            </div>
+=======
+        </div>
 
-            <!-- RUOKAVALIO -->
-            <div id="id03" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container">
-                        <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Ruokavalio</h4>
-                    </header>
-                    <div class="w3-container">
-                        <div class="w3-container w3-card-4 w3-padding-16 ">
-                            <h5><b>Mikä on hyvä ruokavalio?   (Dr. Nūn Sava-Siva Amen-Ra)</b></h5>
-                            <p>Ruokavalio, joka:</p>
-                            <p>- tyydyttää makunystyrät?</p>
-                            <p>- taltuttaa nälkää? </p>
-                            <p>- edistää laihtumista?</p>
-                            <p>Dr. Nūn Amen-Ran määritelmän mukaan hyvä ruokavalio on <b>optimaalinen ruokavalio</b>, joka teoreettisesti tai todistettavissa takaa maksamaalisen pitkäikäisyyden ja vireyden, vastustuskyvyn paranemisen ja neurokogtiviisisen toiminnallisuuden säilyttämisen tai lisäämisen.
-                                Tärkein puoli ravinnosta on elintärkeiden ravinteiden saaminen.
+        <!-- Aloittelijalle informaatiota -->
 
-                            </p>
-                            <h5><b>Meal planner</b></h5>
-                            <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta. <a href>http://scoobysworkshop.com/weight-loss-meal-planner/ </a></p>
-
-                            <h5><b>Lisäravinteet</b></h5>
-                            <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. Lisätietoa lisäravinteista: <a href>https://www.youtube.com/watch?v=NhK0kyJj00s</a> </p>
-                        </div>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Aloittelijalle</h4>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-container w3-card-4 w3-padding-16">
+                        <h5>Aloittelijalla tietoa treenaamisesta</h5>
+                        <p>Infoa</p>
+>>>>>>> 6afe8493540e2a6b432c2285c4c9f51f0fa5af70
                     </div>
-                    <footer class="w3-container w3-teal">
-                        <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
-                    </footer>
                 </div>
+                <footer class="w3-container w3-teal">
+                    <p>TEAM <img src="img/FixFit_red_white-border.png" style="width:12%"></p>
+                </footer>
             </div>
+        </div>
+        <!-- TERVEYS -->
+        <div id="id02" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Terveys</h4>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-container w3-card-4 w3-padding-16">
+                        <h5>Tietoa terveydestä</h5>
+                        <p>Terveys...</p>
+                    </div>
+                </div>
+                <footer class="w3-container w3-teal">
+                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- RUOKAVALIO -->
+        <div id="id03" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container">
+                    <span onclick="document.getElementById('id03').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Ruokavalio</h4>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-container w3-card-4 w3-padding-16 ">
+                        <h5><b>Mikä on hyvä ruokavalio?   (Dr. Nūn Sava-Siva Amen-Ra)</b></h5>
+                        <p>Ruokavalio, joka:</p>
+                        <p>- tyydyttää makunystyrät?</p>
+                        <p>- taltuttaa nälkää? </p>
+                        <p>- edistää laihtumista?</p>
+                        <p>Dr. Nūn Amen-Ran määritelmän mukaan hyvä ruokavalio on <b>optimaalinen ruokavalio</b>, joka teoreettisesti tai todistettavissa takaa maksamaalisen pitkäikäisyyden ja vireyden, vastustuskyvyn paranemisen ja neurokogtiviisisen toiminnallisuuden säilyttämisen tai lisäämisen.
+                            Tärkein puoli ravinnosta on elintärkeiden ravinteiden saaminen.
+
+                        </p>
+                        <h5><b>Meal planner</b></h5>
+                        <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta. <a href>http://scoobysworkshop.com/weight-loss-meal-planner/ </a></p>
+
+                        <h5><b>Lisäravinteet</b></h5>
+                        <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. Lisätietoa lisäravinteista: <a href>https://www.youtube.com/watch?v=NhK0kyJj00s</a> </p>
+                    </div>
+                </div>
+                <footer class="w3-container w3-teal">
+                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                </footer>
+            </div>
+<<<<<<< HEAD
             <!-- Kardiosta -->
             <div id="id04" class="w3-modal">
                 <div class="w3-modal-content w3-card-4 w3-animate-top">
@@ -328,37 +346,62 @@ elseif(!empty($_SESSION['email'])){
                             <p>8. </p>
                             <p>9. </p>
                         </div>
+=======
+        </div>
+        <!-- Kardiosta -->  
+        <div id="id04" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container">
+                    <span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Kardiosta</h4>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-container w3-card-4 w3-padding-16">
+
+                        <p>Kardiota on hyvä tehdä joka päivä (jopa jalkapäivänä).</p>
+                        <p>Kardioita kalorinpolttotehokkuuden mukaan:</p><br>
+                        <p>1. </p>
+                        <p>2. </p>
+                        <p>3. </p>
+                        <p>4. </p>
+                        <p>5. </p>
+                        <p>6. </p>
+                        <p>7. </p>
+                        <p>8. </p>
+                        <p>9. </p>
+>>>>>>> 6afe8493540e2a6b432c2285c4c9f51f0fa5af70
                     </div>
-                    <footer class="w3-container w3-teal">
-                        <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
-                    </footer>
                 </div>
+                <footer class="w3-container w3-teal">
+                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                </footer>
             </div>
-            <!-- Treenauksesta -->
-            <div id="id05" class="w3-modal">
-                <div class="w3-modal-content w3-card-4 w3-animate-top">
-                    <header class="w3-container w3-teal w3-display-container">
-                        <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                        <h4>Treenauksesta</h4>
-                    </header>
-                    <div class="w3-container">
-                        <div class="w3-container w3-card-4 w3-padding-16">
-                            <h5>Kuinka usein treenaat tiettyä lihasryhmää?</h5>
-                            <p>Vatsalihakset (poikkeus)</p>
-                            <p>Vatsalihakset ovat siinä mielessä erilainen lihasryhmä kuin muut, koska ne ovat rakentuneet ja tottuneet tekemään jatkuvasti töitä. Vatsalihakset pitävät yölläkin kehoa koossa. Niitä voi ja kannattaakin treenata joka päivä.</p>
-                            <p>Jalkatreenit</p>
-                            <p>Jaloissa on suuria lihaksia, joiden palautuminen vie enemmän aikaa, joten niiden palautumisessa kestää pitkään(n. 6 päivää).</p>
-                        </div>
+        </div>
+        <!-- Treenauksesta -->
+        <div id="id05" class="w3-modal">
+            <div class="w3-modal-content w3-card-4 w3-animate-top">
+                <header class="w3-container w3-teal w3-display-container">
+                    <span onclick="document.getElementById('id05').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <h4>Treenauksesta</h4>
+                </header>
+                <div class="w3-container">
+                    <div class="w3-container w3-card-4 w3-padding-16">
+                        <h5>Kuinka usein treenaat tiettyä lihasryhmää?</h5>
+                        <p>Vatsalihakset (poikkeus)</p>
+                        <p>Vatsalihakset ovat siinä mielessä erilainen lihasryhmä kuin muut, koska ne ovat rakentuneet ja tottuneet tekemään jatkuvasti töitä. Vatsalihakset pitävät yölläkin kehoa koossa. Niitä voi ja kannattaakin treenata joka päivä.</p>
+                        <p>Jalkatreenit</p>
+                        <p>Jaloissa on suuria lihaksia, joiden palautuminen vie enemmän aikaa, joten niiden palautumisessa kestää pitkään(n. 6 päivää).</p>
                     </div>
-                    <footer class="w3-container w3-teal">
-                        <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
-                    </footer>
                 </div>
+                <footer class="w3-container w3-teal">
+                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                </footer>
             </div>
-            <div class="w3-container w3-padding-large w3-center">
-                <p class="w3-xxxlarge">Treenejä lihasryhmien mukaan</p>
-            </div>
-             <!-- Treenit joka kehon osalle erikseen -->
+        </div>
+        <div class="w3-container w3-padding-large w3-center">
+            <p class="w3-xxxlarge">Treenejä lihasryhmien mukaan</p>
+        </div>
+        <!-- Treenit joka kehon osalle erikseen -->
         <hr class="hr">
         <div class="w3-container w3-padding-small w3-center">
             <div class="w3-container w3-padding-small w3-center" id="Käsitreenit">
@@ -653,47 +696,47 @@ elseif(!empty($_SESSION['email'])){
                 </div>
             </div>
         </div>
-            <!-- Footer -->
-            <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-                <h4>Follow Us</h4>
-                <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
-                <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
-                <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
-                <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
-                <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
-                <p>Powered by <a href="main.php" target="_blank">&copy;Team FixFit</a></p>
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+            <h4>Follow Us</h4>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+            <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+            <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+            <p>Powered by <a href="main.php" target="_blank">&copy;Team FixFit</a></p>
 
-                <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-                    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
-                    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-                        <i class="fa fa-chevron-circle-up"></i></span></a>
-                </div>
-            </footer>
+            <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+                <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+                <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+                    <i class="fa fa-chevron-circle-up"></i></span></a>
+            </div>
+        </footer>
 
-            <script>
-                // Script for side navigation
-                function w3_open() {
-                    var x = document.getElementById("mySidebar");
-                    x.style.width = "300px";
-                    x.style.paddingTop = "10%";
-                    x.style.display = "block";
+        <script>
+            // Script for side navigation
+            function w3_open() {
+                var x = document.getElementById("mySidebar");
+                x.style.width = "300px";
+                x.style.paddingTop = "10%";
+                x.style.display = "block";
+            }
+
+            // Close side navigation
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+
+            // Used to toggle the menu on smaller screens when clicking on the menu button
+            function openNav() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else {
+                    x.className = x.className.replace(" w3-show", "");
                 }
+            }
+        </script>
 
-                // Close side navigation
-                function w3_close() {
-                    document.getElementById("mySidebar").style.display = "none";
-                }
-
-                // Used to toggle the menu on smaller screens when clicking on the menu button
-                function openNav() {
-                    var x = document.getElementById("navDemo");
-                    if (x.className.indexOf("w3-show") == -1) {
-                        x.className += " w3-show";
-                    } else {
-                        x.className = x.className.replace(" w3-show", "");
-                    }
-                }
-            </script>
-
-            </body>
-        </html>
+    </body>
+</html>
