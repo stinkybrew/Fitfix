@@ -144,18 +144,7 @@ fclose($testia);
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-
-                        <a href="treenit.php#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="treenit.php#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="treenit.php#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="treenit.php#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="treenit.php#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="treenit.php#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-                    </div>
-                </div>
+                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
             </div>
         </div>
@@ -318,6 +307,25 @@ fclose($testia);
                                 </li>
                             </ul>
                         </div>
+                        <div class="treenitpad w3-third w3-margin-bottom">
+                            <ul class="w3-ul w3-border w3-hover-shadow">
+                                <li class="w3-theme">
+                                    <h3>Olkapäät</h3>
+                                </li>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" frameborder="0" allowfullscreen>
+                                </iframe>
+                                <li class="w3-padding-16"><b>Treenaa:</b></li>
+                                <li class="w3-padding-16">Olka-</li>
+                                <li class="w3-padding-16">Olkavärttinälihakset</li>
+                                <li class="w3-padding-16">Kädet</li>
+                                <li>   <h2 class="w3-wide"><i class="fa"></i> 1 sarja</h2>
+                                    <span class="w3-opacity">6min</span>
+                                </li>
+                                <li class="w3-theme-l5 w3-padding-24">
+                                    <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
+                                </li>
+                            </ul>
+                        </div>                    
                     </div>
                 </div>
             </div>
