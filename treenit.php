@@ -65,12 +65,6 @@ elseif(!empty($_SESSION['email'])){
                 if (!$conn) {
                     die("Yhteys epäonnistui!: " . mysqli_connect_error());
                 }
-                if(!empty($_SESSION['email'])){
-                    // if user is not yet logged in
-                    $fields = fopen("profilenavbar.txt", "r") or die("Tiedoston avaaminen epäonnistui!");
-                    echo fread($fields,filesize("profilenavbar.txt"));
-                    fclose($fields);
-                }
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <form action="treenit.php">
@@ -104,7 +98,7 @@ elseif(!empty($_SESSION['email'])){
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hei " . $_SESSION['first'] . "</b>";
+                         echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal">' . $_SESSION['first'] . '</a>';
                     }
                     // LOGOUT function !
                     $postemail = $_POST['email'];
