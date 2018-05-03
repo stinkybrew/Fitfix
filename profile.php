@@ -56,7 +56,7 @@ if (isset($_SESSION['first2'])) {
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                        echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'>Hei " . $_SESSION['first'] . "</b>";
+                        echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal">' . $_SESSION['first'] . '</a>';
                     }
 
                     // LOGOUT function !
@@ -96,7 +96,8 @@ if (isset($_SESSION['first2'])) {
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="main.php" class="w3-bar-item w3-button">Home</a>
+                <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
+                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
             </div>
         </div>
