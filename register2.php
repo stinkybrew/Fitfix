@@ -35,10 +35,10 @@ else {
               
             </div>
 
-            <!-- Navbar on small screens -->
+            <!-- Navbar on small screens 
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 
-            </div>
+            </div> -->
         </div>
 
         <!-- Contact Container -->
