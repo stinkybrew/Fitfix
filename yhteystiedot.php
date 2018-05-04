@@ -52,16 +52,15 @@
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                         echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme w3-large"></i>' . $_SESSION['first'] . '</a>';
+                        echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-text-theme w3-large"></i>' . $_SESSION['first'] . '</a>';
                     }
                     ?>
                 </div>
 
                 <!-- Navbar on small screens -->
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                    <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
                     <a href="yhteystiedot.php" class="w3-bar-item w3-button" style="background-color:grey">Yhteystiedot</a>
-                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
+                    <button onclick="document.getElementById('id02').style.display='block'" class="w3-bar-item w3-button">login/register</button>
                 </div>
             </div>
         </div>
@@ -93,6 +92,39 @@
                     </div>
                 </div>
             </div>
+
+            <!-- login/register modal -->
+            <div id="id02" class="w3-modal">
+                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                    <header class="w3-container w3-teal w3-display-container"> 
+                        <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                        <h4>Login or</h4>
+                        <h5>register and account <i class="fa fa-smile-o"></i></h5>
+                    </header>
+                    <div class="w3-container" style="margin:3%">
+                        <div style="background-color:fff" class="w3-hide-medium">
+                            <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
+                                <div class="w3-section">
+                                    <label for="email"></label>
+                                    <input style="margin-top:5px" type="text" name="email" placeholder="email address.." required>
+                                </div>
+                                <div class="w3-section">
+                                    <label for="psw"></label>
+                                    <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
+                                </div>
+                                <div class="w3-section">
+                                    <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
+                                </div>
+                                <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
+                            </form>
+
+                        </div>
+                    </div>
+                    <footer class="w3-container w3-teal">
+                    </footer>
+                </div>
+            </div>            
+            
             <!-- Modal -->
             <div id="id01" class="w3-modal">
                 <div class="w3-modal-content w3-card-4 w3-animate-top">
@@ -164,7 +196,7 @@
                     x.className = x.className.replace(" w3-show", "");
                 }
             }
-            
+
         </script>
     </body>
 </html>
