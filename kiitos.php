@@ -52,19 +52,9 @@
             </div>
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="main.php" class="w3-bar-item w3-button">Home</a>
-                <a href="profile.php" class="w3-bar-item w3-button">Profiili</a>
-                <a href="#work" class="w3-bar-item w3-button">Workout</a>
-                <a href="#pikatreenit" class="w3-bar-item w3-button">Pikatreenit</a>
+                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></button>     
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="display:inline">
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                        <a href="#" class="w3-bar-item w3-button">Link</a>
-                    </div>
-                </div>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
             </div>
         </div>
         <!-- Image Header -->

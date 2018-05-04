@@ -61,6 +61,7 @@
                 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                     <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
                     <a href="yhteystiedot.php" class="w3-bar-item w3-button" style="background-color:grey">Yhteystiedot</a>
+                    <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
                 </div>
             </div>
         </div>

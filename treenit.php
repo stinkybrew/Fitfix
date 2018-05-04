@@ -173,20 +173,9 @@ elseif(!empty($_SESSION['email'])){
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="main.php" class="w3-bar-item w3-button">FIXFIT</a>
-                <div class="w3-dropdown-hover w3-hide-small">
-                    <button class="w3-button" title="Notifications"><a href="treenit.php">Treenit</a><i class="fa fa-caret-down"></i></button>
-                    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-
-                        <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                        <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                        <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                        <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                        <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                        <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-                    </div>
-                </div>
+                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
             </div>
         </div>
         <!-- Sivuston kouluttajat -->
