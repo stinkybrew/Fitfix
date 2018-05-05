@@ -66,9 +66,9 @@ else {
                         <div class="w3-section">
                             <select name="customers">
                                 <option value="">Sukupuoli:</option>
-                                <option value="man">mies</option>
-                                <option value="man">nainen</option>
-                                <option value="man">muu</option>
+                                <option value="man">Mies</option>
+                                <option value="man">Nainen</option>
+                                <option value="man">Muu</option>
                             </select>
                         </div>
                         <div class="w3-section">
@@ -79,7 +79,7 @@ else {
                             <label for="psw-repeat">Toista salasana</label>
                             <input class="w3-input" type="password" name="psw-repeat" required>
                         </div>
-                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-large w3-theme" value="lähetä" name="laheta">
+                        <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-large w3-theme" value="Lähetä" name="laheta">
                         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
                     <div>
