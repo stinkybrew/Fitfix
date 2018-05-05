@@ -242,7 +242,7 @@ elseif(!empty($_SESSION['email'])){
                     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium" title="Aloittelijoille"><b>Aloittelijat</b></button>
                 </div>
                 <div class="w3-bar-item w3-button" style="display:block">
-                    <button onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-medium" title="Terveys"><b>Terveys</b></button>
+                    <button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-medium" title="Terveys"><b>Terveys</b></button>
                 </div>
 
                 <div class="w3-bar-item w3-button" style="display:block">
@@ -314,10 +314,10 @@ elseif(!empty($_SESSION['email'])){
             </div>
         </div>
         <!-- TERVEYS -->
-        <div id="id02" class="w3-modal">
+        <div id="id06" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container">
-                    <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
                     <h4>Terveys</h4>
                 </header>
                 <div class="w3-container">
