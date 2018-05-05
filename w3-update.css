@@ -249,7 +249,8 @@ hr {
 
 .modalcolors{background-color: #BE2400;color: white;}
 
-@media (max-width:1200px) {.box{display: inline-block; width: 100%; padding: 0 5px;}}
+@media (max-width:1200px) {.box{display: inline-block; width: 100%; padding: 0 5px;} .center {width: 80%;margin: 0 auto;}}
+
 
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
