@@ -1,0 +1,1 @@
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">Kirjaudu/Rekisteröidy</button>

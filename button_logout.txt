@@ -1,0 +1,3 @@
+<form action="main.php" method="post">
+    <input class="w3-bar-item w3-button" type="submit" name="logout" value="Kirjaudu ulos">
+</form>

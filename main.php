@@ -40,16 +40,6 @@ fclose($testia);
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal">FIXFIT</a>
-                <?php
-                // Open config.ini file, that contains login-info for DB.
-                $config = parse_ini_file("../../config.ini");
-                // connect to the database  
-                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                // Check connection
-                if (!$conn) {
-                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
-                }
-                ?>
                 <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
@@ -135,7 +125,44 @@ fclose($testia);
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button">login/register</button>
+                <?php
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                if(empty($_SESSION['email'])){
+                    $fields = fopen("button_logreg.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
+                    echo fread($fields,filesize("button_logreg.txt"));
+                    fclose($fields);
+                }
+                elseif(!empty($_SESSION['email'])){       
+                    $fields = fopen("button_logout.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("button_logout.txt"));
+                    fclose($fields);
+                }
+                if(isset($_POST['logout'])) {
+                    session_start();
+                    $_SESSION = array();
+                    $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'"; // Update login info to database!
+                    if(mysqli_query($conn, $logout)){
+                        echo $userlogin;
+                        echo $logout;
+                    } 
+                    else {
+                        echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                    }
+                    if (ini_get("session.use_cookies")) {
+                        $params = session_get_cookie_params();
+                        setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+                    }
+                    session_unset();
+                    session_destroy();
+                    header("Location: main.php");
+                    exit();
+                }
+                ?>
+                
             </div>
         </div>
         <!-- Image Header -->
@@ -354,7 +381,7 @@ fclose($testia);
                 x[myIndex-1].style.display = "block";  
                 setTimeout(carousel, 8000); // Change image every 8 seconds
             }
-            
+
         </script>
         <script>
             // Script for side navigation
