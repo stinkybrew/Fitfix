@@ -68,7 +68,7 @@ elseif(!empty($_SESSION['email'])){
                 ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <form action="treenit.php">
-                        <button class="w3-button" title="Notifications" style="background-color:grey"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
+                        <button class="w3-button" title="Notifications" style="background-color:grey;text-shadow: 3px 3px 3px #000000;"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>
                         <div class="w3-dropdown-content w3-card-4 w3-bar-block">
                             <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
                             <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>

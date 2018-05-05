@@ -28,7 +28,7 @@
                 }
                 ?>
                 <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
-                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey">Yhteystiedot</a>
+                <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey;text-shadow: 3px 3px 3px #000000;">Yhteystiedot</a>
                 <div>
                     <?php
                     // Open config.ini file, that contains login-info for DB.
