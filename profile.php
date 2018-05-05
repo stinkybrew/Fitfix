@@ -295,6 +295,7 @@ if (isset($_SESSION['first2'])) {
                     <div class="w3-container">
                         <input type="button" value="Laske BMI!" onclick="Laske()"><br>
                         <span id="output"></span>
+                        <h2>Tämä tarkoittaa, että olet  <span id='comment'></span> </h2> 
                     </div>
                     <a class="pad3" href="https://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01001" alt="painoindeksista">Lue lisää painoindeksistä.</a>
                 </div>
@@ -354,10 +355,14 @@ if (isset($_SESSION['first2'])) {
                 var weight = Number(document.getElementById("weight").value);
 
                 //Perform calculation
-                var BMI = weight / Math.pow(height,2);
+                var BMI = weight/Math.pow(height,2);
                 //Display result of calculation
 
                 document.getElementById("output").innerHTML = Math.round(BMI * 100)/100;
+                if (BMI < 18.5) document.getElementById("comment").innerHTML = "Alipainoinen";
+                if (BMI >= 18.5 && BMI <= 25) document.getElementById("comment").innerHTML = "Normaali";
+                if (BMI >= 25 && BMI <= 30) document.getElementById("comment").innerHTML = "Hieman ylipainoinen";
+                if (BMI > 30) document.getElementById("comment").innerHTML = "Ylipainoinen";   
             }
         </script>
 
