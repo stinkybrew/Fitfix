@@ -181,7 +181,7 @@ fclose($testia);
         <div id="id02" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container"> 
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+                    <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
                     <h5>Krjaudu tai luo tunnukset <i class="fa fa-key"></i></h5>
                 </header>
                 <div class="w3-container" style="margin:3%">
