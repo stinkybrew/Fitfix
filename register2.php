@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 session_start(['cookie_lifetime' => 3600]);
-if (isset($_POST['first2'])){
+if (isset(htmlentities($_POST['first2']))){
     echo "<script type='text/javascript'>window.location.href = 'main.php';</script>";
     exit();
 }    
@@ -102,12 +102,12 @@ else {
                         // REGISTER USER
                         if (isset($_POST['laheta'])) {
                             // receive all input values from the form
-                            $email = mysqli_real_escape_string($conn, $_POST['email']);
-                            $password1 = mysqli_real_escape_string($conn, $_POST['password']);
-                            $password2 = mysqli_real_escape_string($conn, $_POST['psw-repeat']);
-                            $dob = mysqli_real_escape_string($conn, $_POST['dob']);
-                            $first = mysqli_real_escape_string($conn, $_POST['first']);
-                            $last = mysqli_real_escape_string($conn, $_POST['last']);
+                            $email = mysqli_real_escape_string($conn, (htmlentities($_POST['email'])));
+                            $password1 = mysqli_real_escape_string($conn, (htmlentities($_POST['password']));
+                            $password2 = mysqli_real_escape_string($conn, (htmlentities($_POST['psw-repeat'])));
+                            $dob = mysqli_real_escape_string($conn, (htmlentities($_POST['dob'])));
+                            $first = mysqli_real_escape_string($conn, (htmlentities($_POST['first'])));
+                            $last = mysqli_real_escape_string($conn, (htmlentities($_POST['last']));
                             //echo $_POST['useremail']; AND THIS WORKS ! ! !
                             // by adding (array_push()) corresponding error unto $errors array
                             if ($password1 !== $password2) {
