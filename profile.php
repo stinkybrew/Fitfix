@@ -94,9 +94,45 @@ if (isset($_SESSION['first2'])) {
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
+                <?php
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                if(empty($_SESSION['email'])){
+                    $fields = fopen("button_logreg.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
+                    echo fread($fields,filesize("button_logreg.txt"));
+                    fclose($fields);
+                }
+                elseif(!empty($_SESSION['email'])){       
+                    $fields = fopen("button_logout.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("button_logout.txt"));
+                    fclose($fields);
+                }
+                if(isset($_POST['logout'])) {
+                    session_start();
+                    $_SESSION = array();
+                    $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'"; // Update login info to database!
+                    if(mysqli_query($conn, $logout)){
+                        echo $userlogin;
+                        echo $logout;
+                    } 
+                    else {
+                        echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                    }
+                    if (ini_get("session.use_cookies")) {
+                        $params = session_get_cookie_params();
+                        setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+                    }
+                    session_unset();
+                    session_destroy();
+                    header("Location: main.php");
+                    exit();
+                }
+                ?>
             </div>
         </div>
-        
     <!--muokkaus modaali-->
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-top">

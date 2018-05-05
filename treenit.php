@@ -276,9 +276,9 @@ elseif(!empty($_SESSION['email'])){
                                 <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
                             </div>
                             <div class="w3-section">
-                                <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="Kirjaudu">
+                                <input style="border:none;background-color:#BE2400" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="Kirjaudu">
                             </div>
-                            <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">Rekisteröidy</a>
+                            <a href="register2.php" style="border:none;background-color:#BE2400" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">Rekisteröidy</a>
                         </form>
 
                     </div>

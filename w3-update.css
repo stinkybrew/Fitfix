@@ -246,6 +246,8 @@ hr {
 .textdeco{text-decoration: none;}
 .w3-bar-item2{padding:8px 16px;float:right;width:auto;border:none;display:block;outline:0}
 .margintop{margin-top: 100px;}
+
+.modalcolors{background-color: #BE2400;color: white;}
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
 .w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
