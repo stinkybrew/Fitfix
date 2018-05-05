@@ -162,7 +162,6 @@ fclose($testia);
                     exit();
                 }
                 ?>
-                
             </div>
         </div>
         <!-- Image Header -->

@@ -36,19 +36,19 @@ elseif(!empty($_SESSION['email'])){
     <body id="myPage" class="backgroundimg">
 
         <!-- Sidebar on click -->
-        
+
         <nav class=" w3-sidebar1 w3-bar-block1 w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <div class="backgroundimg">
-            <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-            <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-            <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-            <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-            <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-            <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-        </div>
+                <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+            </div>
         </nav>
 
         <!-- Navbar -->
@@ -98,7 +98,7 @@ elseif(!empty($_SESSION['email'])){
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
-                         echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-large"></i>' . $_SESSION['first'] . '</a>';
+                        echo '<a href="profile.php" title="Profiili" class="w3-bar-item2 w3-button w3-teal"><i class="fa fa-user-circle-o fa-fw w3-margin-right w3-large"></i>' . $_SESSION['first'] . '</a>';
                     }
                     // LOGOUT function !
                     $postemail = $_POST['email'];
@@ -175,7 +175,43 @@ elseif(!empty($_SESSION['email'])){
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
                 <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
-                <button onclick="document.getElementById('id02').style.display='block'" class="w3-bar-item w3-button">login/register</button>
+                <?php
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                if(empty($_SESSION['email'])){
+                    $fields = fopen("button_logreg.txt", "r") or die("Unable to open file!"); // if user is not yet logged in
+                    echo fread($fields,filesize("button_logreg.txt"));
+                    fclose($fields);
+                }
+                elseif(!empty($_SESSION['email'])){       
+                    $fields = fopen("button_logout.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("button_logout.txt"));
+                    fclose($fields);
+                }
+                if(isset($_POST['logout'])) {
+                    session_start();
+                    $_SESSION = array();
+                    $logout = "UPDATE user SET loggedin = 0 WHERE email = '" . $_SESSION['email'] . "'"; // Update login info to database!
+                    if(mysqli_query($conn, $logout)){
+                        echo $userlogin;
+                        echo $logout;
+                    } 
+                    else {
+                        echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
+                    }
+                    if (ini_get("session.use_cookies")) {
+                        $params = session_get_cookie_params();
+                        setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+                    }
+                    session_unset();
+                    session_destroy();
+                    header("Location: main.php");
+                    exit();
+                }
+                ?>
             </div>
         </div>
         <!-- Sivuston kouluttajat -->
@@ -253,13 +289,13 @@ elseif(!empty($_SESSION['email'])){
                 </footer>
             </div>
         </div>
-                     <!-- Container -->
+        <!-- Container -->
         <div class="w3-container" style="position:relative">
             <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
                style="position:absolute;top:-28px;right:24px">+</a>
         </div>
 
-        
+
         <!-- Aloittelijalle informaatiota -->
 
         <div id="id01" class="w3-modal">
@@ -712,7 +748,7 @@ elseif(!empty($_SESSION['email'])){
                     x.className = x.className.replace(" w3-show", "");
                 }
             }
-            
+
         </script>
 
     </body>
