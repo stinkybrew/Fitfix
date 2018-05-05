@@ -36,19 +36,19 @@ elseif(!empty($_SESSION['email'])){
     <body id="myPage" class="backgroundimg">
 
         <!-- Sidebar on click -->
-        <nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+        
+        <nav class=" w3-sidebar1 w3-bar-block1 w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
-            <a href="#" class="w3-bar-item w3-button">Link 4</a>
-            <a href="#" class="w3-bar-item w3-button">Link 5</a>
-            <a href="#" class="w3-bar-item w3-button">Link 6</a>
-            <a href="#" class="w3-bar-item w3-button">Link 7</a>
-            <a href="#" class="w3-bar-item w3-button">Link 8</a>
-            <a href="#" class="w3-bar-item w3-button">Link 9</a>
+            <div class="backgroundimg">
+            <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+            <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+            <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+            <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+            <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+            <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+        </div>
         </nav>
 
         <!-- Navbar -->
@@ -253,6 +253,12 @@ elseif(!empty($_SESSION['email'])){
                 </footer>
             </div>
         </div>
+                     <!-- Container -->
+        <div class="w3-container" style="position:relative">
+            <a onclick="w3_open()" class="w3-button w3-xlarge w3-circle w3-teal"
+               style="position:absolute;top:-28px;right:24px">+</a>
+        </div>
+
         
         <!-- Aloittelijalle informaatiota -->
 
