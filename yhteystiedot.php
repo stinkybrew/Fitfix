@@ -133,7 +133,7 @@
                     <div class="w3-modal-content w3-card-4 w3-animate-top">
                         <header class="w3-container w3-teal w3-display-container"> 
                             <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                            <h5>Kirjaudu tai rekisteröidy <i class="fa fa-smile-o"></i></h5>
+                            <h5>Krjaudu tai luo tunnukset <i class="fa fa-smile-o"></i></h5>
                         </header>
                         <div class="w3-container" style="margin:3%">
                             <div style="background-color:fff" class="w3-hide-medium">
@@ -147,9 +147,9 @@
                                         <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
                                     </div>
                                     <div class="w3-section">
-                                        <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="login">
+                                        <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white" type="submit" name="login" value="Kirjaudu">
                                     </div>
-                                    <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">register</a>
+                                    <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white">Rekisteröidy</a>
                                 </form>
 
                             </div>
