@@ -1,10 +1,11 @@
-<a href="register2.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
+
 <div style="float:right;background-color:fff" class="w3-hide-small">
 	<form action="main.php" method="post">
+        <input style="margin-right:2px;float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
 		<label for="email"></label>
 		<input style="margin-top:5px" type="text" name="email" placeholder="email address.." required>
 		<label for="psw"></label>
 		<input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
-		<input style="margin-right:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="login">
 	</form>
 </div>
+<a href="register2.php" style="float:right;margin-left:2px" class="w3-bar-item w3-button w3-hide-small w3-hover-white">register</a>
