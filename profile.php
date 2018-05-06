@@ -358,11 +358,7 @@ if (isset($_SESSION['first2'])) {
                 var BMI = weight/Math.pow(height,2);
                 //Display result of calculation
 
-                document.getElementById("output").innerHTML = Math.round(BMI * 100)/100;
-                if (BMI < 18.5) document.getElementById("comment").innerHTML = "Alipainoinen";
-                if (BMI >= 18.5 && BMI <= 25) document.getElementById("comment").innerHTML = "Normaalipainoinen";
-                if (BMI >= 25 && BMI <= 30) document.getElementById("comment").innerHTML = "Hieman ylipainoinen";
-                if (BMI > 30) document.getElementById("comment").innerHTML = "Ylipainoinen";   
+                document.getElementById("output").innerHTML = Math.round(BMI * 100)/100; 
             }
         </script>
 
