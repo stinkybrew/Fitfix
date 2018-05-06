@@ -157,10 +157,10 @@ if (isset($_SESSION['first2'])) {
                     <div class="w3-container pad2">
                         <label class="labels w3-left">Sukupuoli</label>
                         <select class="inputs" name="gender">
-                            <option value="man">Mies</option>
-                            <option value="woman">Nainen</option>
-                            <option value="other">Muu</option>
-                            <option value="no">En halua kertoa</option>
+                            <option value="Mies">Mies</option>
+                            <option value="Nainen">Nainen</option>
+                            <option value="Muu">Muu</option>
+                            <option value="Ei">En halua kertoa</option>
                         </select>
                     </div>
                     <div class="w3-container pad2">
