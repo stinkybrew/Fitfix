@@ -320,24 +320,7 @@ elseif(!empty($_SESSION['email'])){
                 </footer>
             </div>
         </div>
-        <!-- TERVEYS -->
-        <div id="id06" class="w3-modal">
-            <div class="w3-modal-content w3-card-4 w3-animate-top">
-                <header class="w3-container w3-teal w3-display-container">
-                    <span onclick="document.getElementById('id06').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
-                    <h4>Terveys</h4>
-                </header>
-                <div class="w3-container">
-                    <div class="w3-container w3-card-4 w3-padding-16">
-                        <h5>Tietoa terveydestä</h5>
-                        <p>Terveys...</p>
-                    </div>
-                </div>
-                <footer class="w3-container w3-teal">
-                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
-                </footer>
-            </div>
-        </div>
+
 
         <!-- RUOKAVALIO -->
         <div id="id03" class="w3-modal">
@@ -348,20 +331,12 @@ elseif(!empty($_SESSION['email'])){
                 </header>
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16 ">
-                        <h5><b>Mikä on hyvä ruokavalio?   (Dr. Nūn Sava-Siva Amen-Ra)</b></h5>
-                        <p>Ruokavalio, joka:</p>
-                        <p>- tyydyttää makunystyrät?</p>
-                        <p>- taltuttaa nälkää? </p>
-                        <p>- edistää laihtumista?</p>
-                        <p>Dr. Nūn Amen-Ran määritelmän mukaan hyvä ruokavalio on <b>optimaalinen ruokavalio</b>, joka teoreettisesti tai todistettavissa takaa maksamaalisen pitkäikäisyyden ja vireyden, vastustuskyvyn paranemisen ja neurokogtiviisisen toiminnallisuuden säilyttämisen tai lisäämisen.
-                            Tärkein puoli ravinnosta on elintärkeiden ravinteiden saaminen.
-
-                        </p>
-                        <h5><b>Meal planner</b></h5>
-                        <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta. <a href>http://scoobysworkshop.com/weight-loss-meal-planner/ </a></p>
+   
+                       <h5><b>Meal planner</b></h5>
+                        <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta.<a target="_blank" href="http://scoobysworkshop.com/weight-loss-meal-planner/">Lisätietoa lisäravinteista</a> </p>
 
                         <h5><b>Lisäravinteet</b></h5>
-                        <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. Lisätietoa lisäravinteista: <a href>https://www.youtube.com/watch?v=NhK0kyJj00s</a> </p>
+                        <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. <a target="_blank" href="https://www.youtube.com/watch?v=NhK0kyJj00s">Lisätietoa lisäravinteista</a> </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
