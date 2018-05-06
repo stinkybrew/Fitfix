@@ -295,7 +295,6 @@ if (isset($_SESSION['first2'])) {
                     <div class="w3-container">
                         <input type="button" value="Laske BMI!" onclick="Laske()"><br>
                         <span id="output"></span>
-                        <h2>Tämä tarkoittaa, että olet  <span id='comment'></span> </h2> 
                     </div>
                     <a class="pad3" href="https://www.terveyskirjasto.fi/terveyskirjasto/tk.koti?p_artikkeli=dlk01001" alt="painoindeksista">Lue lisää painoindeksistä.</a>
                 </div>
