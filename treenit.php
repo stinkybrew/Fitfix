@@ -304,8 +304,15 @@ elseif(!empty($_SESSION['email'])){
                 </header>
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16">
-                        <h5>Aloittelijalla tietoa treenaamisesta</h5>
-                        <p>Infoa</p>
+                        <p>
+                             Kehonhuolto on tärkeä elämäntaito, joka auttaa ajatusten kulkuun sekä pirteänä että eloisana pysymiseen.
+                        </p> 
+                        <p>
+                            Aloittaessa pitää muistaa oma lähtötaso, eikä verrata itseään muihin (you vs you -asenne). Tärkeintä on oppia nauttimaan hyvistä elämäntavoista, ja löytää niistä sisäistä tyydytystä, eikä ainoastaan käyttää niitä välineinä ulkoisille tavoitteille. Monet tekevät virheen aloittamalla liian rankoilla treeneillä ja unohtavat työstää liikunnasta ja ruokavalion optimoinnista kestäviä tapoja. 
+                        </p>
+                        <p>
+                            Alkuun kannattaa suosia hidasta lähestymistapaa (baby steps), joka on pitkäkestoisen onnistumisen kannalta A ja Ö. Jos keho ei ole tottunut fyysiseen rasitukseen, on parempi aloittaa yhdellä yksinkertaisella liikkeellä per lihasryhmä ja vähitellen lisätä liikkeiden määrää. Olennaista on opetella  liikkeen tekniikka ja sitä mukaan, kun ne tuntuvat luontevilta, voi lisätä harjoitusten monipuolisuutta ja intensiivisyyttä.
+                        </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
