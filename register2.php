@@ -64,7 +64,7 @@ else {
                             <input class="w3-input" type="email" name="email" placeholder="testi.esimerkki@gmail.com" required>
                         </div>
                         <div class="w3-section">
-                            <select name="customers">
+                            <select name="sukupuoli">
                                 <option value="">Sukupuoli:</option>
                                 <option value="man">Mies</option>
                                 <option value="man">Nainen</option>
