@@ -245,7 +245,10 @@ hr {
 .textdeco{text-decoration: none;}
 .w3-bar-item2{padding:8px 16px;float:right;width:auto;border:none;display:block;outline:0}
 .margintop{margin-top: 100px;}
-
+.w3-text-teal,.w3-hover-text-teal:hover{color:#BE2400!important}
+.w3-sidebar1{height:100%;width:20%;background-color:#BE2400;position:fixed!important;z-index:1;overflow:auto}
+.w3-white,.w3-hover-white:hover{color:#000!important;background-color:#e5e5e5!important}
+.w3-bar-block1{width:100%;display:block;padding:8px 16px;text-align:left;border:none;float:none;outline:0}
 .modalcolors{background-color: #BE2400;color: white;}
 
 @media (max-width:1200px) {.box{display: inline-block; width: 100%; padding: 0 5px;} .center {width: 80%; margin: 0 auto;} }
