@@ -36,19 +36,19 @@ elseif(!empty($_SESSION['email'])){
     <body id="myPage" class="backgroundimg">
 
         <!-- Sidebar on click -->
-
-        <nav class=" w3-sidebar1 w3-bar-block1 w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
-            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
+        
+        <nav class="backgroundimg w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="backgroundimg w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <div class="backgroundimg">
-                <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-                <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-                <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-                <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-                <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-                <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-            </div>
+            <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+            <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+            <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+            <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+            <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+            <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+        </div>
         </nav>
 
         <!-- Navbar -->
