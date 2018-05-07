@@ -242,10 +242,6 @@ elseif(!empty($_SESSION['email'])){
                     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-medium" title="Aloittelijoille"><b>Aloittelijat</b></button>
                 </div>
                 <div class="w3-bar-item w3-button" style="display:block">
-                    <button onclick="document.getElementById('id06').style.display='block'" class="w3-button w3-medium" title="Terveys"><b>Terveys</b></button>
-                </div>
-
-                <div class="w3-bar-item w3-button" style="display:block">
                     <button onclick="document.getElementById('id03').style.display='block'" class="w3-button w3-medium" title="Ruokavalio"><b>Ruokavalio</b></button>
                 </div>
                 <div class="w3-bar-item w3-button" style="display:block">
