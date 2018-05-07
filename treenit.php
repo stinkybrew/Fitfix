@@ -329,14 +329,14 @@ elseif(!empty($_SESSION['email'])){
                     <div class="w3-container w3-card-4 w3-padding-16 ">
    
                        <h5><b>Meal planner</b></h5>
-                        <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta.<a target="_blank" href="http://scoobysworkshop.com/weight-loss-meal-planner/">Lisätietoa lisäravinteista</a> </p>
+                        <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta.<a target="_blank" href="http://scoobysworkshop.com/weight-loss-meal-planner/">Meal planner</a> </p>
 
                         <h5><b>Lisäravinteet</b></h5>
                         <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. <a target="_blank" href="https://www.youtube.com/watch?v=NhK0kyJj00s">Lisätietoa lisäravinteista</a> </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -360,7 +360,7 @@ elseif(!empty($_SESSION['email'])){
                         </p>
                         <p>Poltettujen kalorien määrä riippuu treenin intensiivisyydestä, kuinka paljon hikoilee ja hengästyy.</p>
                         <p>Esimerkkejä aerobisesta liikunnasta:</p>
-                        <p>1. Hyppynarun hyppiminen </p>
+                        <p>1. Hyppynarulla hyppiminen </p>
                         <p>2. Uiminen </p>
                         <p>3. Juokseminen </p>
                         <p>4. Pyöräily </p>
@@ -368,7 +368,7 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -389,7 +389,7 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>TEAM <img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -518,7 +518,7 @@ elseif(!empty($_SESSION['email'])){
                     <div class="treenitpad w3-third w3-margin-bottom">
                         <ul class="w3-ul w3-border w3-hover-shadow">
                             <li class="w3-theme">
-                                <h3>Treenit 2</h3>
+                                <h3>Treeni 2</h3>
                             </li>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/XqPe_iAm8lI?" frameborder="0" allowfullscreen>
                             </iframe>
@@ -644,8 +644,8 @@ elseif(!empty($_SESSION['email'])){
 
         <hr class="hr">
         <!-- Koko keho Row -->
-        <div class="w3-row-padding w3-center w3-padding-64" id="Kokokehon">
-            <div class="w3-container w3-padding-24 w3-center">
+        <div class="w3-row-padding w3-center w3-padding-large" id="Kokokehon">
+            <div class="w3-container w3-padding-small w3-center">
                 <p class="w3-xxxlarge">Koko kehon treenejä</p>
             </div>
             <hr class="hr">
