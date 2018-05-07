@@ -5,22 +5,17 @@ session_start(['cookie_lifetime' => 0]);
 if (isset($_SESSION['first2'])) {
     unset($_SESSION['first2']);
 }
-
-/*
-// Here i open a text file that contains longin function
-$testia = fopen("login_function.txt", "r") or die("Unable to open file!");
-echo fread($testia,filesize("login_function.txt"));
-fclose($testia);
-*/
 ?>
+
 <html>
-    <title>FIXFIT</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="w3-update.css">
-    <link rel="stylesheet" href="w3-theme-black.css">
-    <link rel="stylesheet" href="font-awesome_min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <title>FIXFIT</title>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="w3-update.css">
+        <link rel="stylesheet" href="w3-theme-black.css">
+        <link rel="stylesheet" href="font-awesome_min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
     <body id="myPage" class="backgroundimg">
 
         <!-- Navbar -->
@@ -195,7 +190,7 @@ fclose($testia);
                 </footer>
             </div>
         </div>
-        
+
         <!-- Pikatreenit Row -->
         <hr class="hr">
         <div class="w3-container w3-padding-small w3-center">
