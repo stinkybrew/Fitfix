@@ -222,12 +222,12 @@ elseif(!empty($_SESSION['email'])){
                     <h2>1. Jeff Cavalieren</h2>
                     <p>Jeff on fysiatri ja ammattilaisurheilijoiden kouluttaja, jonka videoista oppii lihaskuntoharjoittelulle olennaista anatomiaa, oikeaoppisia liikkeitä ja muuta tärkeätä tietoa treenaamisesta.</p>
                 </div>
-                <div class="w3-display-container w3-third nro2">
+                <div class="w3-display-container w3-third">
                     <img src="img/chris.jpg" alt="Chris Heria" style="width:100%;margin-top:4px">
                     <h2>2. Chris Heria</h2>
                     <p>Chris on uskomattoman vahva voimistelija, joka opettaa paljon kehonpainoa hyödyntäviä voimistelutreenejä kaikentasoisille ihmisille.</p>
                 </div>
-                <div class="w3-display-container w3-third nro3">
+                <div class="w3-display-container w3-third">
                     <img src="img/scooby.jpg" alt="Scooby" style="width:100%;height:100%;margin-top:4px">
                     <h2>3. Scooby</h2>
                     <p>Scoobilta löytyy hyviä ratkaisuja urheiluvälineiden hankkimiseen ja kotitreeneihin</p>

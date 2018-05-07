@@ -232,10 +232,7 @@ textarea.area{height: 100%; width: 100%; display: block; background: none; borde
   50% {
     opacity: 0;
   }
-}
-/*treenit sivuston numerojärjestys */
-.nro2{color:lightgray!important;}
-.nro3{color:lightblue!important;}
+
 
 hr {
 	border-top: 3px double #8c8b8b;
