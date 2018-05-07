@@ -208,7 +208,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .backgroundcolor{background-color: aliceblue}
 .probox{display: inline-block: width:100%; padding: 8px 0;}
 
-.labels{width: 25%}
+.labels{width: 100%}
 .inputs{width: 50%}
 .pad{height: 100%}
 .pad2{padding: 2px 0 0 0;}
