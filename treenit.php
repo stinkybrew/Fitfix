@@ -265,11 +265,11 @@ elseif(!empty($_SESSION['email'])){
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                             <div class="w3-section">
                                 <label for="email"></label>
-                                <input style="margin-top:5px" type="text" name="email" placeholder="email address.." required>
+                                <input style="margin-top:5px" type="text" name="email" placeholder="Sähköposti osoite.." required>
                             </div>
                             <div class="w3-section">
                                 <label for="psw"></label>
-                                <input style="margin-top:5px" type="password" name="password" placeholder="Password.." required>
+                                <input style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
                             </div>
                             <div class="w3-section">
                                 <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white modalcolors" type="submit" name="login" value="Kirjaudu">
