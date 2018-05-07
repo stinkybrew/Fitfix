@@ -280,7 +280,7 @@ if (isset($_SESSION['first2'])) {
               <hr>
               <div class="w3-container pad2">
                 <label class="labels w3-left">Syntymäaika
-                  <span class="w3-right"><?php echo $row3["date_of_birth"];?></span>
+                  <span class="w3-right"><?php echo date("d.m.Y", strtotime($row3["date_of_birth"]));?></span>
                 </label>
               </div>
               <div class="w3-container pad2">
