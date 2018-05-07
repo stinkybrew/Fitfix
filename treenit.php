@@ -349,18 +349,22 @@ elseif(!empty($_SESSION['email'])){
                 </header>
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16">
-
-                        <p>Kardiota on hyvä tehdä joka päivä (jopa jalkapäivänä).</p>
-                        <p>Kardioita kalorinpolttotehokkuuden mukaan:</p><br>
-                        <p>1. </p>
-                        <p>2. </p>
-                        <p>3. </p>
-                        <p>4. </p>
-                        <p>5. </p>
-                        <p>6. </p>
-                        <p>7. </p>
-                        <p>8. </p>
-                        <p>9. </p>
+                        <p>
+                            Sydänlihaksen kunto on keskeinen ja merkittävä fyysisen terveyden mittari. Sydän- ja verisuonitautien ollessa länsimaiden yleisimpien kuolinsyiden joukossa, aerobisen liikunnan ja kardion tulisi muodastaa huomattavasti keskeisempi osa ihmisten arkea. 
+                        </p>
+                        <p>
+                            Helpoin tapa lisätä aerobinen liikunta osaksi päivittäistä elämää on alkaa suosia kävelyä, hölkkäämistä, juoksemista ja pyöräilyä pääasiallisina liikkumismuotoina aina kuin mahdollista.
+                        </p>
+                        <p>
+                            Huom! Aerobista liikuntaa voi tehdä joka päivä, jopa jalkatreenien jälkeen.
+                        </p>
+                        <p>Poltettujen kalorien määrä riippuu treenin intensiivisyydestä, kuinka paljon hikoilee ja hengästyy.</p>
+                        <p>Esimerkkejä aerobisesta liikunnasta:</p>
+                        <p>1. Hyppynarun hyppiminen </p>
+                        <p>2. Uiminen </p>
+                        <p>3. Juokseminen </p>
+                        <p>4. Pyöräily </p>
+                        <p>5. Kävely </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
