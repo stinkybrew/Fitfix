@@ -206,7 +206,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .box{display: inline-block; width: 50%; padding: 0 5px;}
 .boxunder{display: inline-block;width: 100%;}
 .backgroundcolor{background-color: aliceblue}
-.probox{display: inline-block: width:100%; padding: 8px 0;}
+.probox{display: inline-block; width:100%; padding: 8px 0;}
 
 .labels{width: 100%}
 .inputs{width: 50%}
@@ -251,9 +251,9 @@ hr {
 .modalcolors{background-color: #BE2400;color: white;}
 
 @media (max-width:1200px) {.box{display: inline-block; width: 100%; padding: 0 5px;} .center {width: 80%; margin: 0 auto;} }
-@media (max-width:1000px) {.centertreenit{margin-left: 30%; margin-right: 30%; float:center; display: grid;}}
-@media (min-width:1000px) {.centertreenit{ margin: 0 auto; display: table;}
-@media (min-width:600px) {.center3 {width: 35%;}}
+@media (max-width:1000px) {.centertreenit{margin-left: 30%; margin-right: 30%; display: grid;}}
+@media (min-width:1000px) {.centertreenit{ margin: 0 auto; display: table;}}
+@media (min-width:900px) {.center3 {width: 35%;}}
 
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
