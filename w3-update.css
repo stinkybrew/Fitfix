@@ -232,7 +232,7 @@ textarea.area{height: 100%; width: 100%; display: block; background: none; borde
   50% {
     opacity: 0;
   }
-
+}
 
 hr {
 	border-top: 3px double #8c8b8b;
