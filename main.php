@@ -204,7 +204,7 @@ if (isset($_SESSION['first2'])) {
                             <li class="w3-theme">
                                 <h3>Vatsa</h3>
                             </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" frameborder="0" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
                             </iframe>
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
                             <li class="w3-padding-16">Syviä</li>
@@ -224,7 +224,7 @@ if (isset($_SESSION['first2'])) {
                             <li class="w3-theme">
                                 <h3>Jalat</h3>
                             </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" frameborder="0" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" allowfullscreen>
                             </iframe>
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
                             <li class="w3-padding-16">Etureidet ja takareidet</li>
@@ -244,7 +244,7 @@ if (isset($_SESSION['first2'])) {
                             <li class="w3-theme">
                                 <h3>Kädet</h3>
                             </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" frameborder="0" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" allowfullscreen>
                             </iframe>
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
                             <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
@@ -266,7 +266,7 @@ if (isset($_SESSION['first2'])) {
                                 <li class="w3-theme">
                                     <h3>Rinta</h3>
                                 </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" frameborder="0" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
                                 </iframe>
                                 <li class="w3-padding-16"><b>Treenaa:</b></li>
                                 <li class="w3-padding-16">Ylä-</li>
@@ -286,7 +286,7 @@ if (isset($_SESSION['first2'])) {
                                 <li class="w3-theme">
                                     <h3>Selkä</h3>
                                 </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" allowfullscreen>
                                 </iframe>
                                 <li class="w3-padding-16"><b>Treenaa:</b></li>
                                 <li class="w3-padding-16">Selän ojentajat</li>
@@ -305,7 +305,7 @@ if (isset($_SESSION['first2'])) {
                                 <li class="w3-theme">
                                     <h3>Olkapäät</h3>
                                 </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" frameborder="0" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" allowfullscreen>
                                 </iframe>
                                 <li class="w3-padding-16"><b>Treenaa:</b></li>
                                 <li class="w3-padding-16">Olka-</li>
