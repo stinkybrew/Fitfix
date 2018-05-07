@@ -312,7 +312,7 @@ elseif(!empty($_SESSION['email'])){
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p>TEAM <img src="img/FixFit_red_white-border.png" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border.png" style="width:12%"></p>
                 </footer>
             </div>
         </div>

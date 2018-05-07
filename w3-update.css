@@ -201,7 +201,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 /*Yhteystiedot* /*Profiili*/ /*Register*/
 .center{width: 50%; margin: 0 auto;}
 .center2{width: 75%; margin: 0 auto;}
-.center3{width: 60%; margin: 0 auto;}
+.center3{width: 99%; margin: 0 auto;}
 
 .box{display: inline-block; width: 50%; padding: 0 5px;}
 .boxunder{display: inline-block;width: 100%;}
@@ -228,7 +228,7 @@ textarea.area{height: 100%; width: 100%; display: block; background: none; borde
   animation: blinker 1s linear infinite;
 }
 
-.margtopbottom{margin-bottom: 20px; margin-top: 60px}
+.margtopbottom{margin-bottom: 20px; margin-top: 60px;}
 
 @keyframes blinker {
   50% {
