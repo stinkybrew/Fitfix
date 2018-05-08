@@ -223,7 +223,6 @@
                         </form>
                       </div>
                       <footer class="w3-container w3-teal">
-                        <p>Modal footer</p>
                       </footer>
                     </div>
                   </div>

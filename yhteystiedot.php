@@ -168,7 +168,6 @@
                                 </div>
                                 <a href="register2.php" style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white modalcolors">Rekisteröidy</a>
                             </form>
-
                         </div>
                     </div>
                     <footer class="w3-container w3-teal">
