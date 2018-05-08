@@ -68,86 +68,86 @@
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-large w3-theme" value="Lähetä" name="laheta">
                         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
-                    <div>
-                        <?php
-                        error_reporting(E_ALL);
-                        // Open config.ini file, that contains login-info for DB.
-                        $config = parse_ini_file("../../config.ini");
-                        // connect to the database  
-                        $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                        // Check connection
-                        if (!$conn) {
-                            die("Connection failed!: " . mysqli_connect_error());
+
+                    <?php
+                    error_reporting(E_ALL);
+                    // Open config.ini file, that contains login-info for DB.
+                    $config = parse_ini_file("../../config.ini");
+                    // connect to the database  
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+
+                    // initializing variables
+                    $username = "";
+                    $email    = "";
+                    $errors = array();
+
+                    // REGISTER USER
+                    if (isset($_POST['laheta'])) {
+                        // receive all input values from the form
+                        $email = mysqli_real_escape_string($conn, (htmlentities($_POST['email'])));
+                        $password1 = mysqli_real_escape_string($conn, (htmlentities($_POST['password'])));
+                        $password2 = mysqli_real_escape_string($conn, (htmlentities($_POST['psw-repeat'])));
+                        $dob = mysqli_real_escape_string($conn, (htmlentities($_POST['dob'])));
+                        $first = mysqli_real_escape_string($conn, (htmlentities($_POST['first'])));
+                        $last = mysqli_real_escape_string($conn, (htmlentities($_POST['last'])));
+                        //echo $_POST['useremail']; AND THIS WORKS ! ! !
+                        // by adding (array_push()) corresponding error unto $errors array
+                        if ($password1 !== $password2) {
+                            array_push($errors, "<b class='blink_me2' style='color:red'>The two passwords do not match<b/>");
                         }
 
-                        // initializing variables
-                        $username = "";
-                        $email    = "";
-                        $errors = array();
+                        // first check the database to make sure 
+                        // a user does not already exist with the same username and/or email
+                        $user_check_query = "SELECT email FROM user WHERE email = '$email'";
+                        $result = mysqli_query($conn, $user_check_query);
+                        $user = mysqli_fetch_assoc($result);
 
-                        // REGISTER USER
-                        if (isset($_POST['laheta'])) {
-                            // receive all input values from the form
-                            $email = mysqli_real_escape_string($conn, (htmlentities($_POST['email'])));
-                            $password1 = mysqli_real_escape_string($conn, (htmlentities($_POST['password'])));
-                            $password2 = mysqli_real_escape_string($conn, (htmlentities($_POST['psw-repeat'])));
-                            $dob = mysqli_real_escape_string($conn, (htmlentities($_POST['dob'])));
-                            $first = mysqli_real_escape_string($conn, (htmlentities($_POST['first'])));
-                            $last = mysqli_real_escape_string($conn, (htmlentities($_POST['last'])));
-                            //echo $_POST['useremail']; AND THIS WORKS ! ! !
-                            // by adding (array_push()) corresponding error unto $errors array
-                            if ($password1 !== $password2) {
-                                array_push($errors, "<b class='blink_me2' style='color:red'>The two passwords do not match<b/>");
+                        if ($user) { // if user exists
+                            if ($user['email'] === $email) {
+                                array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists</b>");
                             }
+                        }
 
-                            // first check the database to make sure 
-                            // a user does not already exist with the same username and/or email
-                            $user_check_query = "SELECT email FROM user WHERE email = '$email'";
-                            $result = mysqli_query($conn, $user_check_query);
-                            $user = mysqli_fetch_assoc($result);
+                        // Register user if there are no errors in the form
+                        if (count($errors) == 0) {
+                            $password = md5($password1);//encrypt the password before saving in the database
 
-                            if ($user) { // if user exists
-                                if ($user['email'] === $email) {
-                                    array_push($errors, "<b class='blink_me2' style='color:red'>Email-address already exists</b>");
-                                }
-                            }
-
-                            // Register user if there are no errors in the form
-                            if (count($errors) == 0) {
-                                $password = md5($password1);//encrypt the password before saving in the database
-
-                                $insertquery = "INSERT INTO user (date_of_birth, email, password, first, last) 
+                            $insertquery = "INSERT INTO user (date_of_birth, email, password, first, last) 
                                 VALUES('$dob', '$email', '$password', '$first', '$last')";
-                                if(mysqli_query($conn, $insertquery)){
-                                } 
-                                else {
-                                    echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
-                                }
-                                echo"<br>";
-                                //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
-                                $_SESSION['first2'] = $first;
-                                $_SESSION['insertquery'] = $insertquery;
-                                $_SESSION['blaa'] = $first;
-                                $_SESSION['success'] = "Voit nyt kirjautua sisään";
-                                sleep(0.5);
-                                echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
-
-                            }
-                            elseif  (count($errors) > 0) {
-                                $arrlength=count($errors);
-                                for($x=0;$x<$arrlength;$x++)
-                                {
-                                    echo $errors[$x];
-                                    echo "<br>";
-                                }
-                                //echo "Something went wrong in your registering prosses";
-                            }
+                            if(mysqli_query($conn, $insertquery)){
+                            } 
                             else {
+                                echo "ERROR: Could not able to execute $insertquery. " . mysqli_error($conn);
                             }
-                        }
+                            echo"<br>";
+                            //echo $insertquery;  PRINT QUERRY FOR TEST! IT WORKS!!
+                            $_SESSION['first2'] = $first;
+                            $_SESSION['insertquery'] = $insertquery;
+                            $_SESSION['blaa'] = $first;
+                            $_SESSION['success'] = "Voit nyt kirjautua sisään";
+                            sleep(0.5);
+                            echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
 
-                        ?>
-                    </div>    
+                        }
+                        elseif  (count($errors) > 0) {
+                            $arrlength=count($errors);
+                            for($x=0;$x<$arrlength;$x++)
+                            {
+                                echo $errors[$x];
+                                echo "<br>";
+                            }
+                            //echo "Something went wrong in your registering prosses";
+                        }
+                        else {
+                        }
+                    }
+
+                    ?>
+
                 </div>
                 <!--modal-->
                 <div id="id01" class="w3-modal">
