@@ -258,6 +258,7 @@ hr {
 @media (max-width:1000px) {.centertreenit{margin-left: 30%; margin-right: 30%; display: grid;}}
 @media (min-width:1000px) {.centertreenit{ margin: 0 auto; display: table;}}
 @media (min-width:900px) {.center3 {width: 35%;}}
+@media (max-width:1100px) { iframe{height: auto;}}
 
 /*
 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
