@@ -128,7 +128,7 @@
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['blaa'] = $first;
-                                $_SESSION['success'] = "You can now login -->";
+                                $_SESSION['success'] = "Kirjaudu täst -->";
                                 sleep(0.5);
                                 echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
 
