@@ -23,7 +23,19 @@
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal" style="text-shadow: 3px 3px 3px #000000;"><i class="fa fa-home w3-margin-right"></i>FIXFIT</a>
-                <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
+                <?php
+                    $config = parse_ini_file("../../config.ini");
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    // checs if session is on. if its no, treenit navbar field is visible!
+                    if(!empty($_SESSION['email'])){       
+                        $fields = fopen("treenit.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                    }
+                ?>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
                     <?php

@@ -52,7 +52,19 @@
                     fclose($fields);
                 }
                 ?>
-                <a href="treenit.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Treenit</a>
+                <?php
+                    $config = parse_ini_file("../../config.ini");
+                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                    if (!$conn) {
+                        die("Connection failed!: " . mysqli_connect_error());
+                    }
+                    // checs if session is on. if its no, treenit navbar field is visible!
+                    if(!empty($_SESSION['email'])){       
+                        $fields = fopen("treenit.txt", "r") or die("Unable to open file!");
+                        echo fread($fields,filesize("logout.txt"));
+                        fclose($fields);
+                    }
+                ?>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Yhteystiedot</a>
                 <div>
 
