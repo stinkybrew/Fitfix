@@ -128,7 +128,7 @@
                                 $_SESSION['first2'] = $first;
                                 $_SESSION['insertquery'] = $insertquery;
                                 $_SESSION['blaa'] = $first;
-                                $_SESSION['success'] = "Kirjaudu täst -->";
+                                $_SESSION['success'] = "Voit nyt kirjautua sisään";
                                 sleep(0.5);
                                 echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
 
