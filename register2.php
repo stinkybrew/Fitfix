@@ -68,7 +68,6 @@
                         <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-large w3-theme" value="Lähetä" name="laheta">
                         <button type="button" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-large w3-theme" title="Kysymys">Kysymyksiä?</button>
                     </form>
-
                     <?php
                     error_reporting(E_ALL);
                     // Open config.ini file, that contains login-info for DB.
@@ -131,7 +130,6 @@
                             $_SESSION['success'] = "Voit nyt kirjautua sisään";
                             sleep(0.5);
                             echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
-
                         }
                         elseif  (count($errors) > 0) {
                             $arrlength=count($errors);
@@ -145,9 +143,7 @@
                         else {
                         }
                     }
-
                     ?>
-
                 </div>
                 <!--modal-->
                 <div id="id01" class="w3-modal">
