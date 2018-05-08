@@ -312,6 +312,9 @@
 
                         <h5><b>Lisäravinteet</b></h5>
                         <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. <a target="_blank" href="https://www.youtube.com/watch?v=NhK0kyJj00s">Lisätietoa lisäravinteista</a> </p>
+                        
+                        <h5><b>Tohtori Amen Ran optimaalinen ruokavalio</b></h5>
+                        <p>Amen Raalla on kiinnostava lähestymistapa ruokavalioon. Hän kuvailee viimeisen kymmenen vuoden aikana kehittämäänsä ruokavaliota optimaaliseksi, joka on enemmän elämäntapa kuin vain ruokavalio. Se pyrkii integroimaan kaikki kokeelliset interventiot, joilla on tehokkuutta pidentäessä maksimaalista elinikää. Hänen tutkimuksensa ovat antaneet yli 50 vuoden edestä täysin yhdenmukaisia tuloksia (malliorganismista riippumatta) kymmenien, ellei jo satojen yksittäin toimivien riippumattomien tahojen toimesta. <a target="_blank" href="http://www.amentaeliteathlete.com/index.html">Lisätietoa</a> </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
@@ -362,9 +365,10 @@
                     <div class="w3-container w3-card-4 w3-padding-16">
                         <h5>Kuinka usein treenaat tiettyä lihasryhmää?</h5>
                         <p>Vatsalihakset (poikkeus)</p>
-                        <p>Vatsalihakset ovat siinä mielessä erilainen lihasryhmä kuin muut, koska ne ovat rakentuneet ja tottuneet tekemään jatkuvasti töitä. Vatsalihakset pitävät yölläkin kehoa koossa. Niitä voi ja kannattaakin treenata joka päivä.</p>
-                        <p>Jalkatreenit</p>
+                        <p>Vatsalihakset ovat siinä mielessä erilainen lihasryhmä kuin muut, koska ne ovat rakentuneet ja tottuneet tekemään jatkuvasti töitä. Niitä voi ja kannattaakin treenata joka päivä.</p>
+                        <p>Jalkatreenit (poikkeus)</p>
                         <p>Jaloissa on suuria lihaksia, joiden palautuminen vie enemmän aikaa, joten niiden palautumisessa kestää pitkään(n. 6 päivää).</p>
+                        <p>Yleinen sääntö muihin lihasryhmiin on, että niitä voi treenata, kun kyseinen lihasryhmä ei ole enää edellisistä treeneistä kipeenä. Näin lihakset ovat ehtineet palautua ennen uutta koitosta.</p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
