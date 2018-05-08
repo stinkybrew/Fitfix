@@ -1,30 +1,22 @@
 
-<html lang="en">
-<?php
-session_start(['cookie_lifetime' => 3600]);
-if (isset($_POST['first2'])){
-    echo "<script type='text/javascript'>window.location.href = 'main.php';</script>";
-    exit();
-}    
-/*   
-if (!empty($_SESSION['first2'])) {
-    error_reporting(E_ALL);
-    header('Location: https://users.metropolia.fi/~willetu/fixfit/main.php', true, 302);
-    exit(); 
-}
-else {
-} 
-*/
-?>
 <!DOCTYPE html>
-    <title>FIXFIT</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="w3-update.css">
-    <link rel="stylesheet" href="w3-theme-black.css">
-    <link rel="stylesheet" href="font-awesome_min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<html lang="en">
+    <head>
+        <title>FIXFIT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="w3-update.css">
+        <link rel="stylesheet" href="w3-theme-black.css">
+        <link rel="stylesheet" href="font-awesome_min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <?php
+    session_start(['cookie_lifetime' => 3600]);
+    if (isset($_POST['first2'])){
+        echo "<script type='text/javascript'>window.location.href = 'main.php';</script>";
+        exit();
+    }    
+    ?>
     <body id="myPages" class="register backgroundimg">
 
         <!-- Navbar -->
@@ -32,13 +24,7 @@ else {
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>FIXFIT</a>
-              
             </div>
-
-            <!-- Navbar on small screens 
-            <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                
-            </div> -->
         </div>
 
         <!-- Contact Container -->
@@ -145,7 +131,7 @@ else {
                                 $_SESSION['success'] = "You can now login -->";
                                 sleep(0.5);
                                 echo "<script type='text/javascript'> document.location = 'main.php'; </script>";
-                                
+
                             }
                             elseif  (count($errors) > 0) {
                                 $arrlength=count($errors);
@@ -159,7 +145,7 @@ else {
                             else {
                             }
                         }
-                       
+
                         ?>
                     </div>    
                 </div>
@@ -246,7 +232,7 @@ else {
                     x.style.display = "none";
                 }
             } 
-            
+
         </script>
     </body>
 </html>

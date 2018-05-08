@@ -1,11 +1,5 @@
 
 <!DOCTYPE html>
-<?php
-session_start(['cookie_lifetime' => 0]);
-if (isset($_SESSION['first2'])) {
-    unset($_SESSION['first2']);
-}
-?>
 
 <html>
     <head>
@@ -16,6 +10,12 @@ if (isset($_SESSION['first2'])) {
         <link rel="stylesheet" href="font-awesome_min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <?php
+    session_start(['cookie_lifetime' => 0]);
+    if (isset($_SESSION['first2'])) {
+        unset($_SESSION['first2']);
+    }
+    ?>
     <body id="myPage" class="backgroundimg">
 
         <!-- Navbar -->
@@ -156,8 +156,8 @@ if (isset($_SESSION['first2'])) {
             <img class="mySlides w3-animate-left" src="img/strong-ladies_wider.jpg" alt="rflexing women" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/jenny-hill-wider.jpg" alt="runningman in the field" style="width:100%;min-height:150px;max-height:600px;">
             <img class="mySlides w3-animate-left" src="img/ayo-ogunseinde-wider.jpg" alt="pushups" style="width:100%;min-height:150px;max-height:600px;">
-            <div class="w3-container w3-display-bottomleft w3-margin-bottom right_marging">  
-                <h1 class="w3-xlarge" style="padding:10px"><img src="img/logoplustext_final.png" alt="fixfit_logo" style="width:40%"></h1>
+            <div class="w3-container w3-display-bottomleft right_marging">  
+                <h1 class="w3-xlarge" style="padding:0px;margin-left:10px"><img src="img/logoplustext_final.png" alt="fixfit_logo" style="width:40%"></h1>
             </div>
         </div>
         <!-- Modal -->
@@ -168,7 +168,7 @@ if (isset($_SESSION['first2'])) {
                     <h5>Kirjaudu tai rekisteröidy käyttäjäksi <i class="fa fa-key"></i></h5>
                 </header>
                 <div class="w3-container" style="margin:3%">
-                    <div style="background-color:ffffff" class="w3-hide-medium">
+                    <div style="background-color:white" class="w3-hide-medium">
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                             <div class="w3-section">
                                 <label for="email"></label>
@@ -196,7 +196,8 @@ if (isset($_SESSION['first2'])) {
         <div class="w3-container w3-padding-small w3-center">
             <div class="w3-row-padding w3-center w3-padding-small" id="pikatreenit">
                 <div class="w3-container w3-padding-large w3-center">
-                    <p class="w3-xxlarge">Pikatreenejä lihasryhmien mukaan</p>
+                    <br><br><br><br><br>
+                    <p class="w3-xxlarge"><i class="fa fa-chevron-circle-down"></i> Pikatreenejä lihasryhmien mukaan <i class="fa fa-chevron-circle-down"></i></p>
                 </div>
                 <div class="w3-padding-16 treenit">  
                     <div class="treenitpad w3-third w3-margin-bottom">

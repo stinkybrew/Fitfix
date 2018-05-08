@@ -1,54 +1,33 @@
 
 <!DOCTYPE html>
-<?php
-session_start(['cookie_lifetime' => 3600]);
-
-// Open config.ini file, that contains login-info for DB.
-$config = parse_ini_file("../../config.ini");
-// connect to the database
-$conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-// Check connection
-if (!$conn) {
-    die("Connection failed!: " . mysqli_connect_error());
-}
-
-// checs if session is on. if its no, login navbar field is visible!
-if(empty($_SESSION['email'])){
-    // if user is not yet logged in
-    $fields = fopen("login_register.txt", "r") or die("Unable to open file!");
-    echo fread($fields,filesize("login_register.txt"));
-    fclose($fields);
-}
-elseif(!empty($_SESSION['email'])){
-    // if user is not yet logged in
-    $fields = fopen("logout.txt", "r") or die("Unable to open file!");
-    echo fread($fields,filesize("logout.txt"));
-    fclose($fields);
-}
-?>
 <html>
-    <title>W3.CSS Template</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="w3-update.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="font-awesome_min.css">
+    <head>
+        <title>W3.CSS Template</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="w3-update.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome_min.css">
+    </head>
+    <?php
+    session_start(['cookie_lifetime' => 3600]);
+    ?>
     <body id="myPage" class="backgroundimg">
 
         <!-- Sidebar on click -->
-        
+
         <nav class="backgroundimg w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
             <a href="javascript:void(0)" onclick="w3_close()" class="backgroundimg w3-bar-item w3-button w3-display-topright w3-text-teal">Sulje
                 <i class="fa fa-remove"></i>
             </a>
             <div class="backgroundimg">
-            <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
-            <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
-            <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
-            <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
-            <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
-            <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
-        </div>
+                <a href="#Käsitreenit" class="w3-bar-item w3-button">Kädet</a>
+                <a href="#Jalkatreenit" class="w3-bar-item w3-button">Jalat</a>
+                <a href="#Rintatreenit" class="w3-bar-item w3-button">Rinta</a>
+                <a href="#Vatsatreenit" class="w3-bar-item w3-button">Vatsa</a>
+                <a href="#Selkätreenit" class="w3-bar-item w3-button">Selkä</a>
+                <a href="#Kokokehon" class="w3-bar-item w3-button">Koko keho</a>
+            </div>
         </nav>
 
         <!-- Navbar -->
@@ -301,7 +280,7 @@ elseif(!empty($_SESSION['email'])){
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16">
                         <p>
-                             Kehonhuolto on tärkeä elämäntaito, joka auttaa ajatusten kulkuun sekä pirteänä että eloisana pysymiseen.
+                            Kehonhuolto on tärkeä elämäntaito, joka auttaa ajatusten kulkuun sekä pirteänä että eloisana pysymiseen.
                         </p> 
                         <p>
                             Aloittaessa pitää muistaa oma lähtötaso, eikä verrata itseään muihin (you vs you -asenne). Tärkeintä on oppia nauttimaan hyvistä elämäntavoista, ja löytää niistä sisäistä tyydytystä, eikä ainoastaan käyttää niitä välineinä ulkoisille tavoitteille. Monet tekevät virheen aloittamalla liian rankoilla treeneillä ja unohtavat työstää liikunnasta ja ruokavalion optimoinnista kestäviä tapoja. 
@@ -327,8 +306,8 @@ elseif(!empty($_SESSION['email'])){
                 </header>
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16 ">
-   
-                       <h5><b>Meal planner</b></h5>
+
+                        <h5><b>Meal planner</b></h5>
                         <p>Scoobilta löytyy ohjelma, josta voi laskea mm. päivittäisen proteiinin, kalorien ja rasvan tarpeen riippuen tavoitteesta.<a target="_blank" href="http://scoobysworkshop.com/weight-loss-meal-planner/">Meal planner</a> </p>
 
                         <h5><b>Lisäravinteet</b></h5>

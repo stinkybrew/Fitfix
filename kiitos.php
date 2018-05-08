@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <title>W3.CSS Template</title>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="5.0;main.php" />  
-    <link rel="stylesheet" href="w3-update.css">
-    <link rel="stylesheet" href="w3-theme-black.css">
-    <link rel="stylesheet" href="font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <title>W3.CSS Template</title>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="refresh" content="5.0;main.php" />  
+        <link rel="stylesheet" href="w3-update.css">
+        <link rel="stylesheet" href="w3-theme-black.css">
+        <link rel="stylesheet" href="font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <?php
+    session_start(['cookie_lifetime' => 0]);
+    if (isset($_SESSION['first2'])) {
+        unset($_SESSION['first2']);
+    }
+    ?>
     <body id="myPage" class="backgroundimg">
 
         <!-- Sidebar on click -->
