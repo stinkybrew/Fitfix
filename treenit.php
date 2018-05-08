@@ -298,8 +298,6 @@
                 </footer>
             </div>
         </div>
-
-
         <!-- RUOKAVALIO -->
         <div id="id03" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
