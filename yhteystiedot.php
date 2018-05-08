@@ -24,17 +24,17 @@
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>FIXFIT</a>
                 <?php
-                    $config = parse_ini_file("../../config.ini");
-                    $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                    if (!$conn) {
-                        die("Connection failed!: " . mysqli_connect_error());
-                    }
-                    // checs if session is on. if its no, treenit navbar field is visible!
-                    if(!empty($_SESSION['email'])){       
-                        $fields = fopen("treenit.txt", "r") or die("Unable to open file!");
-                        echo fread($fields,filesize("treenit.txt"));
-                        fclose($fields);
-                    }
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                }
+                // checs if session is on. if its no, treenit navbar field is visible!
+                if(!empty($_SESSION['email'])){       
+                    $fields = fopen("treenit.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("treenit.txt"));
+                    fclose($fields);
+                }
                 ?>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white" style="background-color:grey;text-shadow: 3px 3px 3px #000000;">Yhteystiedot</a>
                 <div>
@@ -119,7 +119,7 @@
                 ?>
             </div>
         </div>
-              <!-- Contact Container -->
+        <!-- Contact Container -->
         <div class="w3-container w3-padding-24" style="margin-top:40px;margin-bottom:120px">
             <div class="w3-center w3-card w3-padding-16 backroundcolor center">
                 <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span>
@@ -155,12 +155,12 @@
                             <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                                 <div class="w3-section">
                                     <label class="labels">Sähköpostiosoite
-                                    <input class="inputs w3-right" style="margin-top:5px" type="text" name="email" placeholder="Sähköpostiosoite.." required>
+                                        <input class="inputs w3-right" style="margin-top:5px" type="text" name="email" placeholder="Sähköpostiosoite.." required>
                                     </label>
                                 </div>
                                 <div class="w3-section">
                                     <label class="labels w3-left">Salasana
-                                    <input class="inputs w3-right" style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
+                                        <input class="inputs w3-right" style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
                                     </label>
                                 </div>
                                 <div class="w3-section">
@@ -174,7 +174,7 @@
                     <footer class="w3-container w3-teal">
                     </footer>
                 </div>
-            </div>            
+            </div>     
 
             <!-- Modal -->
             <div id="id01" class="w3-modal">
@@ -187,17 +187,17 @@
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
                             <div class="w3-section">
                                 <label class="labels w3-left">Nimi
-                                <input class="inputs w3-right" type="text" name="name">
+                                    <input class="inputs w3-right" type="text" name="name">
                                 </label>
                             </div>
                             <div class="w3-section">
                                 <label class="labels w3-left">Sähköposti
-                                <input class="inputs w3-right" type="email" name="email">
+                                    <input class="inputs w3-right" type="email" name="email">
                                 </label>
                             </div>
                             <div class="w3-section">
                                 <label class="labels">Palaute
-                                <textarea style="height:auto" class="w3-input" name="message" maxlength="500" rows="4" cols="50"></textarea>
+                                    <textarea style="height:auto" class="w3-input" name="message" maxlength="500" rows="4" cols="50"></textarea>
                                 </label>
                             </div>
                             <input class="w3-check" type="checkbox" checked name="like">
