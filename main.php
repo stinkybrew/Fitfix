@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-
 <html>
     <?php
     session_start(['cookie_lifetime' => 0]);
@@ -11,6 +10,7 @@
     <head>
         <title>FIXFIT</title>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="HTML,CSS,php,JavaScript">
         <link rel="stylesheet" href="w3-update.css">
         <link rel="stylesheet" href="w3-theme-black.css">
         <link rel="stylesheet" href="font-awesome_min.css">
@@ -173,7 +173,6 @@
                 <h1 class="w3-xlarge" style="padding:0px;margin-left:10px"><img src="img/logoplustext_final.png" alt="fixfit_logo" style="width:40%"></h1>
             </div>
         </div>
-
         <!-- login/register modal -->
         <div id="id02" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
@@ -213,128 +212,128 @@
             <div class="w3-row-padding w3-center w3-padding-small" id="pikatreenit">
                 <div class="w3-container w3-padding-large w3-center">
                     <br><br><br><br><br>
-                    <p class="w3-xxlarge">Pikatreenejä lihasryhmien mukaan <i class="fa fa-chevron-circle-down"></i></p>
+                    <p class="w3-xxlarge"> Pikatreenejä lihasryhmien mukaan </p>
                 </div>
                 <div class="w3-padding-16 treenit">  
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Vatsa</h3>
-                            </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
+                            </div>
+                            <iframe width="344" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
                             </iframe>
-                            <li class="w3-padding-16"><b>Treenaa:</b></li>
-                            <li class="w3-padding-16">Syvät</li>
-                            <li class="w3-padding-16">Suorat</li>
-                            <li class="w3-padding-16">Vinot vatsalihakset</li>
-                            <li><h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
+                            <div class="w3-padding-16"><b>Treenaa:</b></div>
+                            <div class="w3-padding-16">Syviä</div>
+                            <div class="w3-padding-16">Suoria</div>
+                            <div class="w3-padding-16">Vinoja vatsalihaksia</div>
+                            <div><h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
                                 <span class="w3-opacity">6min</span>
-                            </li>
-                            <li class="w3-theme-l5 w3-padding-24">
+                            </div>
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Jalat</h3>
-                            </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" allowfullscreen>
+                            </div>
+                            <iframe width="344" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" allowfullscreen>
                             </iframe>
-                            <li class="w3-padding-16"><b>Treenaa:</b></li>
-                            <li class="w3-padding-16">Etureidet ja takareidet</li>
-                            <li class="w3-padding-16">Pohjelihakset</li>
-                            <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
-                            <li>   <h2 class="w3-wide"><i class="fa"></i>2 liikettä</h2>
+                            <div class="w3-padding-16"><b>Treenaa:</b></div>
+                            <div class="w3-padding-16">Etureidet ja takareidet</div>
+                            <div class="w3-padding-16">Pohjelihakset</div>
+                            <div class="w3-padding-16">Reiden lähentäjät ja loitontajat</div>
+                            <div>   <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
                                 <span class="w3-opacity">6min</span>
-                            </li>
-                            <li class="w3-theme-l5 w3-padding-24">
+                            </div>
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Kädet</h3>
-                            </li>
-                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" allowfullscreen>
+                            </div>
+                            <iframe width="344" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" allowfullscreen>
                             </iframe>
-                            <li class="w3-padding-16"><b>Treenaa:</b></li>
-                            <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
-                            <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
-                            <li class="w3-padding-16">Olkalihas ja olkavärttinäluulihas</li>
-                            <li>
-                                <h2 class="w3-wide"><i class="fa"></i>4 liikettä</h2>
+                            <div class="w3-padding-16"><b>Treenaa:</b></div>
+                            <div class="w3-padding-16">Ojentajat ja hauslihakset</div>
+                            <div class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</div>
+                            <div class="w3-padding-16">Olka- ja olka-värttinäluulihas</div>
+                            <div>
+                                <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
                                 <span class="w3-opacity">8min</span>
-                            </li>
-                            <li class="w3-theme-l5 w3-padding-24">
+                            </div>
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div>
                         <div class="treenitpad w3-third w3-margin-bottom">
-                            <ul class="w3-ul w3-border w3-hover-shadow">
-                                <li class="w3-theme">
+                            <div class="w3-ul w3-border w3-hover-shadow">
+                                <div class="w3-theme">
                                     <h3>Rinta</h3>
-                                </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
+                                </div>
+                                <iframe width="344" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
                                 </iframe>
-                                <li class="w3-padding-16"><b>Treenaa:</b></li>
-                                <li class="w3-padding-16">Ylärintalihakset</li>
-                                <li class="w3-padding-16">Keskirintalihakset</li>
-                                <li class="w3-padding-16">Alarintalihakset</li>
-                                <li>    <h2 class="w3-wide"><i class="fa"></i>4 liikettä</h2>
+                                <div class="w3-padding-16"><b>Treenaa:</b></div>
+                                <div class="w3-padding-16">Ylä-</div>
+                                <div class="w3-padding-16">Keski-</div>
+                                <div class="w3-padding-16">Alarintalihakset</div>
+                                <div>    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
                                     <span class="w3-opacity">6min</span>
-                                </li>
-                                <li class="w3-theme-l5 w3-padding-24">
+                                </div>
+                                <div class="w3-theme-l5 w3-padding-24">
                                     <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="treenitpad w3-third w3-margin-bottom">
-                            <ul class="w3-ul w3-border w3-hover-shadow">
-                                <li class="w3-theme">
+                            <div class="w3-ul w3-border w3-hover-shadow">
+                                <div class="w3-theme">
                                     <h3>Selkä</h3>
-                                </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" allowfullscreen>
+                                </div>
+                                <iframe width="344" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" allowfullscreen>
                                 </iframe>
-                                <li class="w3-padding-16"><b>Treenaa:</b></li>
-                                <li class="w3-padding-16">Selän ojentajat</li>
-                                <li class="w3-padding-16">Leveät selkälihakset</li>
-                                <li class="w3-padding-16">Epäkäslihakset</li>
-                                <li>   <h2 class="w3-wide"><i class="fa"></i>2 liikettä</h2>
+                                <div class="w3-padding-16"><b>Treenaa:</b></div>
+                                <div class="w3-padding-16">Selän ojentajat</div>
+                                <div class="w3-padding-16">Leveät selkälihakset</div>
+                                <div class="w3-padding-16">Epäkäslihakset</div>
+                                <div>   <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
                                     <span class="w3-opacity">6min</span>
-                                </li>
-                                <li class="w3-theme-l5 w3-padding-24">
+                                </div>
+                                <div class="w3-theme-l5 w3-padding-24">
                                     <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="treenitpad w3-third w3-margin-bottom">
-                            <ul class="w3-ul w3-border w3-hover-shadow">
-                                <li class="w3-theme">
+                            <div class="w3-ul w3-border w3-hover-shadow">
+                                <div class="w3-theme">
                                     <h3>Olkapäät</h3>
-                                </li>
-                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" allowfullscreen>
+                                </div>
+                                <iframe width="344" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" allowfullscreen>
                                 </iframe>
-                                <li class="w3-padding-16"><b>Treenaa:</b></li>
-                                <li class="w3-padding-16">Olka-</li>
-                                <li class="w3-padding-16">Olkavärttinälihakset</li>
-                                <li class="w3-padding-16">Kädet</li>
-                                <li>   <h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
+                                <div class="w3-padding-16"><b>Treenaa:</b></div>
+                                <div class="w3-padding-16">Olka-</div>
+                                <div class="w3-padding-16">Olkavärttinälihakset</div>
+                                <div class="w3-padding-16">Kädet</div>
+                                <div>   <h2 class="w3-wide"><i class="fa"></i> 1 sarja</h2>
                                     <span class="w3-opacity">6min</span>
-                                </li>
-                                <li class="w3-theme-l5 w3-padding-24">
+                                </div>
+                                <div class="w3-theme-l5 w3-padding-24">
                                     <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>                    
                     </div>
                 </div>
