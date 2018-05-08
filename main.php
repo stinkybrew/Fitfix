@@ -173,7 +173,8 @@
                 <h1 class="w3-xlarge" style="padding:0px;margin-left:10px"><img src="img/logoplustext_final.png" alt="fixfit_logo" style="width:40%"></h1>
             </div>
         </div>
-        <!-- Modal -->
+
+        <!-- login/register modal -->
         <div id="id02" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container"> 
@@ -181,15 +182,17 @@
                     <h5>Kirjaudu tai rekisteröidy käyttäjäksi <i class="fa fa-key"></i></h5>
                 </header>
                 <div class="w3-container" style="margin:3%">
-                    <div style="background-color:white" class="w3-hide-medium">
+                    <div style="background-color:#ffffff" class="w3-hide-medium">
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                             <div class="w3-section">
-                                <label for="email"></label>
-                                <input style="margin-top:5px" type="text" name="email" placeholder="Sähköposti osoite.." required>
+                                <label class="labels">Sähköpostiosoite
+                                    <input class="inputs w3-right" style="margin-top:5px" type="text" name="email" placeholder="Sähköpostiosoite.." required>
+                                </label>
                             </div>
                             <div class="w3-section">
-                                <label for="psw"></label>
-                                <input style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
+                                <label class="labels w3-left">Salasana
+                                    <input class="inputs w3-right" style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
+                                </label>
                             </div>
                             <div class="w3-section">
                                 <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white modalcolors" type="submit" name="login" value="Kirjaudu">
@@ -202,7 +205,7 @@
                 <footer class="w3-container w3-teal">
                 </footer>
             </div>
-        </div>
+        </div>   
 
         <!-- Pikatreenit Row -->
         <hr class="hr">
