@@ -210,7 +210,7 @@
             <div class="w3-row-padding w3-center w3-padding-small" id="pikatreenit">
                 <div class="w3-container w3-padding-large w3-center">
                     <br><br><br><br><br>
-                    <p class="w3-xxlarge"><i class="fa fa-chevron-circle-down"></i> Pikatreenejä lihasryhmien mukaan <i class="fa fa-chevron-circle-down"></i></p>
+                    <p class="w3-xxlarge">Pikatreenejä lihasryhmien mukaan <i class="fa fa-chevron-circle-down"></i></p>
                 </div>
                 <div class="w3-padding-16 treenit">  
                     <div class="treenitpad w3-third w3-margin-bottom">
