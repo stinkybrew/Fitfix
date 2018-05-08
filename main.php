@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <?php
     session_start(['cookie_lifetime' => 0]);
     if (isset($_SESSION['first2'])) {
