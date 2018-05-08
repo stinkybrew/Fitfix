@@ -274,7 +274,7 @@
         ?>
 
         <!--Profiili-->
-        <div class="w3-row w3-row-padding-64">
+        <div class="w3-row w3-row-padding-64 margtopbottom">
             <form action="" method="post" class="w3-container w3-padding w3-card-4 center3 profiili fontti pad">
                 <div class="w3-container w3-center pad2">
                     <h2><?php echo $_SESSION['first'];?></h2>
