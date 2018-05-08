@@ -73,7 +73,7 @@
                 $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
                 if (!$conn) {
                     die("Connection failed!: " . mysqli_connect_error());
-                 elseif(!empty($_SESSION['email'])){       
+                if(!empty($_SESSION['email'])){       
                     $fields = fopen("smallnavbartreenit.txt", "r") or die("Unable to open file!");
                     echo fread($fields,filesize("smallnavbartreenit.txt"));
                     fclose($fields);
