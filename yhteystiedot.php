@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="if">
     <head>
         <!--testikommentti-->
         <title>FIXFIT</title>

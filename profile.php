@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="if">
     <head> 
         <title>Fixfit</title>
         <meta charset="UTF-8">

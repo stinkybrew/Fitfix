@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="if">
     <head>
         <title>W3.CSS Template</title>
         <meta charset="UTF-8">

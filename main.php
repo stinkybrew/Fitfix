@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="if">
     <?php
     session_start(['cookie_lifetime' => 0]);
     if (isset($_SESSION['first2'])) {
@@ -167,7 +167,6 @@
                 exit();
             }
             ?>
-        </div>
         </div>
     <!-- Image Header -->
     <div class="w3-display-container w3-animate-opacity">
