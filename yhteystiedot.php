@@ -109,11 +109,7 @@
                 ?>
             </div>
         </div>
-        <!--Image Header-->
-        <div class="w3-display-container w3-animate-opacity">
-            <!-- <img src="img/running_man_wider.jpg" alt="runningman" style="width:100%;min-height:350px;max-height:600px;"> -->
-        </div>
-        <!-- Contact Container -->
+              <!-- Contact Container -->
         <div class="w3-container w3-padding-24" style="margin-top:40px;margin-bottom:120px">
             <div class="w3-center w3-card w3-padding-16 backroundcolor center">
                 <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Yhteystiedot</span>
@@ -145,15 +141,17 @@
                         <h5>Kirjaudu tai rekisteröidy käyttäjäksi <i class="fa fa-key"></i></h5>
                     </header>
                     <div class="w3-container" style="margin:3%">
-                        <div style="background-color:ffffff" class="w3-hide-medium">
+                        <div style="background-color: white" class="w3-hide-medium">
                             <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="main.php" method="post">
                                 <div class="w3-section">
-                                    <label for="email"></label>
-                                    <input style="margin-top:5px" type="text" name="email" placeholder="Sähköposti osoite.." required>
+                                    <label class="labels">Sähköpostiosoite
+                                    <input class="inputs w3-right" style="margin-top:5px" type="text" name="email" placeholder="Sähköpostiosoite.." required>
+                                    </label>
                                 </div>
                                 <div class="w3-section">
-                                    <label for="psw"></label>
-                                    <input style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
+                                    <label class="labels w3-left">Salasana
+                                    <input class="inputs w3-right" style="margin-top:5px" type="password" name="password" placeholder="Salasana.." required>
+                                    </label>
                                 </div>
                                 <div class="w3-section">
                                     <input style="border:none" class="w3-bar-item w3-button w3-hide-medium w3-hover-white modalcolors" type="submit" name="login" value="Kirjaudu">
@@ -178,19 +176,22 @@
                     <div class="w3-container">
                         <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="lahetys.php" method="post">
                             <div class="w3-section">
-                                <label>Nimi</label>
-                                <input class="w3-input" type="text" name="name">
+                                <label class="labels w3-left">Nimi
+                                <input class="inputs w3-right" type="text" name="name">
+                                </label>
                             </div>
                             <div class="w3-section">
-                                <label>Sähköposti</label>
-                                <input class="w3-input" type="email" name="email">
+                                <label class="labels w3-left">Sähköposti
+                                <input class="inputs w3-right" type="email" name="email">
+                                </label>
                             </div>
                             <div class="w3-section">
-                                <label>Palaute</label>
-                                <textarea style="height:auto" class="w3-input" type="text" name="message" maxlength="500" rows="4" cols="50"></textarea> 
+                                <label class="labels">Palaute
+                                <textarea style="height:auto" class="w3-input" name="message" maxlength="500" rows="4" cols="50"></textarea>
+                                </label>
                             </div>
                             <input class="w3-check" type="checkbox" checked name="like">
-                            <label>Tykkään</label>
+                            <label class="labels">Tykkään</label>
                             <button type="reset" style="display:inline" class="w3-button w3-right w3-theme" value="Reset">Tyhjennä</button>
                             <input type="submit" style="display:inline;margin-right:2px" class="w3-button w3-right w3-theme" value="Lähetä">
                         </form>
