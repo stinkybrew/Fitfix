@@ -119,7 +119,17 @@
             </div>
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
+                <?php
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                 elseif(!empty($_SESSION['email'])){       
+                    $fields = fopen("smallnavbartreenit.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("smallnavbartreenit.txt"));
+                    fclose($fields);
+                }               
+                ?>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 <?php
                 $config = parse_ini_file("../../config.ini");
@@ -220,7 +230,7 @@
                             <div class="w3-theme">
                                 <h3>Vatsa</h3>
                             </div>
-                            <iframe width="344" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
                             </iframe>
                             <div class="w3-padding-16"><b>Treenaa:</b></div>
                             <div class="w3-padding-16">Syvät</div>
@@ -240,7 +250,7 @@
                             <div class="w3-theme">
                                 <h3>Jalat</h3>
                             </div>
-                            <iframe width="344" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/Og4AkUfCTGM?" allowfullscreen>
                             </iframe>
                             <div class="w3-padding-16"><b>Treenaa:</b></div>
                             <div class="w3-padding-16">Etureidet ja takareidet</div>
@@ -260,7 +270,7 @@
                             <div class="w3-theme">
                                 <h3>Kädet</h3>
                             </div>
-                            <iframe width="344" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" allowfullscreen>
+                            <iframe width="100%" height="344" src="https://www.youtube.com/embed/8fvT3sYfzLo?" allowfullscreen>
                             </iframe>
                             <div class="w3-padding-16"><b>Treenaa:</b></div>
                             <div class="w3-padding-16">Ojentajat ja hauslihakset</div>
@@ -282,7 +292,7 @@
                                 <div class="w3-theme">
                                     <h3>Rinta</h3>
                                 </div>
-                                <iframe width="344" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
                                 </iframe>
                                 <div class="w3-padding-16"><b>Treenaa:</b></div>
                                 <div class="w3-padding-16">Ylärintalihakset</div>
@@ -302,7 +312,7 @@
                                 <div class="w3-theme">
                                     <h3>Selkä</h3>
                                 </div>
-                                <iframe width="344" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" allowfullscreen>
                                 </iframe>
                                 <div class="w3-padding-16"><b>Treenaa:</b></div>
                                 <div class="w3-padding-16">Selän ojentajat</div>
@@ -321,7 +331,7 @@
                                 <div class="w3-theme">
                                     <h3>Olkapäät</h3>
                                 </div>
-                                <iframe width="344" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" allowfullscreen>
+                                <iframe width="100%" height="344" src="https://www.youtube.com/embed/ui0KSWOPTIw?" allowfullscreen>
                                 </iframe>
                                 <div class="w3-padding-16"><b>Treenaa:</b></div>
                                 <div class="w3-padding-16">Olka-</div>

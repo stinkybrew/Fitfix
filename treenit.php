@@ -35,16 +35,6 @@
             <div class="w3-bar w3-theme-d2 w3-left-align">
                 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
                 <a href="main.php" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>FIXFIT</a>
-                <?php
-                // Open config.ini file, that contains login-info for DB.
-                $config = parse_ini_file("../../config.ini");
-                // connect to the database  
-                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
-                // Check connection
-                if (!$conn) {
-                    die("Yhteys epäonnistui!: " . mysqli_connect_error());
-                }
-                ?>
                 <div class="w3-dropdown-hover w3-hide-small">
                     <form action="treenit.php">
                         <button class="w3-button" title="Notifications" style="background-color:grey;text-shadow: 3px 3px 3px #000000;"><a href="treenit.php" class="textdeco">Treenit </a><i class="fa fa-caret-down"></i></button>

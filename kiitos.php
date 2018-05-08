@@ -61,7 +61,7 @@
                     // checs if session is on. if its no, treenit navbar field is visible!
                     if(!empty($_SESSION['email'])){       
                         $fields = fopen("treenit.txt", "r") or die("Unable to open file!");
-                        echo fread($fields,filesize("logout.txt"));
+                        echo fread($fields,filesize("treenit.txt"));
                         fclose($fields);
                     }
                 ?>
@@ -72,7 +72,17 @@
             </div>
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-                <a href="treenit.php" class="w3-bar-item w3-button">Treenit</a>
+                <?php
+                $config = parse_ini_file("../../config.ini");
+                $conn = mysqli_connect($config['dbaddr'],$config['username'],$config['password'],$config['dbname'],$config['dbport']);
+                if (!$conn) {
+                    die("Connection failed!: " . mysqli_connect_error());
+                 elseif(!empty($_SESSION['email'])){       
+                    $fields = fopen("smallnavbartreenit.txt", "r") or die("Unable to open file!");
+                    echo fread($fields,filesize("smallnavbartreenit.txt"));
+                    fclose($fields);
+                }               
+                ?>
                 <a href="yhteystiedot.php" class="w3-bar-item w3-button">Yhteystiedot</a>
                 <?php
                 $config = parse_ini_file("../../config.ini");
