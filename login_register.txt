@@ -1,5 +1,5 @@
 
-<div style="float:right;background-color:fff" class="w3-hide-small">
+<div style="float:right;background-color:ffffff" class="w3-hide-small">
 	<form action="main.php" method="post">
         <input style="margin-right:2px;float:right" class="w3-bar-item w3-button w3-hide-small w3-hover-white" type="submit" name="login" value="Kirjaudu">
 		<label for="email"></label>
