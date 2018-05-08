@@ -221,9 +221,9 @@
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/EB8Iom51fdA?" allowfullscreen>
                             </iframe>
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
-                            <li class="w3-padding-16">Syviä</li>
-                            <li class="w3-padding-16">Suoria</li>
-                            <li class="w3-padding-16">Vinoja vatsalihaksia</li>
+                            <li class="w3-padding-16">Syvät</li>
+                            <li class="w3-padding-16">Suorat</li>
+                            <li class="w3-padding-16">Vinot vatsalihakset</li>
                             <li><h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
                                 <span class="w3-opacity">6min</span>
                             </li>
@@ -244,7 +244,7 @@
                             <li class="w3-padding-16">Etureidet ja takareidet</li>
                             <li class="w3-padding-16">Pohjelihakset</li>
                             <li class="w3-padding-16">Reiden lähentäjät ja loitontajat</li>
-                            <li>   <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                            <li>   <h2 class="w3-wide"><i class="fa"></i>2 liikettä</h2>
                                 <span class="w3-opacity">6min</span>
                             </li>
                             <li class="w3-theme-l5 w3-padding-24">
@@ -263,9 +263,9 @@
                             <li class="w3-padding-16"><b>Treenaa:</b></li>
                             <li class="w3-padding-16">Ojentajat ja hauslihakset</li>
                             <li class="w3-padding-16">Ranteen koukistaja- ja ojentajalihakset</li>
-                            <li class="w3-padding-16">Olka- ja olka-värttinäluulihas</li>
+                            <li class="w3-padding-16">Olkalihas ja olkavärttinäluulihas</li>
                             <li>
-                                <h2 class="w3-wide"><i class="fa"></i> 7 sarjaa</h2>
+                                <h2 class="w3-wide"><i class="fa"></i>4 liikettä</h2>
                                 <span class="w3-opacity">8min</span>
                             </li>
                             <li class="w3-theme-l5 w3-padding-24">
@@ -283,10 +283,10 @@
                                 <iframe width="100%" height="344" src="https://www.youtube.com/embed/8mOjYFwmgxk?" allowfullscreen>
                                 </iframe>
                                 <li class="w3-padding-16"><b>Treenaa:</b></li>
-                                <li class="w3-padding-16">Ylä-</li>
-                                <li class="w3-padding-16">Keski-</li>
+                                <li class="w3-padding-16">Ylärintalihakset</li>
+                                <li class="w3-padding-16">Keskirintalihakset</li>
                                 <li class="w3-padding-16">Alarintalihakset</li>
-                                <li>    <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                                <li>    <h2 class="w3-wide"><i class="fa"></i>4 liikettä</h2>
                                     <span class="w3-opacity">6min</span>
                                 </li>
                                 <li class="w3-theme-l5 w3-padding-24">
@@ -306,7 +306,7 @@
                                 <li class="w3-padding-16">Selän ojentajat</li>
                                 <li class="w3-padding-16">Leveät selkälihakset</li>
                                 <li class="w3-padding-16">Epäkäslihakset</li>
-                                <li>   <h2 class="w3-wide"><i class="fa"></i> 6 sarjaa</h2>
+                                <li>   <h2 class="w3-wide"><i class="fa"></i>2 liikettä</h2>
                                     <span class="w3-opacity">6min</span>
                                 </li>
                                 <li class="w3-theme-l5 w3-padding-24">
@@ -325,7 +325,7 @@
                                 <li class="w3-padding-16">Olka-</li>
                                 <li class="w3-padding-16">Olkavärttinälihakset</li>
                                 <li class="w3-padding-16">Kädet</li>
-                                <li>   <h2 class="w3-wide"><i class="fa"></i> 1 sarja</h2>
+                                <li>   <h2 class="w3-wide"><i class="fa"></i>6 liikettä</h2>
                                     <span class="w3-opacity">6min</span>
                                 </li>
                                 <li class="w3-theme-l5 w3-padding-24">
