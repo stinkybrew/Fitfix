@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="if">
+<html lang="fi">
     <head>
         <title>W3.CSS Template</title>
         <meta charset="UTF-8">
@@ -63,7 +63,7 @@
                         fclose($fields);
                         echo "<b style='color:#32FC42;float:right;padding-top:8px;margin-top:0px'> " . $_SESSION['success'] . "</b>";
                     }
-                    elseif(!empty($_SESSION['email'])){       
+                    elseif(!empty($_SESSION['email'])){
                         $fields = fopen("logout.txt", "r") or die("Unable to open file!");
                         echo fread($fields,filesize("logout.txt"));
                         fclose($fields);
@@ -78,7 +78,7 @@
                         if(mysqli_query($conn, $logout)){
                             echo $userlogin;
                             echo $logout;
-                        } 
+                        }
                         else {
                             echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                         }
@@ -97,7 +97,7 @@
                         $sqlfetch = "select * from user where email = '" . $_POST['email'] . "'";  //select * user users where username = ..., or something samelike sql-code
                         $result = $conn->query($sqlfetch);
                         $pwd2 = password_hash($userpwd, PASSWORD_DEFAULT);
-                        if ($result->num_rows > 0) {                    // Check data of columns!     
+                        if ($result->num_rows > 0) {                    // Check data of columns!
                             while($row = $result->fetch_assoc()) {      // output data of rows needed
                                 $userlogin = $row["loggedin"];
                                 $userfirst = $row["first"];
@@ -106,13 +106,13 @@
                                 // If login email and password are valid or invalid.
                                 if ((htmlentities($_POST['email'])) == $useremail && (htmlentities($_POST['password'] == $userpwd))) {
                                     $_SESSION['email'] = $useremail;
-                                    $_SESSION['first'] = $userfirst;   
+                                    $_SESSION['first'] = $userfirst;
 
                                     // UPDATE loggedin to 1, and 1 means that you are logged in!
                                     $updatelogin = "UPDATE user SET loggedin = 1 WHERE email = '" . (htmlentities($_POST['email'])) . "'";
                                     if(mysqli_query($conn, $updatelogin)){
 
-                                    } 
+                                    }
                                     else {
                                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                                     }
@@ -126,7 +126,7 @@
                     }
                     mysqli_close($conn);
                     ?>
-                </div>  
+                </div>
                 <!--
 <div class="w3-dropdown-hover w3-hide-small">
 <button class="w3-button" title="Notifications">Treenit <i class="fa fa-caret-down"></i></button>
@@ -154,7 +154,7 @@
                     echo fread($fields,filesize("button_logreg.txt"));
                     fclose($fields);
                 }
-                elseif(!empty($_SESSION['email'])){       
+                elseif(!empty($_SESSION['email'])){
                     $fields = fopen("button_logout.txt", "r") or die("Unable to open file!");
                     echo fread($fields,filesize("button_logout.txt"));
                     fclose($fields);
@@ -166,7 +166,7 @@
                     if(mysqli_query($conn, $logout)){
                         echo $userlogin;
                         echo $logout;
-                    } 
+                    }
                     else {
                         echo "ERROR: Could not able to execute $updatelogin. " . mysqli_error($conn);
                     }
@@ -225,7 +225,7 @@
         <!-- login/register modal -->
         <div id="id02" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
-                <header class="w3-container w3-teal w3-display-container"> 
+                <header class="w3-container w3-teal w3-display-container">
                     <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
                     <h5>Kirjaudu tai rekisteröidy käyttäjäksi <i class="fa fa-key"></i></h5>
                 </header>
@@ -253,7 +253,7 @@
                 <footer class="w3-container w3-teal">
                 </footer>
             </div>
-        </div>   
+        </div>
 
         <!-- Container -->
         <div class="w3-container" style="position:relative">
@@ -274,9 +274,9 @@
                     <div class="w3-container w3-card-4 w3-padding-16">
                         <p>
                             Kehonhuolto on tärkeä elämäntaito, joka auttaa ajatusten kulkuun sekä pirteänä että eloisana pysymiseen.
-                        </p> 
+                        </p>
                         <p>
-                            Aloittaessa pitää muistaa oma lähtötaso, eikä verrata itseään muihin (you vs you -asenne). Tärkeintä on oppia nauttimaan hyvistä elämäntavoista, ja löytää niistä sisäistä tyydytystä, eikä ainoastaan käyttää niitä välineinä ulkoisille tavoitteille. Monet tekevät virheen aloittamalla liian rankoilla treeneillä ja unohtavat työstää liikunnasta ja ruokavalion optimoinnista kestäviä tapoja. 
+                            Aloittaessa pitää muistaa oma lähtötaso, eikä verrata itseään muihin (you vs you -asenne). Tärkeintä on oppia nauttimaan hyvistä elämäntavoista, ja löytää niistä sisäistä tyydytystä, eikä ainoastaan käyttää niitä välineinä ulkoisille tavoitteille. Monet tekevät virheen aloittamalla liian rankoilla treeneillä ja unohtavat työstää liikunnasta ja ruokavalion optimoinnista kestäviä tapoja.
                         </p>
                         <p>
                             Alkuun kannattaa suosia hidasta lähestymistapaa (baby steps), joka on pitkäkestoisen onnistumisen kannalta A ja Ö. Jos keho ei ole tottunut fyysiseen rasitukseen, on parempi aloittaa yhdellä yksinkertaisella liikkeellä per lihasryhmä ja vähitellen lisätä liikkeiden määrää. Olennaista on opetella  liikkeen tekniikka ja sitä mukaan, kun ne tuntuvat luontevilta, voi lisätä harjoitusten monipuolisuutta ja intensiivisyyttä.
@@ -313,7 +313,7 @@
                 </footer>
             </div>
         </div>
-        <!-- Kardiosta -->  
+        <!-- Kardiosta -->
         <div id="id04" class="w3-modal">
             <div class="w3-modal-content w3-card-4 w3-animate-top">
                 <header class="w3-container w3-teal w3-display-container">
@@ -323,7 +323,7 @@
                 <div class="w3-container">
                     <div class="w3-container w3-card-4 w3-padding-16">
                         <p>
-                            Sydänlihaksen kunto on keskeinen ja merkittävä fyysisen terveyden mittari. Sydän- ja verisuonitautien ollessa länsimaiden yleisimpien kuolinsyiden joukossa, aerobisen liikunnan ja kardion tulisi muodastaa huomattavasti keskeisempi osa ihmisten arkea. 
+                            Sydänlihaksen kunto on keskeinen ja merkittävä fyysisen terveyden mittari. Sydän- ja verisuonitautien ollessa länsimaiden yleisimpien kuolinsyiden joukossa, aerobisen liikunnan ja kardion tulisi muodastaa huomattavasti keskeisempi osa ihmisten arkea.
                         </p>
                         <p>
                             Helpoin tapa lisätä aerobinen liikunta osaksi päivittäistä elämää on alkaa suosia kävelyä, hölkkäämistä, juoksemista ja pyöräilyä pääasiallisina liikkumismuotoina aina kuin mahdollista.
@@ -341,7 +341,7 @@
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" alt="Fixfitborder" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -363,7 +363,7 @@
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" alt="Fixfitborder" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -379,43 +379,43 @@
                 </div>
                 <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Hauikset</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/kzohU7hbN9I?" frameborder="0" allowfullscreen>
                             </iframe>
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Ojentajat</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/8B_uf-lR8cI?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Kyynärvarret</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/kSxKXaxujRg?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -427,44 +427,44 @@
                 </div>
                 <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 1</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/4H920oAfowE?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treenit 2</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/q3FLp036yhk?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 3</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/MAHMUc3vEWo?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -474,46 +474,46 @@
                 <div class="w3-container w3-padding-large w3-center">
                     <p class="w3-xxlarge">Rintatreenit</p>
                 </div>
-                <div class="w3-padding-16 treenit">    
+                <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 1</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/kBJTLMaJZrQ?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 2</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/XqPe_iAm8lI?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 3</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/FU_5LPjtjus?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -524,44 +524,44 @@
                 </div>
                 <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 1</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/bx9SssAikQo?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 2</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/LgdoQgmCA-A?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 3</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/9VsDP584zyQ?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -573,44 +573,44 @@
                 </div>
                 <div class="w3-padding-16 treenit">
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 1</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/mjnseqLiVXM?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 2</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/I2Mu3lpUfMY?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="treenitpad w3-third w3-margin-bottom">
-                        <ul class="w3-ul w3-border w3-hover-shadow">
-                            <li class="w3-theme">
+                        <div class="w3-ul w3-border w3-hover-shadow">
+                            <div class="w3-theme">
                                 <h3>Treeni 3</h3>
-                            </li>
+                            </div>
                             <iframe width="100%" height="344" src="https://www.youtube.com/embed/pjkZUmzvb1M?" frameborder="0" allowfullscreen>
                             </iframe>
 
-                            <li class="w3-theme-l5 w3-padding-24">
+                            <div class="w3-theme-l5 w3-padding-24">
                                 <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -626,42 +626,42 @@
             <div class="w3-container w3-padding"><h2 class="w3-wide">Valitse tasosi mukaan!</h2></div>
             <div class="w3-padding-16 treenit">
                 <div class="treenitpad w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
+                    <div class="w3-ul w3-border w3-hover-shadow">
+                        <div class="w3-theme">
                             <p class="w3-xlarge">Aloittelija</p>
-                        </li>
+                        </div>
                         <iframe width="100%" height="344" src="https://www.youtube.com/embed/5eV33roibqc?" frameborder="0" allowfullscreen>
                         </iframe>
-                        <li class="w3-theme-l5 w3-padding-24">
+                        <div class="w3-theme-l5 w3-padding-24">
                             <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="treenitpad w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
+                    <div class="w3-ul w3-border w3-hover-shadow">
+                        <div class="w3-theme">
                             <p class="w3-xlarge">Keskitaso</p>
-                        </li>
+                        </div>
                         <iframe width="100%" height="344" src="https://www.youtube.com/embed/ZA8GzhFh_CQ?" frameborder="0" allowfullscreen>
                         </iframe>
-                        <li class="w3-theme-l5 w3-padding-24">
+                        <div class="w3-theme-l5 w3-padding-24">
                             <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="treenitpad w3-third w3-margin-bottom">
-                    <ul class="w3-ul w3-border w3-hover-shadow">
-                        <li class="w3-theme">
+                    <div class="w3-ul w3-border w3-hover-shadow">
+                        <div class="w3-theme">
                             <p class="w3-xlarge">Vaikea</p>
-                        </li>
+                        </div>
                         <iframe width="100%" height="344" src="https://www.youtube.com/embed/MABMQy8CCNc?" frameborder="0" allowfullscreen>
                         </iframe>
-                        <li class="w3-theme-l5 w3-padding-24">
+                        <div class="w3-theme-l5 w3-padding-24">
                             <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Treenaa</button>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
