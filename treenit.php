@@ -315,7 +315,7 @@
                         <p>Terveellinen ruokavalio sisältää harvoin kaikki tarpeelliset ravinteet. <a target="_blank" href="https://www.youtube.com/watch?v=NhK0kyJj00s">Lisätietoa lisäravinteista</a> </p>
 
                         <h5><b>Tohtori Amen Ran optimaalinen ruokavalio</b></h5>
-                        <p>Amen Raalla on kiinnostava lähestymistapa ruokavalioon. Hän kuvailee viimeisen kymmenen vuoden aikana kehittämäänsä ruokavaliota optimaaliseksi, joka on enemmän elämäntapa kuin vain ruokavalio. Se pyrkii integroimaan kaikki kokeelliset interventiot, joilla on tehokkuutta pidentäessä maksimaalista elinikää. Hänen tutkimuksensa ovat antaneet yli 50 vuoden edestä täysin yhdenmukaisia tuloksia (malliorganismista riippumatta) kymmenien, ellei jo satojen yksittäin toimivien riippumattomien tahojen toimesta. <a target="_blank" href="http://www.amentaeliteathlete.com/index.html">Lisätietoa</a> </p>
+                        <p>Amen Ralla on kiinnostava lähestymistapa ruokavalioon. Hän kuvailee viimeisen kymmenen vuoden aikana kehittämäänsä ruokavaliota optimaaliseksi, joka on enemmän elämäntapa kuin vain ruokavalio. Se pyrkii integroimaan kaikki kokeelliset interventiot, joilla on tehokkuutta pidentäessä maksimaalista elinikää. Hänen tutkimuksensa ovat antaneet yli 50 vuoden edestä täysin yhdenmukaisia tuloksia (malliorganismista riippumatta) kymmenien, ellei jo satojen yksittäin toimivien riippumattomien tahojen toimesta. <a target="_blank" href="http://www.amentaeliteathlete.com/index.html">Tutki lisää</a> </p>
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
