@@ -161,6 +161,17 @@
                             $bdquery = mysqli_query($conn, $birthday);
 
                             $row3 = $bdquery->fetch_assoc();
+                            $yuser = date("Y", strtotime($row3["date_of_birth"]));
+
+                            function age($age){
+                            $now = date("Y");
+                            $ageNow = $now - $age;
+                            if ($age < 0){
+                            return "Not possible";
+                            } else {
+                            return $ageNow;
+                            }
+
 
                             if ($check) { // if user exists
                                 if ($check['email'] === $email) {
@@ -284,6 +295,11 @@
                     <label class="labels w3-left">Syntymäaika
                         <span class="w3-right"><?php echo date("d.m.Y", strtotime($row3["date_of_birth"]));?></span>
                     </label>
+                </div>
+                <div class="w3-container pad2">
+                     <label class="labels w3-left">Ikä
+                         <span class="w3-right"><?php echo age($yuser);?></span>
+                     </label>
                 </div>
                 <div class="w3-container pad2">
                     <label class="labels w3-left">Sukupuoli
