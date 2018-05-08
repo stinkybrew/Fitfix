@@ -213,7 +213,7 @@ if (isset($_SESSION['first2'])) {
                 </div>
                 <div class="w3-container pad2">
                   <label class="w3-left labels">Minusta
-                    <input type="textarea" style="height:auto" class="w3-input w3-right" type="text" name="minusta" maxlength="500" rows="4" cols="50"  value="<?= $rowU['bio'] ?>"></input>
+                    <input type="textarea" style="height:auto" class="w3-input w3-right" type="text" name="minusta" maxlength="500" rows="4" cols="50"  value="<?= $rowU['bio'] ?>">
                   </label>
                   <br> 
                 </div>
