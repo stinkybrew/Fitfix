@@ -284,7 +284,7 @@
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p><img src="img/FixFit_red_white-border.png" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border.png" alt="Fixfitborder" style="width:12%"></p>
                 </footer>
             </div>
         </div>
@@ -309,7 +309,7 @@
                     </div>
                 </div>
                 <footer class="w3-container w3-teal">
-                    <p><img src="img/FixFit_red_white-border" style="width:12%"></p>
+                    <p><img src="img/FixFit_red_white-border" alt="Fixfitborder" style="width:12%"></p>
                 </footer>
             </div>
         </div>
