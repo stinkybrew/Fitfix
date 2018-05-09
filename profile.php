@@ -171,7 +171,7 @@
                             } else {
                             return $ageNow;
                             }
-
+                            }
 
                             if ($check) { // if user exists
                                 if ($check['email'] === $email) {
