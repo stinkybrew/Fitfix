@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="if">
+<html lang="fi">
     <head>
         <title>W3.CSS Template</title>
         <meta charset="UTF-8" >
