@@ -241,47 +241,47 @@
 
         <?php
 
-    if(isset($_SESSION['email'])){
+        if(isset($_SESSION['email'])){
 
-        $sqldb = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
-        $resultdb = mysqli_query($conn, $sqldb);
+            $sqldb = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
+            $resultdb = mysqli_query($conn, $sqldb);
 
-        $sqldb2 = "SELECT value, target FROM weight WHERE email = '$email'";
-        $resultdb2 = mysqli_query($conn, $sqldb2);
+            $sqldb2 = "SELECT value, target FROM weight WHERE email = '$email'";
+            $resultdb2 = mysqli_query($conn, $sqldb2);
 
-        $row = $resultdb->fetch_assoc();
-        $row2 = $resultdb2->fetch_assoc();
+            $row = $resultdb->fetch_assoc();
+            $row2 = $resultdb2->fetch_assoc();
 
-        if(isset($_POST['Tallenna'])){
+            if(isset($_POST['Tallenna'])){
 
-            $height = mysqli_real_escape_string($conn, htmlentities($_POST['height']));
-            $weight = mysqli_real_escape_string($conn, htmlentities($_POST['weight']));
-            $goal = mysqli_real_escape_string($conn, htmlentities($_POST['weight2']));
-            $gender = mysqli_real_escape_string($conn, htmlentities($_POST['gender']));   
-            $city = mysqli_real_escape_string($conn, htmlentities($_POST['town']));
-            $bio = mysqli_real_escape_string($conn, htmlentities($_POST['minusta']));
+                $height = mysqli_real_escape_string($conn, htmlentities($_POST['height']));
+                $weight = mysqli_real_escape_string($conn, htmlentities($_POST['weight']));
+                $goal = mysqli_real_escape_string($conn, htmlentities($_POST['weight2']));
+                $gender = mysqli_real_escape_string($conn, htmlentities($_POST['gender']));   
+                $city = mysqli_real_escape_string($conn, htmlentities($_POST['town']));
+                $bio = mysqli_real_escape_string($conn, htmlentities($_POST['minusta']));
 
-            $sql1 = "UPDATE user SET height = '$height', gender = '$gender', city = '$city', bio = '$bio' WHERE email = '$email'";
-            $query1 = mysqli_query($conn, $sql1);
-            //$recheck1 = mysqli_fetch_assoc($query1);
-            //echo $sql1; toimii
+                $sql1 = "UPDATE user SET height = '$height', gender = '$gender', city = '$city', bio = '$bio' WHERE email = '$email'";
+                $query1 = mysqli_query($conn, $sql1);
+                //$recheck1 = mysqli_fetch_assoc($query1);
+                //echo $sql1; toimii
 
-            $sql2 = "UPDATE weight SET date = NOW(), value = '$weight', target = '$goal' WHERE email = '$email'";
-            $query2 = mysqli_query($conn, $sql2);
-            //$recheck2 = mysqli_fetch_assoc($query2);
-            //echo $sql2; toimii
+                $sql2 = "UPDATE weight SET date = NOW(), value = '$weight', target = '$goal' WHERE email = '$email'";
+                $query2 = mysqli_query($conn, $sql2);
+                //$recheck2 = mysqli_fetch_assoc($query2);
+                //echo $sql2; toimii
 
-            $sql3 = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
-            $result3 = mysqli_query($conn, $sql3);
+                $sql3 = "SELECT height, gender, city, bio FROM user WHERE email = '$email'";
+                $result3 = mysqli_query($conn, $sql3);
 
-            $sql4 = "SELECT value, target FROM weight WHERE email = '$email'";
-            $result4 = mysqli_query($conn, $sql4);
+                $sql4 = "SELECT value, target FROM weight WHERE email = '$email'";
+                $result4 = mysqli_query($conn, $sql4);
 
-            $row = $result3->fetch_assoc();
-            $row2 = $result4->fetch_assoc();
+                $row = $result3->fetch_assoc();
+                $row2 = $result4->fetch_assoc();
 
+            }
         }
-    }
         ?>
 
         <!--Profiili-->
