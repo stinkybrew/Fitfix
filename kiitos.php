@@ -127,7 +127,7 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="img/jogging-wide.jpg" alt="joggingman" style="width:100%;min-height:150px;max-height:600px;">
             <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal blink_me" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal blink_me" style="margin-left:35%;margin-right:50%" title="Go To W3.CSS"><h1 style="font-size:200%">KIITOS PALAUTTEESTASI!</h1></button>
             </div>
         </div>
         <div style="margin-top: 50px;font-size: 150%">

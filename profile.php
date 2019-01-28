@@ -195,8 +195,8 @@
                         }
                         ?>
                         <div class="w3-container pad2">
-                            <label class="w3-left labels">Pituus
-                                <input class="inputs w3-right" type="number" step="0.01" name="height" placeholder="m" value="<?= $rowU['height'] ?>">
+                            <label class="w3-left labels">Pituus (m)
+                                <input class="inputs w3-right" type="number" step="0.01" name="height" placeholder="esim. 1,83" value="<?= $rowU['height'] ?>">
                             </label>
                         </div>
                         <div class="w3-container pad2">
