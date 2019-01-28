@@ -119,7 +119,7 @@
                             if (count($errors) == 0) {
                                 $password = md5($password1);//encrypt the password before saving in the database
 
-                                $insertquery = "INSERT INTO user (date_of_birth, email, password, first, last) 
+                                $insertquery = "INSERT INTO user (date_of_birth, email, password1, first, last) 
                                 VALUES('$dob', '$email', '$password', '$first', '$last')";
                                 if(mysqli_query($conn, $insertquery)){
                                 } 

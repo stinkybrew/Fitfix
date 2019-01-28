@@ -180,7 +180,7 @@
                             } else {
                                 $update = "INSERT INTO weight (email) VALUES ('$email')";
                                 $result2 = mysqli_query($conn, $update);
-                                $check2 = mysqli_fetch_assoc($result2);
+                                $check2 = $result2->fetch_assoc();
                                 //var_dump($result2);
                             }
 
